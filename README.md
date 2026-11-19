@@ -57,7 +57,7 @@ Seven series stopped reporting (mostly cabai merah besar: Gorontalo 2020, Bangka
 
 **4. Clear seasonality outside Lebaran.** Bawang merah sits 13% to 16% above its yearly average in May and June and 14% to 17% below it in September and October. Cabai rawit merah is cheapest from September to November (17% to 21% below average).
 
-## Forecasting (release 2, in progress)
+## Forecasting (release 2)
 
 **Model:** one global LightGBM per quantile (P10, P50, P90) shared by all 304 province x commodity series. It predicts the log change from the last known price, so a Rp 13,000 rice series and a Rp 70,000 chili series share one scale, then converts back to rupiah. Features: price changes over 1 to 364 days, 28-day volatility, distance from the 28- and 91-day median, gap to the national price, national momentum, horizon, month, days until and since Lebaran, commodity and province (`model.py`).
 
