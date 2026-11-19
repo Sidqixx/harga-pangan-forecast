@@ -9,16 +9,12 @@ import pandas as pd
 import plotly.graph_objects as go
 from plotly.offline import get_plotlyjs_version
 
+import lebaran
 import quality
 
 SITE = Path(__file__).parent / "site"
 NATIONAL = "Semua Provinsi"
 SPIKE = 1.10  # price above 110% of its 4-week median = "waspada"; the same label the model will predict
-# 1 Syawal as set by the government's sidang isbat
-LEBARAN = pd.to_datetime([
-    "2017-06-25", "2018-06-15", "2019-06-05", "2020-05-24", "2021-05-13",
-    "2022-05-02", "2023-04-22", "2024-04-10", "2025-03-31", "2026-03-21",
-])
 
 
 def status(df: pd.DataFrame) -> pd.DataFrame:
@@ -77,7 +73,7 @@ def lebaran_fig(df: pd.DataFrame) -> go.Figure:
     daily = df[df["province"] == NATIONAL].pivot(index="date", columns="commodity", values="price").asfreq("D").ffill()
     offsets = range(-30, 31)
     curves = []
-    for day in LEBARAN[LEBARAN <= daily.index.max() - pd.Timedelta(days=30)]:
+    for day in lebaran.LEBARAN[lebaran.LEBARAN <= daily.index.max() - pd.Timedelta(days=30)]:
         base = daily.loc[day - pd.Timedelta(days=60):day - pd.Timedelta(days=45)].median()
         curves.append((daily.reindex([day + pd.Timedelta(days=o) for o in offsets]) / base - 1).set_axis(offsets) * 100)
     median = pd.concat(curves).groupby(level=0).median()

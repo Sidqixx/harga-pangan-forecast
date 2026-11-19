@@ -6,7 +6,7 @@ A daily-updated pipeline over Indonesia's official food price survey ([PIHPS, Ba
 
 The dashboard and UI are in Indonesian, since the users are Indonesian.
 
-**Status:** release 1 (data pipeline, quality checks, dashboard) is live. Forecasting and the spike classifier come next.
+**Status:** release 1 (data pipeline, quality checks, dashboard) is live. Release 2 (forecasting) has a backtested model; daily live forecasts come next.
 
 ## Pipeline
 
@@ -56,6 +56,34 @@ Seven series stopped reporting (mostly cabai merah besar: Gorontalo 2020, Bangka
 
 **4. Clear seasonality outside Lebaran.** Bawang merah sits 13% to 16% above its yearly average in May and June and 14% to 17% below it in September and October. Cabai rawit merah is cheapest from September to November (17% to 21% below average).
 
+## Forecasting (release 2, in progress)
+
+**Model:** one global LightGBM per quantile (P10, P50, P90) shared by all 304 province x commodity series. It predicts the log change from the last known price, so a Rp 13,000 rice series and a Rp 70,000 chili series share one scale, then converts back to rupiah. Features: price changes over 1 to 364 days, 28-day volatility, distance from the 28- and 91-day median, gap to the national price, national momentum, horizon, month, days until and since Lebaran, commodity and province (`model.py`).
+
+**Backtest** (`backtest.py`): every Monday from Nov 2024 to Nov 2026 (104 origins) is a forecast origin. Each forecaster sees only prices up to the origin (the harness slices the history, so leakage is impossible by construction), predicts the next 14 calendar days, and is scored on the 314,768 days that had a real price. LightGBM is retrained every 6 months inside the backtest, using only examples whose target was already known.
+
+MAPE (%), lower is better. Coverage = share of actual prices inside the P10–P90 range; 80% means the range is honest.
+
+| Horizon | naive (last price) | seasonal (last year's move) | **LightGBM P50** | P10–P90 coverage |
+|---|---|---|---|---|
+| 1–3 days | 2.1 | 3.4 | **2.0** | 80.5% |
+| 4–7 days | 4.0 | 6.3 | **3.7** | 79.8% |
+| 8–14 days | 6.3 | 9.7 | **5.8** | 78.5% |
+
+| 8–14 days ahead | naive | LightGBM | Error reduction |
+|---|---|---|---|
+| Bawang Merah | 5.7 | **4.8** | −16% |
+| Cabai Rawit Merah | 13.6 | **12.1** | −11% |
+| Cabai Merah Besar | 10.5 | **9.6** | −9% |
+| Cabai Merah Keriting | 12.2 | **11.2** | −8% |
+| Cabai Rawit Hijau | 9.2 | **8.6** | −7% |
+| Beras / Telur / Ayam / Bawang Putih | 0.3 / 1.6 / 3.4 / 1.9 | 0.3 / 1.5 / 3.2 / 1.8 | 0% to −6% |
+
+What this says:
+- **"Same as the last price" is a strong baseline**, and the intuitive seasonal baseline loses to it everywhere: last year's moves do not repeat on the same dates.
+- **LightGBM never loses to naive** in any commodity or horizon bucket, but the gains are modest and sit where volatility is: bawang merah and the chilies. Stable staples (beras, bawang putih) mostly tie, because there is almost nothing to win.
+- **The P10–P90 range is honest overall (78.5–80.5%) but slightly too narrow for chilies 8–14 days ahead (73–78%)**: chili shocks are larger than the model expects. Worth fixing before the range drives alerts.
+
 ## Running locally
 
 Requires Python 3.14.
@@ -73,7 +101,7 @@ python -m venv .venv
 ## Roadmap
 
 1. ~~Daily data pipeline, quality checks, dashboard~~
-2. Forecast: naive and seasonal baselines, then a global LightGBM with quantiles (P10/P50/P90) over all province x commodity series, rolling-origin backtests, and live scoring of every past forecast
+2. Forecast: ~~naive and seasonal baselines, global LightGBM with quantiles, rolling-origin backtest~~; daily live forecasts and automatic scoring of every past forecast
 3. Spike warning: probability of a commodity-specific spike within 14 days, retraining with a champion/challenger gate, model card
 4. Dashboard redesign once forecasts exist: commodity and province filters instead of showing every series at once, clickable alert cards, one chart per selection with the forecast band attached, provinces as a ranked bar chart, and a lighter page (data as small JSON files, smaller chart library)
 
