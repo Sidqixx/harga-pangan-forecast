@@ -93,3 +93,13 @@ LightGBM tidak pernah kalah dari naive, dan menang paling besar di bawang merah 
 2. Kenapa targetnya log-perubahan? *(Supaya semua komoditas satu skala. Error 10% di beras dan cabai dihitung sama.)*
 3. Model cuma menang 8% dari naive. Berguna tidak? *(Kemenangannya ada di komoditas yang paling penting dan paling liar. Selain itu model memberi rentang risiko P10–P90 yang jujur, sesuatu yang naive tidak punya.)*
 4. Kenapa coverage dicek? *(Rentang yang terlalu sempit bikin user kaget, rentang yang terlalu lebar tidak berguna. Coverage membuktikan rentangnya bisa dipercaya.)*
+
+### `live.py`: forecast harian live
+- **Tiap hari cron:** latih ulang model pakai semua data, tebak 14 hari ke depan untuk 304 deret, simpan ke `data/forecasts/`. Isinya P10, P50, P90, dan naive (biar bisa dibandingkan).
+- **Penilaian otomatis:** begitu harga asli untuk tanggal yang ditebak keluar, dashboard mencocokkan tebakan lama dengan harga asli dan menghitung error-nya. Ini **delayed labels**: jawaban untuk tebakan hari ini baru keluar 1 sampai 14 hari kemudian.
+- **Kenapa ini penting:** backtest itu simulasi masa lalu. Akurasi live itu bukti bahwa model benar-benar jalan di dunia nyata, dengan data yang belum pernah ia lihat. Kalau akurasi live jauh lebih jelek dari backtest, berarti ada yang salah (misalnya leakage di backtest, atau pola harga berubah).
+- **Idempotent lagi:** cron yang jalan dua kali di hari yang sama (atau di akhir pekan, saat harga baru belum ada) menimpa tebakan untuk origin yang sama, bukan menumpuk.
+
+**Pertanyaan interview**
+1. Gimana kamu tahu model rusak di produksi kalau labelnya baru datang 2 minggu kemudian? *(Horizon 1 hari sudah bisa dinilai besoknya, jadi sinyal paling awal datang dalam sehari. Coverage P10–P90 yang turun jauh dari 80% juga tanda bahaya.)*
+2. Kenapa simpan naive juga? *(Supaya akurasi live model selalu dibandingkan dengan baseline di hari yang sama. Error 5% di bulan Lebaran bisa jadi bagus kalau naive 8%.)*

@@ -6,7 +6,7 @@ A daily-updated pipeline over Indonesia's official food price survey ([PIHPS, Ba
 
 The dashboard and UI are in Indonesian, since the users are Indonesian.
 
-**Status:** release 1 (data pipeline, quality checks, dashboard) is live. Release 2 (forecasting) has a backtested model; daily live forecasts come next.
+**Status:** releases 1 and 2 are live: daily data pipeline, quality checks, dashboard, and a backtested LightGBM model that publishes 14-day forecasts every day and is scored automatically against the prices that follow. The spike warning comes next.
 
 ## Pipeline
 
@@ -14,8 +14,9 @@ The dashboard and UI are in Indonesian, since the users are Indonesian.
 GitHub Actions, daily 10:00 WIB
   fetch.py    PIHPS API -> data/raw/YYYY-MM.csv   (re-fetches the last 14 days to catch late entries and revisions)
   quality.py  checks; the job fails (and emails) if the newest price is more than 10 days old
-  commit      only when prices changed
-  report.py   site/index.html -> GitHub Pages
+  live.py     retrains LightGBM on all data, saves P10/P50/P90 + naive for the next 14 days -> data/forecasts/YYYY-MM.csv
+  commit      only when prices or forecasts changed
+  report.py   site/index.html -> GitHub Pages, including live accuracy of every past forecast
 ```
 
 - **Idempotent:** rows are upserted on `(date, province, commodity_id)`; running twice changes nothing, and a revised price replaces the old one.
@@ -95,13 +96,15 @@ python -m venv .venv
 .venv\Scripts\python.exe fetch.py                       # last 14 days
 .venv\Scripts\python.exe fetch.py --start 2017-01-01    # full backfill (~1 hour, the server is slow on purpose)
 .venv\Scripts\python.exe quality.py
+.venv\Scripts\python.exe backtest.py                    # baselines vs LightGBM over 2 years (~8 min)
+.venv\Scripts\python.exe live.py                        # today's 14-day forecast
 .venv\Scripts\python.exe report.py                      # site/index.html
 ```
 
 ## Roadmap
 
 1. ~~Daily data pipeline, quality checks, dashboard~~
-2. Forecast: ~~naive and seasonal baselines, global LightGBM with quantiles, rolling-origin backtest~~; daily live forecasts and automatic scoring of every past forecast
+2. ~~Forecast: naive and seasonal baselines, global LightGBM with quantiles, rolling-origin backtest, daily live forecasts scored against the prices that follow~~
 3. Spike warning: probability of a commodity-specific spike within 14 days, retraining with a champion/challenger gate, model card
 4. Dashboard redesign once forecasts exist: commodity and province filters instead of showing every series at once, clickable alert cards, one chart per selection with the forecast band attached, provinces as a ranked bar chart, and a lighter page (data as small JSON files, smaller chart library)
 

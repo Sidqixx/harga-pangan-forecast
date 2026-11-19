@@ -19,7 +19,7 @@ NATIONAL = "Semua Provinsi"
 TRAIN_WEEKDAY = 0
 PARAMS = dict(
     objective="quantile", n_estimators=300, learning_rate=0.05, num_leaves=63, min_child_samples=200,
-    subsample=0.5, subsample_freq=1, colsample_bytree=0.8, verbose=-1,
+    subsample=0.5, subsample_freq=1, colsample_bytree=0.8, seed=0, verbose=-1,
 )
 
 
@@ -74,7 +74,7 @@ class LightGBM:
     def fit(self, history: pd.DataFrame) -> None:
         logp = np.log(history.ffill(limit=quality.STALE_DAYS))
         last_origin = history.index[-1] - pd.Timedelta(days=HORIZON)  # every training target must be known
-        origins = logp.index[(logp.index.weekday == TRAIN_WEEKDAY) & (logp.index <= last_origin)]
+        origins = logp.index[(logp.index.day_of_week == TRAIN_WEEKDAY) & (logp.index <= last_origin)]
         x = design(logp, origins)
         actual = stack(np.log(history))  # real reports only, not forward-filled days
         y = actual.reindex(pd.MultiIndex.from_arrays([x["target"], x["commodity_id"].astype(str), x["province"].astype(str)])).to_numpy() - x["last"].to_numpy()

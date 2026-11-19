@@ -9,8 +9,11 @@ import pandas as pd
 import plotly.graph_objects as go
 from plotly.offline import get_plotlyjs_version
 
+import backtest
 import lebaran
+import live
 import quality
+from model import HORIZON
 
 SITE = Path(__file__).parent / "site"
 NATIONAL = "Semua Provinsi"
@@ -86,6 +89,29 @@ def lebaran_fig(df: pd.DataFrame) -> go.Figure:
     return fig
 
 
+def live_section(df: pd.DataFrame) -> str:
+    """Accuracy of the daily forecasts so far, scored against prices that have since been reported."""
+    s = live.score(df)
+    if s.empty:
+        return "<p>Belum ada forecast yang bisa dinilai: harga aslinya belum keluar.</p>"
+    s = s.assign(horizon=pd.cut(s["h"], [0, 3, 7, HORIZON], labels=["1-3 hari", "4-7 hari", "8-14 hari"]))
+    table = pd.DataFrame([
+        {
+            "Horizon": hz, "Dinilai": len(g),
+            "Error naive (harga terakhir)": backtest.mape(g["naive"], g["actual"]),
+            "Error model (P50)": backtest.mape(g["p50"], g["actual"]),
+            "Harga asli di rentang P10-P90": g["actual"].between(g["p10"], g["p90"]).mean(),
+        }
+        for hz, g in s.groupby("horizon", observed=True)
+    ]).to_html(index=False, border=0, formatters={
+        "Dinilai": "{:,}".format, "Error naive (harga terakhir)": "{:.1f}%".format,
+        "Error model (P50)": "{:.1f}%".format, "Harga asli di rentang P10-P90": "{:.0%}".format,
+    })
+    return (f"<p>Forecast harian berjalan sejak <b>{s['origin'].min():%d %b %Y}</b>. "
+            f"{len(s):,} prediksi sudah dinilai dengan harga asli (error = MAPE, makin kecil makin baik; "
+            f"rentang P10-P90 yang jujur memuat sekitar 80% harga asli).</p>\n{table}")
+
+
 def html(df: pd.DataFrame) -> str:
     st = status(df)
     waspada = st[st["Perubahan"] > SPIKE - 1]
@@ -111,6 +137,8 @@ data sampai <b>{df["date"].max():%d %b %Y}</b>. Diperbarui otomatis setiap hari 
 <p><b>{len(waspada)}</b> dari {len(st)} deret harga sedang <b>waspada</b>: lebih dari {SPIKE - 1:.0%} di atas median 4 minggu terakhirnya.
 Tabel: 20 kenaikan tertinggi.</p>
 {table}
+<h2>Akurasi forecast (live)</h2>
+{live_section(df)}
 {figs}
 </body></html>"""
 
