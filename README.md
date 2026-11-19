@@ -75,6 +75,7 @@ python -m venv .venv
 1. ~~Daily data pipeline, quality checks, dashboard~~
 2. Forecast: naive and seasonal baselines, then a global LightGBM with quantiles (P10/P50/P90) over all province x commodity series, rolling-origin backtests, and live scoring of every past forecast
 3. Spike warning: probability of a commodity-specific spike within 14 days, retraining with a champion/challenger gate, model card
+4. Dashboard redesign once forecasts exist: commodity and province filters instead of showing every series at once, clickable alert cards, one chart per selection with the forecast band attached, provinces as a ranked bar chart, and a lighter page (data as small JSON files, smaller chart library)
 
 ## Data
 
