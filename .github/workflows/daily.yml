@@ -33,3 +33,30 @@ jobs:
           git add data/raw
           git diff --cached --quiet || git commit -m "data: prices up to $(date -u +%F)"
           git push
+
+  dashboard:
+    needs: update
+    if: always() # rebuild from whatever data the repo has, even after a failed fetch
+    runs-on: ubuntu-latest
+    permissions: # job-level permissions replace the workflow-level ones
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main # include the data commit made by the update job
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python report.py
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v5
