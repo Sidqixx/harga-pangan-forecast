@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pemantau Harga Pangan</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js" defer></script>
+<style>
+  :root { --fg: #1f2328; --muted: #656d76; --line: #d0d7de; --bg2: #f6f8fa; --red: #cf222e; --amber: #bf8700; --blue: #0969da; }
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--fg); max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 3rem; line-height: 1.5; }
+  h1 { margin: 0 0 .25rem; font-size: 1.7rem; }
+  h2 { margin: 2rem 0 .5rem; font-size: 1.2rem; }
+  .muted { color: var(--muted); font-size: .9rem; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .6rem; }
+  .card { text-align: left; font: inherit; color: inherit; background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--amber); border-radius: 8px; padding: .6rem .8rem; cursor: pointer; }
+  .card:hover, .card:focus-visible { background: var(--bg2); outline: 2px solid var(--blue); outline-offset: 1px; }
+  .card.waspada { border-left-color: var(--red); }
+  .card b { display: block; }
+  .card .big { font-size: 1.3rem; font-weight: 700; }
+  .controls { display: flex; flex-wrap: wrap; gap: .8rem; align-items: end; padding: .8rem; background: var(--bg2); border-radius: 8px; position: sticky; top: 0; z-index: 1; }
+  .controls label { display: flex; flex-direction: column; font-size: .85rem; color: var(--muted); }
+  select { font: inherit; padding: .35rem .5rem; border: 1px solid var(--line); border-radius: 6px; min-width: 200px; }
+  .chart { position: relative; height: 380px; margin-top: .8rem; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+  table { border-collapse: collapse; font-size: .9rem; }
+  th, td { padding: .3rem .7rem; border-bottom: 1px solid var(--line); text-align: right; }
+  th:first-child, td:first-child { text-align: left; }
+</style>
+</head>
+<body>
+<h1>Pemantau Harga Pangan</h1>
+<p class="muted">Harga harian pasar tradisional dari <a href="https://www.bi.go.id/hargapangan">PIHPS Bank Indonesia</a>,
+data sampai <b id="data-date"></b>. Diperbarui otomatis setiap hari (<span id="built"></span>).
+<a href="https://github.com/Sidqixx/harga-pangan-forecast">Kode &amp; metodologi</a> ·
+<a href="https://github.com/Sidqixx/harga-pangan-forecast/blob/main/MODEL_CARD.md">Model card</a></p>
+
+<h2>Peringatan dini: berpeluang melonjak dalam 14 hari</h2>
+<p class="muted" id="alert-intro"></p>
+<div class="cards" id="alerts"></div>
+
+<h2>Sedang waspada</h2>
+<p class="muted" id="waspada-intro"></p>
+<div class="cards" id="waspada"></div>
+
+<h2>Jelajahi harga</h2>
+<div class="controls">
+  <label>Komoditas <select id="commodity"></select></label>
+  <label>Provinsi <select id="province"></select></label>
+  <label>Rentang <select id="range"><option value="3m">3 bulan terakhir (harian)</option><option value="year">1 tahun terakhir (harian)</option><option value="all">Sejak 2017 (mingguan)</option></select></label>
+</div>
+<div class="chart"><canvas id="price-chart" aria-label="Grafik harga dan forecast"></canvas></div>
+<p class="muted">Area oranye: forecast 14 hari, 80% kemungkinan harga ada di dalamnya (P10–P90). Garis merah putus-putus: batas waspada.</p>
+
+<div class="grid2">
+  <div>
+    <h2 id="rank-title">Harga per provinsi</h2>
+    <div class="chart" id="rank-box"><canvas id="rank-chart" aria-label="Harga terakhir per provinsi"></canvas></div>
+  </div>
+  <div>
+    <h2>Pola sekitar Lebaran</h2>
+    <div class="chart"><canvas id="lebaran-chart" aria-label="Pola harga sekitar Lebaran"></canvas></div>
+    <p class="muted" id="lebaran-note"></p>
+  </div>
+</div>
+
+<h2>Akurasi forecast (live)</h2>
+__LIVE_TABLE__
+<p class="muted">__GATE__</p>
+
+<script id="summary" type="application/json">__SUMMARY__</script>
+<script>
+const S = JSON.parse(document.getElementById("summary").textContent);
+const $ = id => document.getElementById(id);
+const NAME = Object.fromEntries(S.commodities.map(c => [c.id, c.name]));
+const rp = v => v == null ? "–" : "Rp " + Math.round(v).toLocaleString("id-ID");
+const pct = (v, d = 0) => (v * 100).toFixed(d) + "%";
+const place = p => p === S.national ? "Nasional" : p;
+const cache = {};
+const charts = {};
+const load = cid => cache[cid] ??= fetch(`series/${cid}.json`).then(r => r.json());
+
+$("data-date").textContent = S.dataDate;
+$("built").textContent = S.built;
+
+function card(container, cls, cid, province, html) {
+  const b = document.createElement("button");
+  b.className = "card " + cls;
+  b.innerHTML = html;
+  b.onclick = () => select(cid, province);
+  container.append(b);
+}
+
+$("alert-intro").innerHTML = `${S.alerts.length} deret yang hari ini masih normal berpeluang &ge; ${pct(S.alertCutoff)} menembus batas waspadanya.
+  Di backtest 2 tahun, 65% peringatan seperti ini benar-benar melonjak. __ALERT_TRACK__ Klik kartu untuk melihat grafiknya.`;
+S.alerts.forEach(a => card($("alerts"), "", a.cid, a.province,
+  `<b>${NAME[a.cid]}</b>${place(a.province)}<div class="big">${pct(a.p)}</div>
+   <span class="muted">sekarang ${rp(a.price)}, batas ${rp(a.level)}</span>`));
+
+$("waspada-intro").textContent = S.waspada.length
+  ? `${S.waspada.length} dari ${S.series} deret sudah di atas batas waspadanya (median 4 minggu + ambang per komoditas, dari beras 5% sampai cabai rawit merah 50%).`
+  : `Tidak ada dari ${S.series} deret yang sedang di atas batas waspadanya (median 4 minggu + ambang per komoditas, dari beras 5% sampai cabai rawit merah 50%).`;
+S.waspada.forEach(w => card($("waspada"), "waspada", w.cid, w.province,
+  `<b>${NAME[w.cid]}</b>${place(w.province)}<div class="big">+${pct(w.change, 1)}</div>
+   <span class="muted">${rp(w.price)} · batas +${pct(w.threshold)}</span>`));
+
+S.commodities.forEach(c => $("commodity").add(new Option(c.name, c.id)));
+
+async function select(cid, province) {
+  $("commodity").value = cid;
+  await fillProvinces(province);
+  await draw();
+  $("commodity").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+async function fillProvinces(keep) {
+  const d = await load($("commodity").value);
+  const current = keep ?? $("province").value;
+  const list = Object.keys(d.prices).sort((a, b) => a === S.national ? -1 : b === S.national ? 1 : a.localeCompare(b));
+  $("province").replaceChildren(...list.map(p => new Option(place(p), p)));
+  $("province").value = list.includes(current) ? current : S.national;
+}
+
+function chart(id, config) {
+  charts[id]?.destroy();
+  charts[id] = new Chart($(id), config);
+}
+
+const lastIndex = arr => { for (let i = arr.length - 1; i >= 0; i--) if (arr[i] != null) return i; return -1; };
+
+async function draw() {
+  const cid = $("commodity").value, prov = $("province").value, d = await load(cid);
+  const range = $("range").value;
+  const cut = range === "3m" ? Math.max(0, d.dates.length - 65) : 0;  // ~13 weeks of weekday reports
+  const hist = range === "all" ? d.weekly
+    : { dates: d.dates.slice(cut), prices: Object.fromEntries(Object.entries(d.prices).map(([p, a]) => [p, a.slice(cut)])) };
+  const n = hist.dates.length, f = d.forecast, nf = f.dates.length;
+  const labels = hist.dates.concat(f.dates);
+  const own = hist.prices[prov].concat(Array(nf).fill(null));
+  const last = lastIndex(own);
+  const band = q => {  // forecast starts from the last real price so the band connects to the line
+    if (!f[q][prov]) return [];
+    const a = Array(n).fill(null).concat(f[q][prov]);
+    if (last >= 0) a[last] = own[last];
+    return a;
+  };
+  const datasets = [
+    { label: `Harga ${place(prov)}`, data: own, borderColor: "#0969da", borderWidth: 2 },
+    prov !== S.national && { label: "Nasional", data: hist.prices[S.national].concat(Array(nf).fill(null)), borderColor: "#8c959f", borderDash: [4, 4], borderWidth: 1 },
+    { label: "P10", data: band("p10"), borderWidth: 0, spanGaps: true },
+    { label: "Forecast 80% (P10–P90)", data: band("p90"), borderWidth: 0, fill: "-1", backgroundColor: "rgba(191,135,0,.25)", spanGaps: true },
+    { label: "Forecast (P50)", data: band("p50"), borderColor: "#bf8700", borderDash: [6, 4], borderWidth: 2, spanGaps: true },
+    range !== "all" && d.level[prov] && { label: "Batas waspada", data: labels.map(() => d.level[prov]), borderColor: "#cf222e", borderDash: [2, 3], borderWidth: 1 },
+  ].filter(Boolean).map(s => ({ pointRadius: 0, ...s }));
+  chart("price-chart", {
+    type: "line", data: { labels, datasets },
+    options: {
+      maintainAspectRatio: false, animation: false, interaction: { mode: "index", intersect: false },
+      scales: { x: { ticks: { maxTicksLimit: 8 } }, y: { ticks: { callback: rp } } },
+      plugins: {
+        title: { display: true, text: `${NAME[cid]} · ${place(prov)}` },
+        legend: { labels: { filter: i => i.text !== "P10" } },
+        tooltip: { filter: i => i.dataset.label !== "P10", callbacks: { label: c => `${c.dataset.label}: ${rp(c.raw)}` } },
+      },
+    },
+  });
+
+  const latest = Object.entries(d.prices).map(([p, a]) => [p, a[lastIndex(a)]]).filter(([, v]) => v != null).sort((a, b) => b[1] - a[1]);
+  $("rank-title").textContent = `Harga terakhir per provinsi: ${NAME[cid]}`;
+  $("rank-box").style.height = `${latest.length * 18 + 60}px`;
+  chart("rank-chart", {
+    type: "bar",
+    data: { labels: latest.map(([p]) => place(p)), datasets: [{ data: latest.map(([, v]) => v),
+      backgroundColor: latest.map(([p]) => p === prov ? "#0969da" : p === S.national ? "#8c959f" : "#d0d7de") }] },
+    options: { indexAxis: "y", maintainAspectRatio: false, animation: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => rp(c.raw) } } },
+      scales: { x: { ticks: { callback: rp, maxTicksLimit: 5 } }, y: { ticks: { autoSkip: false, font: { size: 11 } } } } },
+  });
+
+  chart("lebaran-chart", {
+    type: "line",
+    data: { labels: d.lebaran.offsets, datasets: [{ data: d.lebaran.values, borderColor: "#0969da", pointRadius: 0, borderWidth: 2 }] },
+    options: { maintainAspectRatio: false, animation: false,
+      plugins: { legend: { display: false }, title: { display: true, text: `${NAME[cid]}, nasional` },
+                 tooltip: { callbacks: { title: c => `H${c[0].label >= 0 ? "+" : ""}${c[0].label}`, label: c => `${c.raw > 0 ? "+" : ""}${c.raw}% vs H-60 s.d. H-45` } } },
+      scales: { x: { title: { display: true, text: "Hari terhadap 1 Syawal" }, ticks: { maxTicksLimit: 7 } },
+                y: { ticks: { callback: v => v + "%" } } } },
+  });
+  $("lebaran-note").textContent = `Median ${d.lebaran.years} Lebaran sejak 2017, harga nasional relatif terhadap harga 45-60 hari sebelumnya.`;
+}
+
+$("commodity").onchange = async () => { await fillProvinces(); draw(); };
+$("province").onchange = draw;
+$("range").onchange = draw;
+
+window.addEventListener("DOMContentLoaded", async () => {
+  const first = S.alerts[0] ?? S.waspada[0] ?? { cid: S.commodities[0].id, province: S.national };
+  $("commodity").value = first.cid;
+  await fillProvinces(first.province);
+  draw();
+});
+</script>
+</body>
+</html>

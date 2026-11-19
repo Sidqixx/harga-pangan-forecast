@@ -147,3 +147,13 @@ Dokumen standar di industri: model ini untuk apa, **tidak** untuk apa, datanya a
 3. Model kamu benar 65%. Itu bagus? *(Dibanding acak 7,5% dan heuristik 19%, jauh lebih baik. Dan cut-off bisa digeser kalau user butuh lebih yakin.)*
 4. Apa yang terjadi kalau besok modelnya rusak? *(Gerbang rilis gagal, tidak ada yang dipublikasikan, versi terakhir yang lolos tetap tampil, dan saya dapat email.)*
 5. Apa risiko etis sistem ini? *(Peringatan publik bisa memicu penimbunan. Karena itu peringatan ditampilkan bersama track record-nya, sebagai peluang, dan ditujukan ke pengelola pasokan.)*
+
+## Rilis 4: dashboard
+- **Mulai dari keputusan user, bukan dari data:** halaman dibuka dengan kartu peringatan dini (apa yang harus diwaspadai), baru kemudian grafik untuk eksplorasi. Versi lama menampilkan semua komoditas dan provinsi sekaligus, jadi susah dibaca.
+- **Satu grafik, satu pertanyaan:** pilih komoditas + provinsi, lalu lihat harga, harga nasional, batas waspada, dan pita forecast 14 hari di satu tempat. Klik kartu = langsung lompat ke grafik deret itu.
+- **Halaman ringan:** Plotly (~4 MB) diganti Chart.js (~200 KB). Data dipecah per komoditas (~175 KB) dan baru diambil saat komoditasnya dipilih. Ringkasan hari ini ditanam langsung di HTML, jadi kartu peringatan tampil tanpa menunggu.
+- **Tetap statis:** GitHub Pages, gratis, tanpa server yang bisa tidur. Python (`report.py`) menyiapkan data, JavaScript (`web/index.html`) cuma menggambar.
+
+**Pertanyaan interview**
+1. Kenapa tidak pakai Streamlit? *(Aplikasi gratisnya tidur saat sepi, jadi rekruter bisa menunggu belasan detik. Halaman statis langsung terbuka dan gratis.)*
+2. Kenapa datanya dipecah per komoditas? *(Pengunjung biasanya cuma melihat 1–2 komoditas. Tidak perlu mengunduh semuanya di awal.)*
