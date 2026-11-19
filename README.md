@@ -4,7 +4,7 @@
 
 A daily-updated pipeline over Indonesia's official food price survey ([PIHPS, Bank Indonesia](https://www.bi.go.id/hargapangan)): traditional-market prices for 9 staple commodities in 34 provinces since 2017. The goal is an early warning for price spikes (*"which commodity in which province will jump in the next two weeks?"*) for the people who act on it: regional inflation teams (TPID) planning market operations, and traders deciding when to stock up.
 
-The dashboard and UI are in Indonesian, since the users are Indonesian.
+The dashboard is in Indonesian, since the users are Indonesian. It opens on today's early-warning cards; clicking one shows that series' price, national price, alert level and 14-day forecast band, a ranking of provinces, and the commodity's Lebaran pattern. It is a static page on GitHub Pages: today's summary is inline and each commodity's history is a small JSON file loaded on demand, drawn with Chart.js (`report.py`, `web/index.html`).
 
 **Status:** all three releases are live: daily data pipeline and quality checks, a LightGBM forecaster that publishes 14-day forecasts with an 80% range, and a spike early warning, both behind a daily release gate and scored automatically against the prices that follow. See the [model card](MODEL_CARD.md).
 
@@ -55,7 +55,7 @@ Seven series stopped reporting (mostly cabai merah besar: Gorontalo 2020, Bangka
 
 **2. The Lebaran effect is a sharp, late jump, not a slow build-up.** National price vs its level 45 to 60 days before 1 Syawal, median over the 10 Lebaran holidays since 2017 (the dashboard chart). Daging ayam is the clearest Lebaran item: +4.2% a week before, +13.2% on the day before. Cabai is *below* its earlier level in the last week (cabai rawit merah −21.2%, cabai merah besar −8.2% at H-7) and then jumps within days (to +2.4% and +8.7% at H-1). Telur is up about 5% throughout, bawang merah keeps rising after Lebaran (+11.0% at H+30), and beras does not move (±0.2%). A jump that happens in the last few days is exactly what a two-week warning has to anticipate.
 
-**3. Eastern Indonesia pays far more, and the gap is persistent.** Over the last 30 days, the most expensive province pays 5.0x the cheapest for cabai rawit hijau, but only 1.5x for beras. Maluku Utara is the most expensive province for 5 of the 9 commodities and Papua for 2; Nusa Tenggara Barat is the cheapest for 5. The dashboard heatmap shows the gap holding all year, so province is a strong feature for the model.
+**3. Eastern Indonesia pays far more, and the gap is persistent.** Over the last 30 days, the most expensive province pays 5.0x the cheapest for cabai rawit hijau, but only 1.5x for beras. Maluku Utara is the most expensive province for 5 of the 9 commodities and Papua for 2; Nusa Tenggara Barat is the cheapest for 5. Weekly prices over the past year show the gap holding all year, so province is a strong feature for the model.
 
 **4. Clear seasonality outside Lebaran.** Bawang merah sits 13% to 16% above its yearly average in May and June and 14% to 17% below it in September and October. Cabai rawit merah is cheapest from September to November (17% to 21% below average).
 
@@ -129,7 +129,7 @@ python -m venv .venv
 1. ~~Daily data pipeline, quality checks, dashboard~~
 2. ~~Forecast: naive and seasonal baselines, global LightGBM with quantiles, rolling-origin backtest, daily live forecasts scored against the prices that follow~~
 3. ~~Spike early warning with commodity-specific thresholds, daily release gate, model card~~
-4. Dashboard redesign: commodity and province filters instead of showing every series at once, clickable alert cards, one chart per selection with the forecast band attached, provinces as a ranked bar chart, and a lighter page (data as small JSON files, smaller chart library)
+4. ~~Dashboard redesign: alert cards that open their series, commodity and province filters, one chart per selection with the alert level and forecast band, provinces as a ranked bar chart, lighter page (Chart.js + per-commodity JSON instead of Plotly)~~
 
 ## Data
 
