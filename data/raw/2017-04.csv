@@ -1,0 +1,2010 @@
+date,province,commodity_id,commodity,price
+2017-04-03,Aceh,com_10,Telur Ayam Ras Segar,19350
+2017-04-03,Aceh,com_11,Bawang Merah Ukuran Sedang,28850
+2017-04-03,Aceh,com_12,Bawang Putih Ukuran Sedang,37250
+2017-04-03,Aceh,com_13,Cabai Merah Besar,21500
+2017-04-03,Aceh,com_14,Cabai Merah Keriting,18150
+2017-04-03,Aceh,com_15,Cabai Rawit Hijau,28500
+2017-04-03,Aceh,com_16,Cabai Rawit Merah,25750
+2017-04-03,Aceh,com_3,Beras Kualitas Medium I,11150
+2017-04-03,Aceh,com_7,Daging Ayam Ras Segar,24650
+2017-04-03,Gorontalo,com_11,Bawang Merah Ukuran Sedang,40000
+2017-04-03,Gorontalo,com_12,Bawang Putih Ukuran Sedang,45000
+2017-04-03,Gorontalo,com_14,Cabai Merah Keriting,40000
+2017-04-03,Gorontalo,com_15,Cabai Rawit Hijau,60000
+2017-04-03,Gorontalo,com_16,Cabai Rawit Merah,60000
+2017-04-03,Gorontalo,com_7,Daging Ayam Ras Segar,30000
+2017-04-03,Jawa Barat,com_10,Telur Ayam Ras Segar,17900
+2017-04-03,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,29500
+2017-04-03,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,35750
+2017-04-03,Jawa Barat,com_13,Cabai Merah Besar,33000
+2017-04-03,Jawa Barat,com_14,Cabai Merah Keriting,31250
+2017-04-03,Jawa Barat,com_15,Cabai Rawit Hijau,46250
+2017-04-03,Jawa Barat,com_16,Cabai Rawit Merah,87500
+2017-04-03,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-03,Jawa Barat,com_7,Daging Ayam Ras Segar,30250
+2017-04-03,Jawa Timur,com_10,Telur Ayam Ras Segar,16600
+2017-04-03,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,30000
+2017-04-03,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,34350
+2017-04-03,Jawa Timur,com_13,Cabai Merah Besar,20750
+2017-04-03,Jawa Timur,com_14,Cabai Merah Keriting,24600
+2017-04-03,Jawa Timur,com_15,Cabai Rawit Hijau,28100
+2017-04-03,Jawa Timur,com_16,Cabai Rawit Merah,49650
+2017-04-03,Jawa Timur,com_3,Beras Kualitas Medium I,9600
+2017-04-03,Jawa Timur,com_7,Daging Ayam Ras Segar,25650
+2017-04-03,Kalimantan Barat,com_10,Telur Ayam Ras Segar,19800
+2017-04-03,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32650
+2017-04-03,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,37400
+2017-04-03,Kalimantan Barat,com_13,Cabai Merah Besar,26400
+2017-04-03,Kalimantan Barat,com_14,Cabai Merah Keriting,20500
+2017-04-03,Kalimantan Barat,com_15,Cabai Rawit Hijau,48750
+2017-04-03,Kalimantan Barat,com_16,Cabai Rawit Merah,60750
+2017-04-03,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-03,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27750
+2017-04-03,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,38000
+2017-04-03,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-03,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11900
+2017-04-03,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,21050
+2017-04-03,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,32750
+2017-04-03,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,36750
+2017-04-03,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,58750
+2017-04-03,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,28000
+2017-04-03,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,53750
+2017-04-03,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,82000
+2017-04-03,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11150
+2017-04-03,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,30500
+2017-04-03,Semua Provinsi,com_10,Telur Ayam Ras Segar,19550
+2017-04-03,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,32650
+2017-04-03,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,37700
+2017-04-03,Semua Provinsi,com_13,Cabai Merah Besar,32650
+2017-04-03,Semua Provinsi,com_14,Cabai Merah Keriting,27150
+2017-04-03,Semua Provinsi,com_15,Cabai Rawit Hijau,44200
+2017-04-03,Semua Provinsi,com_16,Cabai Rawit Merah,59000
+2017-04-03,Semua Provinsi,com_3,Beras Kualitas Medium I,11400
+2017-04-03,Semua Provinsi,com_7,Daging Ayam Ras Segar,29050
+2017-04-03,Sulawesi Utara,com_10,Telur Ayam Ras Segar,22000
+2017-04-03,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,43000
+2017-04-03,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,41000
+2017-04-03,Sulawesi Utara,com_13,Cabai Merah Besar,35500
+2017-04-03,Sulawesi Utara,com_14,Cabai Merah Keriting,37150
+2017-04-03,Sulawesi Utara,com_15,Cabai Rawit Hijau,70000
+2017-04-03,Sulawesi Utara,com_16,Cabai Rawit Merah,79000
+2017-04-03,Sulawesi Utara,com_3,Beras Kualitas Medium I,10750
+2017-04-03,Sulawesi Utara,com_7,Daging Ayam Ras Segar,28400
+2017-04-03,Sumatera Barat,com_10,Telur Ayam Ras Segar,20000
+2017-04-03,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,27650
+2017-04-03,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,36250
+2017-04-03,Sumatera Barat,com_14,Cabai Merah Keriting,25500
+2017-04-03,Sumatera Barat,com_15,Cabai Rawit Hijau,34750
+2017-04-03,Sumatera Barat,com_3,Beras Kualitas Medium I,14200
+2017-04-03,Sumatera Barat,com_7,Daging Ayam Ras Segar,37100
+2017-04-03,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-03,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,24000
+2017-04-03,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,35000
+2017-04-03,Sumatera Utara,com_14,Cabai Merah Keriting,19000
+2017-04-03,Sumatera Utara,com_15,Cabai Rawit Hijau,27500
+2017-04-03,Sumatera Utara,com_16,Cabai Rawit Merah,27500
+2017-04-03,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-03,Sumatera Utara,com_7,Daging Ayam Ras Segar,27000
+2017-04-04,Aceh,com_10,Telur Ayam Ras Segar,18900
+2017-04-04,Aceh,com_11,Bawang Merah Ukuran Sedang,29650
+2017-04-04,Aceh,com_12,Bawang Putih Ukuran Sedang,35150
+2017-04-04,Aceh,com_13,Cabai Merah Besar,20750
+2017-04-04,Aceh,com_14,Cabai Merah Keriting,19900
+2017-04-04,Aceh,com_15,Cabai Rawit Hijau,28000
+2017-04-04,Aceh,com_16,Cabai Rawit Merah,25250
+2017-04-04,Aceh,com_3,Beras Kualitas Medium I,10350
+2017-04-04,Aceh,com_7,Daging Ayam Ras Segar,24650
+2017-04-04,Gorontalo,com_10,Telur Ayam Ras Segar,17500
+2017-04-04,Gorontalo,com_11,Bawang Merah Ukuran Sedang,40000
+2017-04-04,Gorontalo,com_12,Bawang Putih Ukuran Sedang,42500
+2017-04-04,Gorontalo,com_14,Cabai Merah Keriting,30000
+2017-04-04,Gorontalo,com_15,Cabai Rawit Hijau,57500
+2017-04-04,Gorontalo,com_16,Cabai Rawit Merah,57500
+2017-04-04,Gorontalo,com_3,Beras Kualitas Medium I,9500
+2017-04-04,Gorontalo,com_7,Daging Ayam Ras Segar,32500
+2017-04-04,Jawa Barat,com_10,Telur Ayam Ras Segar,17900
+2017-04-04,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,29500
+2017-04-04,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,36000
+2017-04-04,Jawa Barat,com_13,Cabai Merah Besar,33000
+2017-04-04,Jawa Barat,com_14,Cabai Merah Keriting,30000
+2017-04-04,Jawa Barat,com_15,Cabai Rawit Hijau,42500
+2017-04-04,Jawa Barat,com_16,Cabai Rawit Merah,87500
+2017-04-04,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-04,Jawa Barat,com_7,Daging Ayam Ras Segar,30000
+2017-04-04,Jawa Tengah,com_10,Telur Ayam Ras Segar,17750
+2017-04-04,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,25000
+2017-04-04,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,36000
+2017-04-04,Jawa Tengah,com_13,Cabai Merah Besar,16000
+2017-04-04,Jawa Tengah,com_14,Cabai Merah Keriting,19000
+2017-04-04,Jawa Tengah,com_15,Cabai Rawit Hijau,33500
+2017-04-04,Jawa Tengah,com_16,Cabai Rawit Merah,43500
+2017-04-04,Jawa Tengah,com_3,Beras Kualitas Medium I,10250
+2017-04-04,Jawa Tengah,com_7,Daging Ayam Ras Segar,28000
+2017-04-04,Jawa Timur,com_10,Telur Ayam Ras Segar,16650
+2017-04-04,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29500
+2017-04-04,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,36900
+2017-04-04,Jawa Timur,com_13,Cabai Merah Besar,19500
+2017-04-04,Jawa Timur,com_14,Cabai Merah Keriting,18000
+2017-04-04,Jawa Timur,com_15,Cabai Rawit Hijau,25500
+2017-04-04,Jawa Timur,com_16,Cabai Rawit Merah,45500
+2017-04-04,Jawa Timur,com_3,Beras Kualitas Medium I,9650
+2017-04-04,Jawa Timur,com_7,Daging Ayam Ras Segar,25650
+2017-04-04,Kalimantan Barat,com_10,Telur Ayam Ras Segar,19800
+2017-04-04,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32650
+2017-04-04,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,37400
+2017-04-04,Kalimantan Barat,com_13,Cabai Merah Besar,27400
+2017-04-04,Kalimantan Barat,com_14,Cabai Merah Keriting,20250
+2017-04-04,Kalimantan Barat,com_15,Cabai Rawit Hijau,48750
+2017-04-04,Kalimantan Barat,com_16,Cabai Rawit Merah,61000
+2017-04-04,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-04,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27750
+2017-04-04,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,20250
+2017-04-04,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,36250
+2017-04-04,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,37500
+2017-04-04,Kalimantan Selatan,com_13,Cabai Merah Besar,32000
+2017-04-04,Kalimantan Selatan,com_14,Cabai Merah Keriting,39500
+2017-04-04,Kalimantan Selatan,com_15,Cabai Rawit Hijau,35000
+2017-04-04,Kalimantan Selatan,com_16,Cabai Rawit Merah,92000
+2017-04-04,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11900
+2017-04-04,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,37800
+2017-04-04,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,24650
+2017-04-04,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,42750
+2017-04-04,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,42750
+2017-04-04,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,43750
+2017-04-04,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,32500
+2017-04-04,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,51250
+2017-04-04,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,82500
+2017-04-04,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11350
+2017-04-04,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,31000
+2017-04-04,Semua Provinsi,com_10,Telur Ayam Ras Segar,19550
+2017-04-04,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,32500
+2017-04-04,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,37900
+2017-04-04,Semua Provinsi,com_13,Cabai Merah Besar,28200
+2017-04-04,Semua Provinsi,com_14,Cabai Merah Keriting,25800
+2017-04-04,Semua Provinsi,com_15,Cabai Rawit Hijau,40750
+2017-04-04,Semua Provinsi,com_16,Cabai Rawit Merah,58150
+2017-04-04,Semua Provinsi,com_3,Beras Kualitas Medium I,11100
+2017-04-04,Semua Provinsi,com_7,Daging Ayam Ras Segar,30000
+2017-04-04,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21900
+2017-04-04,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,42000
+2017-04-04,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,41500
+2017-04-04,Sulawesi Utara,com_13,Cabai Merah Besar,33000
+2017-04-04,Sulawesi Utara,com_14,Cabai Merah Keriting,31500
+2017-04-04,Sulawesi Utara,com_15,Cabai Rawit Hijau,67500
+2017-04-04,Sulawesi Utara,com_16,Cabai Rawit Merah,62500
+2017-04-04,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-04,Sulawesi Utara,com_7,Daging Ayam Ras Segar,28400
+2017-04-04,Sumatera Barat,com_10,Telur Ayam Ras Segar,20000
+2017-04-04,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,27250
+2017-04-04,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,36250
+2017-04-04,Sumatera Barat,com_14,Cabai Merah Keriting,25150
+2017-04-04,Sumatera Barat,com_15,Cabai Rawit Hijau,34750
+2017-04-04,Sumatera Barat,com_3,Beras Kualitas Medium I,14150
+2017-04-04,Sumatera Barat,com_7,Daging Ayam Ras Segar,37150
+2017-04-04,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-04,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,23000
+2017-04-04,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,35000
+2017-04-04,Sumatera Utara,com_14,Cabai Merah Keriting,18000
+2017-04-04,Sumatera Utara,com_15,Cabai Rawit Hijau,24000
+2017-04-04,Sumatera Utara,com_16,Cabai Rawit Merah,24000
+2017-04-04,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-04,Sumatera Utara,com_7,Daging Ayam Ras Segar,27000
+2017-04-05,Aceh,com_10,Telur Ayam Ras Segar,19400
+2017-04-05,Aceh,com_11,Bawang Merah Ukuran Sedang,29750
+2017-04-05,Aceh,com_12,Bawang Putih Ukuran Sedang,35500
+2017-04-05,Aceh,com_13,Cabai Merah Besar,19500
+2017-04-05,Aceh,com_14,Cabai Merah Keriting,18900
+2017-04-05,Aceh,com_15,Cabai Rawit Hijau,29250
+2017-04-05,Aceh,com_16,Cabai Rawit Merah,24000
+2017-04-05,Aceh,com_3,Beras Kualitas Medium I,10350
+2017-04-05,Aceh,com_7,Daging Ayam Ras Segar,24750
+2017-04-05,Jawa Barat,com_10,Telur Ayam Ras Segar,17850
+2017-04-05,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,29500
+2017-04-05,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,36000
+2017-04-05,Jawa Barat,com_13,Cabai Merah Besar,32500
+2017-04-05,Jawa Barat,com_14,Cabai Merah Keriting,32500
+2017-04-05,Jawa Barat,com_15,Cabai Rawit Hijau,42000
+2017-04-05,Jawa Barat,com_16,Cabai Rawit Merah,78750
+2017-04-05,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-05,Jawa Barat,com_7,Daging Ayam Ras Segar,30500
+2017-04-05,Jawa Tengah,com_10,Telur Ayam Ras Segar,17750
+2017-04-05,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,24500
+2017-04-05,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,36000
+2017-04-05,Jawa Tengah,com_13,Cabai Merah Besar,16000
+2017-04-05,Jawa Tengah,com_14,Cabai Merah Keriting,19000
+2017-04-05,Jawa Tengah,com_15,Cabai Rawit Hijau,33500
+2017-04-05,Jawa Tengah,com_16,Cabai Rawit Merah,35500
+2017-04-05,Jawa Tengah,com_3,Beras Kualitas Medium I,10250
+2017-04-05,Jawa Tengah,com_7,Daging Ayam Ras Segar,28000
+2017-04-05,Jawa Timur,com_10,Telur Ayam Ras Segar,16800
+2017-04-05,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29700
+2017-04-05,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,35750
+2017-04-05,Jawa Timur,com_13,Cabai Merah Besar,20250
+2017-04-05,Jawa Timur,com_14,Cabai Merah Keriting,25850
+2017-04-05,Jawa Timur,com_15,Cabai Rawit Hijau,28750
+2017-04-05,Jawa Timur,com_16,Cabai Rawit Merah,46350
+2017-04-05,Jawa Timur,com_3,Beras Kualitas Medium I,9400
+2017-04-05,Jawa Timur,com_7,Daging Ayam Ras Segar,26500
+2017-04-05,Kalimantan Barat,com_10,Telur Ayam Ras Segar,19650
+2017-04-05,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32400
+2017-04-05,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,37650
+2017-04-05,Kalimantan Barat,com_13,Cabai Merah Besar,28150
+2017-04-05,Kalimantan Barat,com_14,Cabai Merah Keriting,27500
+2017-04-05,Kalimantan Barat,com_15,Cabai Rawit Hijau,50000
+2017-04-05,Kalimantan Barat,com_16,Cabai Rawit Merah,60000
+2017-04-05,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-05,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27650
+2017-04-05,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,20250
+2017-04-05,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,35500
+2017-04-05,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,38250
+2017-04-05,Kalimantan Selatan,com_13,Cabai Merah Besar,25000
+2017-04-05,Kalimantan Selatan,com_14,Cabai Merah Keriting,30000
+2017-04-05,Kalimantan Selatan,com_15,Cabai Rawit Hijau,25000
+2017-04-05,Kalimantan Selatan,com_16,Cabai Rawit Merah,75000
+2017-04-05,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11600
+2017-04-05,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,37200
+2017-04-05,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20550
+2017-04-05,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,33500
+2017-04-05,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,37500
+2017-04-05,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,61250
+2017-04-05,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,28000
+2017-04-05,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,52500
+2017-04-05,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,84500
+2017-04-05,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11650
+2017-04-05,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,30500
+2017-04-05,Papua Barat,com_10,Telur Ayam Ras Segar,25000
+2017-04-05,Papua Barat,com_11,Bawang Merah Ukuran Sedang,50000
+2017-04-05,Papua Barat,com_12,Bawang Putih Ukuran Sedang,50000
+2017-04-05,Papua Barat,com_13,Cabai Merah Besar,30000
+2017-04-05,Papua Barat,com_14,Cabai Merah Keriting,40000
+2017-04-05,Papua Barat,com_16,Cabai Rawit Merah,70000
+2017-04-05,Papua Barat,com_3,Beras Kualitas Medium I,14500
+2017-04-05,Papua Barat,com_7,Daging Ayam Ras Segar,40000
+2017-04-05,Semua Provinsi,com_10,Telur Ayam Ras Segar,19900
+2017-04-05,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,32450
+2017-04-05,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,38100
+2017-04-05,Semua Provinsi,com_13,Cabai Merah Besar,29250
+2017-04-05,Semua Provinsi,com_14,Cabai Merah Keriting,26950
+2017-04-05,Semua Provinsi,com_15,Cabai Rawit Hijau,38500
+2017-04-05,Semua Provinsi,com_16,Cabai Rawit Merah,55800
+2017-04-05,Semua Provinsi,com_3,Beras Kualitas Medium I,11500
+2017-04-05,Semua Provinsi,com_7,Daging Ayam Ras Segar,30550
+2017-04-05,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21900
+2017-04-05,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,40000
+2017-04-05,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,41000
+2017-04-05,Sulawesi Utara,com_13,Cabai Merah Besar,30750
+2017-04-05,Sulawesi Utara,com_14,Cabai Merah Keriting,30750
+2017-04-05,Sulawesi Utara,com_15,Cabai Rawit Hijau,65000
+2017-04-05,Sulawesi Utara,com_16,Cabai Rawit Merah,60000
+2017-04-05,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-05,Sulawesi Utara,com_7,Daging Ayam Ras Segar,28400
+2017-04-05,Sumatera Barat,com_10,Telur Ayam Ras Segar,20000
+2017-04-05,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,27250
+2017-04-05,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,36400
+2017-04-05,Sumatera Barat,com_14,Cabai Merah Keriting,24750
+2017-04-05,Sumatera Barat,com_15,Cabai Rawit Hijau,34900
+2017-04-05,Sumatera Barat,com_3,Beras Kualitas Medium I,14100
+2017-04-05,Sumatera Barat,com_7,Daging Ayam Ras Segar,37150
+2017-04-05,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-05,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,25000
+2017-04-05,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,35000
+2017-04-05,Sumatera Utara,com_14,Cabai Merah Keriting,19000
+2017-04-05,Sumatera Utara,com_15,Cabai Rawit Hijau,24000
+2017-04-05,Sumatera Utara,com_16,Cabai Rawit Merah,24000
+2017-04-05,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-05,Sumatera Utara,com_7,Daging Ayam Ras Segar,25500
+2017-04-06,Aceh,com_10,Telur Ayam Ras Segar,19000
+2017-04-06,Aceh,com_11,Bawang Merah Ukuran Sedang,29500
+2017-04-06,Aceh,com_12,Bawang Putih Ukuran Sedang,35600
+2017-04-06,Aceh,com_13,Cabai Merah Besar,19000
+2017-04-06,Aceh,com_14,Cabai Merah Keriting,18000
+2017-04-06,Aceh,com_15,Cabai Rawit Hijau,27750
+2017-04-06,Aceh,com_16,Cabai Rawit Merah,23250
+2017-04-06,Aceh,com_3,Beras Kualitas Medium I,10600
+2017-04-06,Aceh,com_7,Daging Ayam Ras Segar,25650
+2017-04-06,Jawa Barat,com_10,Telur Ayam Ras Segar,17850
+2017-04-06,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,29500
+2017-04-06,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,36000
+2017-04-06,Jawa Barat,com_13,Cabai Merah Besar,32500
+2017-04-06,Jawa Barat,com_14,Cabai Merah Keriting,32500
+2017-04-06,Jawa Barat,com_15,Cabai Rawit Hijau,41250
+2017-04-06,Jawa Barat,com_16,Cabai Rawit Merah,78750
+2017-04-06,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-06,Jawa Barat,com_7,Daging Ayam Ras Segar,30500
+2017-04-06,Jawa Timur,com_10,Telur Ayam Ras Segar,16700
+2017-04-06,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29500
+2017-04-06,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,35700
+2017-04-06,Jawa Timur,com_13,Cabai Merah Besar,21000
+2017-04-06,Jawa Timur,com_14,Cabai Merah Keriting,21850
+2017-04-06,Jawa Timur,com_15,Cabai Rawit Hijau,28700
+2017-04-06,Jawa Timur,com_16,Cabai Rawit Merah,45400
+2017-04-06,Jawa Timur,com_3,Beras Kualitas Medium I,9650
+2017-04-06,Jawa Timur,com_7,Daging Ayam Ras Segar,26150
+2017-04-06,Kalimantan Barat,com_10,Telur Ayam Ras Segar,19650
+2017-04-06,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32400
+2017-04-06,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,37650
+2017-04-06,Kalimantan Barat,com_13,Cabai Merah Besar,28150
+2017-04-06,Kalimantan Barat,com_14,Cabai Merah Keriting,27500
+2017-04-06,Kalimantan Barat,com_15,Cabai Rawit Hijau,50000
+2017-04-06,Kalimantan Barat,com_16,Cabai Rawit Merah,59650
+2017-04-06,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-06,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27650
+2017-04-06,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,20500
+2017-04-06,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,34000
+2017-04-06,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,39500
+2017-04-06,Kalimantan Selatan,com_13,Cabai Merah Besar,25000
+2017-04-06,Kalimantan Selatan,com_14,Cabai Merah Keriting,30000
+2017-04-06,Kalimantan Selatan,com_15,Cabai Rawit Hijau,25000
+2017-04-06,Kalimantan Selatan,com_16,Cabai Rawit Merah,75000
+2017-04-06,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11250
+2017-04-06,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,37350
+2017-04-06,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,24650
+2017-04-06,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,36400
+2017-04-06,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,39400
+2017-04-06,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,46250
+2017-04-06,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,28750
+2017-04-06,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,51250
+2017-04-06,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,83150
+2017-04-06,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11350
+2017-04-06,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,32250
+2017-04-06,Semua Provinsi,com_10,Telur Ayam Ras Segar,19650
+2017-04-06,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,31400
+2017-04-06,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,37450
+2017-04-06,Semua Provinsi,com_13,Cabai Merah Besar,28750
+2017-04-06,Semua Provinsi,com_14,Cabai Merah Keriting,25700
+2017-04-06,Semua Provinsi,com_15,Cabai Rawit Hijau,37700
+2017-04-06,Semua Provinsi,com_16,Cabai Rawit Merah,56100
+2017-04-06,Semua Provinsi,com_3,Beras Kualitas Medium I,11100
+2017-04-06,Semua Provinsi,com_7,Daging Ayam Ras Segar,30050
+2017-04-06,Sulawesi Selatan,com_10,Telur Ayam Ras Segar,16550
+2017-04-06,Sulawesi Selatan,com_3,Beras Kualitas Medium I,9400
+2017-04-06,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21900
+2017-04-06,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,40000
+2017-04-06,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,41000
+2017-04-06,Sulawesi Utara,com_13,Cabai Merah Besar,29500
+2017-04-06,Sulawesi Utara,com_14,Cabai Merah Keriting,28000
+2017-04-06,Sulawesi Utara,com_15,Cabai Rawit Hijau,61250
+2017-04-06,Sulawesi Utara,com_16,Cabai Rawit Merah,59500
+2017-04-06,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-06,Sulawesi Utara,com_7,Daging Ayam Ras Segar,28400
+2017-04-06,Sumatera Barat,com_10,Telur Ayam Ras Segar,20000
+2017-04-06,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,27400
+2017-04-06,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,37250
+2017-04-06,Sumatera Barat,com_14,Cabai Merah Keriting,24650
+2017-04-06,Sumatera Barat,com_15,Cabai Rawit Hijau,30000
+2017-04-06,Sumatera Barat,com_3,Beras Kualitas Medium I,14100
+2017-04-06,Sumatera Barat,com_7,Daging Ayam Ras Segar,36900
+2017-04-06,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-06,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,24000
+2017-04-06,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,35000
+2017-04-06,Sumatera Utara,com_14,Cabai Merah Keriting,20000
+2017-04-06,Sumatera Utara,com_15,Cabai Rawit Hijau,24000
+2017-04-06,Sumatera Utara,com_16,Cabai Rawit Merah,24000
+2017-04-06,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-06,Sumatera Utara,com_7,Daging Ayam Ras Segar,25500
+2017-04-07,Aceh,com_10,Telur Ayam Ras Segar,19350
+2017-04-07,Aceh,com_11,Bawang Merah Ukuran Sedang,29350
+2017-04-07,Aceh,com_12,Bawang Putih Ukuran Sedang,35900
+2017-04-07,Aceh,com_13,Cabai Merah Besar,19750
+2017-04-07,Aceh,com_14,Cabai Merah Keriting,19400
+2017-04-07,Aceh,com_15,Cabai Rawit Hijau,26600
+2017-04-07,Aceh,com_16,Cabai Rawit Merah,22750
+2017-04-07,Aceh,com_3,Beras Kualitas Medium I,10500
+2017-04-07,Aceh,com_7,Daging Ayam Ras Segar,23250
+2017-04-07,Jawa Barat,com_10,Telur Ayam Ras Segar,17650
+2017-04-07,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,29000
+2017-04-07,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,36750
+2017-04-07,Jawa Barat,com_13,Cabai Merah Besar,32500
+2017-04-07,Jawa Barat,com_14,Cabai Merah Keriting,32500
+2017-04-07,Jawa Barat,com_15,Cabai Rawit Hijau,41250
+2017-04-07,Jawa Barat,com_16,Cabai Rawit Merah,78750
+2017-04-07,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-07,Jawa Barat,com_7,Daging Ayam Ras Segar,31000
+2017-04-07,Jawa Timur,com_10,Telur Ayam Ras Segar,16650
+2017-04-07,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,30650
+2017-04-07,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,36350
+2017-04-07,Jawa Timur,com_13,Cabai Merah Besar,21400
+2017-04-07,Jawa Timur,com_14,Cabai Merah Keriting,28250
+2017-04-07,Jawa Timur,com_15,Cabai Rawit Hijau,29200
+2017-04-07,Jawa Timur,com_16,Cabai Rawit Merah,58650
+2017-04-07,Jawa Timur,com_3,Beras Kualitas Medium I,9750
+2017-04-07,Jawa Timur,com_7,Daging Ayam Ras Segar,26400
+2017-04-07,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20300
+2017-04-07,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32400
+2017-04-07,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-07,Kalimantan Barat,com_13,Cabai Merah Besar,29650
+2017-04-07,Kalimantan Barat,com_14,Cabai Merah Keriting,32500
+2017-04-07,Kalimantan Barat,com_15,Cabai Rawit Hijau,50000
+2017-04-07,Kalimantan Barat,com_16,Cabai Rawit Merah,58750
+2017-04-07,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-07,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27900
+2017-04-07,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,20250
+2017-04-07,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,35000
+2017-04-07,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,39000
+2017-04-07,Kalimantan Selatan,com_13,Cabai Merah Besar,25000
+2017-04-07,Kalimantan Selatan,com_14,Cabai Merah Keriting,27500
+2017-04-07,Kalimantan Selatan,com_15,Cabai Rawit Hijau,25000
+2017-04-07,Kalimantan Selatan,com_16,Cabai Rawit Merah,80000
+2017-04-07,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11250
+2017-04-07,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,38800
+2017-04-07,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,24650
+2017-04-07,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,33000
+2017-04-07,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,35500
+2017-04-07,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,41500
+2017-04-07,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,28500
+2017-04-07,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,48000
+2017-04-07,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,82500
+2017-04-07,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11350
+2017-04-07,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,32500
+2017-04-07,Semua Provinsi,com_10,Telur Ayam Ras Segar,19800
+2017-04-07,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,31100
+2017-04-07,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,37150
+2017-04-07,Semua Provinsi,com_13,Cabai Merah Besar,28900
+2017-04-07,Semua Provinsi,com_14,Cabai Merah Keriting,27050
+2017-04-07,Semua Provinsi,com_15,Cabai Rawit Hijau,37150
+2017-04-07,Semua Provinsi,com_16,Cabai Rawit Merah,60350
+2017-04-07,Semua Provinsi,com_3,Beras Kualitas Medium I,11100
+2017-04-07,Semua Provinsi,com_7,Daging Ayam Ras Segar,29950
+2017-04-07,Sulawesi Selatan,com_10,Telur Ayam Ras Segar,17600
+2017-04-07,Sulawesi Selatan,com_3,Beras Kualitas Medium I,9400
+2017-04-07,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21900
+2017-04-07,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,40000
+2017-04-07,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,41000
+2017-04-07,Sulawesi Utara,com_13,Cabai Merah Besar,32500
+2017-04-07,Sulawesi Utara,com_14,Cabai Merah Keriting,31000
+2017-04-07,Sulawesi Utara,com_15,Cabai Rawit Hijau,61250
+2017-04-07,Sulawesi Utara,com_16,Cabai Rawit Merah,77500
+2017-04-07,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-07,Sulawesi Utara,com_7,Daging Ayam Ras Segar,28400
+2017-04-07,Sumatera Barat,com_10,Telur Ayam Ras Segar,20000
+2017-04-07,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,27400
+2017-04-07,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,37000
+2017-04-07,Sumatera Barat,com_14,Cabai Merah Keriting,24650
+2017-04-07,Sumatera Barat,com_15,Cabai Rawit Hijau,28900
+2017-04-07,Sumatera Barat,com_3,Beras Kualitas Medium I,14100
+2017-04-07,Sumatera Barat,com_7,Daging Ayam Ras Segar,36900
+2017-04-07,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-07,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,23000
+2017-04-07,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,35000
+2017-04-07,Sumatera Utara,com_14,Cabai Merah Keriting,19000
+2017-04-07,Sumatera Utara,com_15,Cabai Rawit Hijau,24000
+2017-04-07,Sumatera Utara,com_16,Cabai Rawit Merah,24000
+2017-04-07,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-07,Sumatera Utara,com_7,Daging Ayam Ras Segar,24500
+2017-04-10,Aceh,com_10,Telur Ayam Ras Segar,19500
+2017-04-10,Aceh,com_11,Bawang Merah Ukuran Sedang,29750
+2017-04-10,Aceh,com_12,Bawang Putih Ukuran Sedang,36750
+2017-04-10,Aceh,com_13,Cabai Merah Besar,20000
+2017-04-10,Aceh,com_14,Cabai Merah Keriting,19750
+2017-04-10,Aceh,com_15,Cabai Rawit Hijau,26500
+2017-04-10,Aceh,com_16,Cabai Rawit Merah,22750
+2017-04-10,Aceh,com_3,Beras Kualitas Medium I,10500
+2017-04-10,Aceh,com_7,Daging Ayam Ras Segar,23100
+2017-04-10,Jawa Barat,com_10,Telur Ayam Ras Segar,17650
+2017-04-10,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,28500
+2017-04-10,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-10,Jawa Barat,com_13,Cabai Merah Besar,33000
+2017-04-10,Jawa Barat,com_14,Cabai Merah Keriting,33250
+2017-04-10,Jawa Barat,com_15,Cabai Rawit Hijau,41250
+2017-04-10,Jawa Barat,com_16,Cabai Rawit Merah,70000
+2017-04-10,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-10,Jawa Barat,com_7,Daging Ayam Ras Segar,31250
+2017-04-10,Jawa Tengah,com_10,Telur Ayam Ras Segar,17700
+2017-04-10,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,28650
+2017-04-10,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,41900
+2017-04-10,Jawa Tengah,com_13,Cabai Merah Besar,22250
+2017-04-10,Jawa Tengah,com_14,Cabai Merah Keriting,22750
+2017-04-10,Jawa Tengah,com_15,Cabai Rawit Hijau,38900
+2017-04-10,Jawa Tengah,com_16,Cabai Rawit Merah,48500
+2017-04-10,Jawa Tengah,com_3,Beras Kualitas Medium I,9550
+2017-04-10,Jawa Tengah,com_7,Daging Ayam Ras Segar,31150
+2017-04-10,Jawa Timur,com_10,Telur Ayam Ras Segar,16500
+2017-04-10,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29300
+2017-04-10,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,36050
+2017-04-10,Jawa Timur,com_13,Cabai Merah Besar,24700
+2017-04-10,Jawa Timur,com_14,Cabai Merah Keriting,26400
+2017-04-10,Jawa Timur,com_15,Cabai Rawit Hijau,29400
+2017-04-10,Jawa Timur,com_16,Cabai Rawit Merah,47600
+2017-04-10,Jawa Timur,com_3,Beras Kualitas Medium I,9550
+2017-04-10,Jawa Timur,com_7,Daging Ayam Ras Segar,26550
+2017-04-10,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20300
+2017-04-10,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32000
+2017-04-10,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-10,Kalimantan Barat,com_13,Cabai Merah Besar,29650
+2017-04-10,Kalimantan Barat,com_14,Cabai Merah Keriting,32500
+2017-04-10,Kalimantan Barat,com_15,Cabai Rawit Hijau,49400
+2017-04-10,Kalimantan Barat,com_16,Cabai Rawit Merah,57900
+2017-04-10,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-10,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27900
+2017-04-10,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,19500
+2017-04-10,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,36250
+2017-04-10,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,41000
+2017-04-10,Kalimantan Selatan,com_13,Cabai Merah Besar,32250
+2017-04-10,Kalimantan Selatan,com_14,Cabai Merah Keriting,35000
+2017-04-10,Kalimantan Selatan,com_15,Cabai Rawit Hijau,30650
+2017-04-10,Kalimantan Selatan,com_16,Cabai Rawit Merah,78150
+2017-04-10,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11250
+2017-04-10,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,37850
+2017-04-10,Kalimantan Tengah,com_10,Telur Ayam Ras Segar,22400
+2017-04-10,Kalimantan Tengah,com_11,Bawang Merah Ukuran Sedang,37250
+2017-04-10,Kalimantan Tengah,com_12,Bawang Putih Ukuran Sedang,39000
+2017-04-10,Kalimantan Tengah,com_13,Cabai Merah Besar,56250
+2017-04-10,Kalimantan Tengah,com_14,Cabai Merah Keriting,65000
+2017-04-10,Kalimantan Tengah,com_15,Cabai Rawit Hijau,48750
+2017-04-10,Kalimantan Tengah,com_16,Cabai Rawit Merah,103750
+2017-04-10,Kalimantan Tengah,com_3,Beras Kualitas Medium I,14150
+2017-04-10,Kalimantan Tengah,com_7,Daging Ayam Ras Segar,34250
+2017-04-10,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20750
+2017-04-10,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,33400
+2017-04-10,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,39000
+2017-04-10,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,61900
+2017-04-10,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,29650
+2017-04-10,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,46900
+2017-04-10,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,75750
+2017-04-10,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11450
+2017-04-10,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,30500
+2017-04-10,Papua Barat,com_10,Telur Ayam Ras Segar,25000
+2017-04-10,Papua Barat,com_11,Bawang Merah Ukuran Sedang,50000
+2017-04-10,Papua Barat,com_12,Bawang Putih Ukuran Sedang,47500
+2017-04-10,Papua Barat,com_13,Cabai Merah Besar,25000
+2017-04-10,Papua Barat,com_14,Cabai Merah Keriting,25000
+2017-04-10,Papua Barat,com_15,Cabai Rawit Hijau,50000
+2017-04-10,Papua Barat,com_16,Cabai Rawit Merah,55000
+2017-04-10,Papua Barat,com_3,Beras Kualitas Medium I,14500
+2017-04-10,Papua Barat,com_7,Daging Ayam Ras Segar,30450
+2017-04-10,Semua Provinsi,com_10,Telur Ayam Ras Segar,19850
+2017-04-10,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,33000
+2017-04-10,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,38950
+2017-04-10,Semua Provinsi,com_13,Cabai Merah Besar,32350
+2017-04-10,Semua Provinsi,com_14,Cabai Merah Keriting,30500
+2017-04-10,Semua Provinsi,com_15,Cabai Rawit Hijau,40100
+2017-04-10,Semua Provinsi,com_16,Cabai Rawit Merah,58700
+2017-04-10,Semua Provinsi,com_3,Beras Kualitas Medium I,11500
+2017-04-10,Semua Provinsi,com_7,Daging Ayam Ras Segar,29550
+2017-04-10,Sulawesi Selatan,com_10,Telur Ayam Ras Segar,17150
+2017-04-10,Sulawesi Selatan,com_11,Bawang Merah Ukuran Sedang,31450
+2017-04-10,Sulawesi Selatan,com_12,Bawang Putih Ukuran Sedang,34650
+2017-04-10,Sulawesi Selatan,com_13,Cabai Merah Besar,20350
+2017-04-10,Sulawesi Selatan,com_14,Cabai Merah Keriting,32000
+2017-04-10,Sulawesi Selatan,com_16,Cabai Rawit Merah,53450
+2017-04-10,Sulawesi Selatan,com_3,Beras Kualitas Medium I,9650
+2017-04-10,Sulawesi Selatan,com_7,Daging Ayam Ras Segar,21750
+2017-04-10,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21900
+2017-04-10,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,42000
+2017-04-10,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,41500
+2017-04-10,Sulawesi Utara,com_13,Cabai Merah Besar,30500
+2017-04-10,Sulawesi Utara,com_14,Cabai Merah Keriting,29500
+2017-04-10,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-10,Sulawesi Utara,com_16,Cabai Rawit Merah,67500
+2017-04-10,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-10,Sulawesi Utara,com_7,Daging Ayam Ras Segar,27750
+2017-04-10,Sumatera Barat,com_10,Telur Ayam Ras Segar,20000
+2017-04-10,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,26150
+2017-04-10,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,37750
+2017-04-10,Sumatera Barat,com_14,Cabai Merah Keriting,25650
+2017-04-10,Sumatera Barat,com_15,Cabai Rawit Hijau,26750
+2017-04-10,Sumatera Barat,com_3,Beras Kualitas Medium I,14100
+2017-04-10,Sumatera Barat,com_7,Daging Ayam Ras Segar,36400
+2017-04-10,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-10,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,24500
+2017-04-10,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,35000
+2017-04-10,Sumatera Utara,com_14,Cabai Merah Keriting,20000
+2017-04-10,Sumatera Utara,com_15,Cabai Rawit Hijau,24000
+2017-04-10,Sumatera Utara,com_16,Cabai Rawit Merah,24000
+2017-04-10,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-10,Sumatera Utara,com_7,Daging Ayam Ras Segar,25000
+2017-04-11,Aceh,com_10,Telur Ayam Ras Segar,19450
+2017-04-11,Aceh,com_11,Bawang Merah Ukuran Sedang,29500
+2017-04-11,Aceh,com_12,Bawang Putih Ukuran Sedang,36500
+2017-04-11,Aceh,com_13,Cabai Merah Besar,19500
+2017-04-11,Aceh,com_14,Cabai Merah Keriting,19400
+2017-04-11,Aceh,com_15,Cabai Rawit Hijau,25350
+2017-04-11,Aceh,com_16,Cabai Rawit Merah,21250
+2017-04-11,Aceh,com_3,Beras Kualitas Medium I,10650
+2017-04-11,Aceh,com_7,Daging Ayam Ras Segar,23150
+2017-04-11,Jambi,com_11,Bawang Merah Ukuran Sedang,30000
+2017-04-11,Jambi,com_12,Bawang Putih Ukuran Sedang,40000
+2017-04-11,Jambi,com_13,Cabai Merah Besar,30000
+2017-04-11,Jambi,com_14,Cabai Merah Keriting,28000
+2017-04-11,Jambi,com_15,Cabai Rawit Hijau,35000
+2017-04-11,Jambi,com_16,Cabai Rawit Merah,36000
+2017-04-11,Jambi,com_3,Beras Kualitas Medium I,10300
+2017-04-11,Jawa Barat,com_10,Telur Ayam Ras Segar,17600
+2017-04-11,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,28500
+2017-04-11,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,39000
+2017-04-11,Jawa Barat,com_13,Cabai Merah Besar,34500
+2017-04-11,Jawa Barat,com_14,Cabai Merah Keriting,32750
+2017-04-11,Jawa Barat,com_15,Cabai Rawit Hijau,41250
+2017-04-11,Jawa Barat,com_16,Cabai Rawit Merah,72500
+2017-04-11,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-11,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-11,Jawa Tengah,com_10,Telur Ayam Ras Segar,17750
+2017-04-11,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,29150
+2017-04-11,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,41150
+2017-04-11,Jawa Tengah,com_13,Cabai Merah Besar,22000
+2017-04-11,Jawa Tengah,com_14,Cabai Merah Keriting,23000
+2017-04-11,Jawa Tengah,com_15,Cabai Rawit Hijau,37400
+2017-04-11,Jawa Tengah,com_16,Cabai Rawit Merah,51500
+2017-04-11,Jawa Tengah,com_3,Beras Kualitas Medium I,9550
+2017-04-11,Jawa Tengah,com_7,Daging Ayam Ras Segar,31400
+2017-04-11,Jawa Timur,com_10,Telur Ayam Ras Segar,16550
+2017-04-11,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29550
+2017-04-11,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,36750
+2017-04-11,Jawa Timur,com_13,Cabai Merah Besar,25700
+2017-04-11,Jawa Timur,com_14,Cabai Merah Keriting,26850
+2017-04-11,Jawa Timur,com_15,Cabai Rawit Hijau,28900
+2017-04-11,Jawa Timur,com_16,Cabai Rawit Merah,48650
+2017-04-11,Jawa Timur,com_3,Beras Kualitas Medium I,9550
+2017-04-11,Jawa Timur,com_7,Daging Ayam Ras Segar,26900
+2017-04-11,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20400
+2017-04-11,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32000
+2017-04-11,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,38150
+2017-04-11,Kalimantan Barat,com_13,Cabai Merah Besar,29650
+2017-04-11,Kalimantan Barat,com_14,Cabai Merah Keriting,32500
+2017-04-11,Kalimantan Barat,com_15,Cabai Rawit Hijau,48750
+2017-04-11,Kalimantan Barat,com_16,Cabai Rawit Merah,58150
+2017-04-11,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-11,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27900
+2017-04-11,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,19650
+2017-04-11,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,34750
+2017-04-11,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,39250
+2017-04-11,Kalimantan Selatan,com_13,Cabai Merah Besar,30900
+2017-04-11,Kalimantan Selatan,com_14,Cabai Merah Keriting,32750
+2017-04-11,Kalimantan Selatan,com_15,Cabai Rawit Hijau,30650
+2017-04-11,Kalimantan Selatan,com_16,Cabai Rawit Merah,75400
+2017-04-11,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-11,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,34400
+2017-04-11,Kalimantan Tengah,com_10,Telur Ayam Ras Segar,22400
+2017-04-11,Kalimantan Tengah,com_11,Bawang Merah Ukuran Sedang,36500
+2017-04-11,Kalimantan Tengah,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-11,Kalimantan Tengah,com_13,Cabai Merah Besar,70000
+2017-04-11,Kalimantan Tengah,com_14,Cabai Merah Keriting,80000
+2017-04-11,Kalimantan Tengah,com_15,Cabai Rawit Hijau,67500
+2017-04-11,Kalimantan Tengah,com_16,Cabai Rawit Merah,112500
+2017-04-11,Kalimantan Tengah,com_3,Beras Kualitas Medium I,14250
+2017-04-11,Kalimantan Tengah,com_7,Daging Ayam Ras Segar,35000
+2017-04-11,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,24650
+2017-04-11,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,36500
+2017-04-11,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-11,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,45000
+2017-04-11,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,30000
+2017-04-11,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,52500
+2017-04-11,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,80000
+2017-04-11,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,12000
+2017-04-11,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,31500
+2017-04-11,Papua Barat,com_10,Telur Ayam Ras Segar,28250
+2017-04-11,Papua Barat,com_11,Bawang Merah Ukuran Sedang,49000
+2017-04-11,Papua Barat,com_12,Bawang Putih Ukuran Sedang,46250
+2017-04-11,Papua Barat,com_13,Cabai Merah Besar,42500
+2017-04-11,Papua Barat,com_14,Cabai Merah Keriting,37500
+2017-04-11,Papua Barat,com_15,Cabai Rawit Hijau,45000
+2017-04-11,Papua Barat,com_16,Cabai Rawit Merah,67500
+2017-04-11,Papua Barat,com_3,Beras Kualitas Medium I,14250
+2017-04-11,Papua Barat,com_7,Daging Ayam Ras Segar,32750
+2017-04-11,Semua Provinsi,com_10,Telur Ayam Ras Segar,20400
+2017-04-11,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,32750
+2017-04-11,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,38750
+2017-04-11,Semua Provinsi,com_13,Cabai Merah Besar,33150
+2017-04-11,Semua Provinsi,com_14,Cabai Merah Keriting,31900
+2017-04-11,Semua Provinsi,com_15,Cabai Rawit Hijau,40950
+2017-04-11,Semua Provinsi,com_16,Cabai Rawit Merah,59350
+2017-04-11,Semua Provinsi,com_3,Beras Kualitas Medium I,11500
+2017-04-11,Semua Provinsi,com_7,Daging Ayam Ras Segar,29550
+2017-04-11,Sulawesi Selatan,com_10,Telur Ayam Ras Segar,17600
+2017-04-11,Sulawesi Selatan,com_11,Bawang Merah Ukuran Sedang,32250
+2017-04-11,Sulawesi Selatan,com_12,Bawang Putih Ukuran Sedang,35750
+2017-04-11,Sulawesi Selatan,com_13,Cabai Merah Besar,17500
+2017-04-11,Sulawesi Selatan,com_14,Cabai Merah Keriting,30000
+2017-04-11,Sulawesi Selatan,com_16,Cabai Rawit Merah,57750
+2017-04-11,Sulawesi Selatan,com_3,Beras Kualitas Medium I,10000
+2017-04-11,Sulawesi Selatan,com_7,Daging Ayam Ras Segar,21050
+2017-04-11,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-11,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,40000
+2017-04-11,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,41000
+2017-04-11,Sulawesi Utara,com_13,Cabai Merah Besar,30500
+2017-04-11,Sulawesi Utara,com_14,Cabai Merah Keriting,28500
+2017-04-11,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-11,Sulawesi Utara,com_16,Cabai Rawit Merah,66250
+2017-04-11,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-11,Sulawesi Utara,com_7,Daging Ayam Ras Segar,27000
+2017-04-11,Sumatera Barat,com_10,Telur Ayam Ras Segar,20000
+2017-04-11,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,26250
+2017-04-11,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,37650
+2017-04-11,Sumatera Barat,com_14,Cabai Merah Keriting,25500
+2017-04-11,Sumatera Barat,com_15,Cabai Rawit Hijau,27400
+2017-04-11,Sumatera Barat,com_3,Beras Kualitas Medium I,14100
+2017-04-11,Sumatera Barat,com_7,Daging Ayam Ras Segar,36400
+2017-04-11,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-11,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,24500
+2017-04-11,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,35000
+2017-04-11,Sumatera Utara,com_14,Cabai Merah Keriting,20000
+2017-04-11,Sumatera Utara,com_15,Cabai Rawit Hijau,24000
+2017-04-11,Sumatera Utara,com_16,Cabai Rawit Merah,24000
+2017-04-11,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-11,Sumatera Utara,com_7,Daging Ayam Ras Segar,24500
+2017-04-12,Aceh,com_10,Telur Ayam Ras Segar,19550
+2017-04-12,Aceh,com_11,Bawang Merah Ukuran Sedang,29850
+2017-04-12,Aceh,com_12,Bawang Putih Ukuran Sedang,37150
+2017-04-12,Aceh,com_13,Cabai Merah Besar,19500
+2017-04-12,Aceh,com_14,Cabai Merah Keriting,20000
+2017-04-12,Aceh,com_15,Cabai Rawit Hijau,25350
+2017-04-12,Aceh,com_16,Cabai Rawit Merah,20000
+2017-04-12,Aceh,com_3,Beras Kualitas Medium I,11000
+2017-04-12,Aceh,com_7,Daging Ayam Ras Segar,23000
+2017-04-12,Jawa Barat,com_10,Telur Ayam Ras Segar,17600
+2017-04-12,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,28500
+2017-04-12,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,38750
+2017-04-12,Jawa Barat,com_13,Cabai Merah Besar,34500
+2017-04-12,Jawa Barat,com_14,Cabai Merah Keriting,32750
+2017-04-12,Jawa Barat,com_15,Cabai Rawit Hijau,41250
+2017-04-12,Jawa Barat,com_16,Cabai Rawit Merah,70000
+2017-04-12,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-12,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-12,Jawa Tengah,com_10,Telur Ayam Ras Segar,17800
+2017-04-12,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,28050
+2017-04-12,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,43200
+2017-04-12,Jawa Tengah,com_13,Cabai Merah Besar,28000
+2017-04-12,Jawa Tengah,com_14,Cabai Merah Keriting,23400
+2017-04-12,Jawa Tengah,com_15,Cabai Rawit Hijau,41300
+2017-04-12,Jawa Tengah,com_16,Cabai Rawit Merah,53700
+2017-04-12,Jawa Tengah,com_3,Beras Kualitas Medium I,9450
+2017-04-12,Jawa Tengah,com_7,Daging Ayam Ras Segar,30650
+2017-04-12,Jawa Timur,com_10,Telur Ayam Ras Segar,16550
+2017-04-12,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29400
+2017-04-12,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,37150
+2017-04-12,Jawa Timur,com_13,Cabai Merah Besar,25500
+2017-04-12,Jawa Timur,com_14,Cabai Merah Keriting,27400
+2017-04-12,Jawa Timur,com_15,Cabai Rawit Hijau,29650
+2017-04-12,Jawa Timur,com_16,Cabai Rawit Merah,54100
+2017-04-12,Jawa Timur,com_3,Beras Kualitas Medium I,9550
+2017-04-12,Jawa Timur,com_7,Daging Ayam Ras Segar,27300
+2017-04-12,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20600
+2017-04-12,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32650
+2017-04-12,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,38400
+2017-04-12,Kalimantan Barat,com_13,Cabai Merah Besar,29650
+2017-04-12,Kalimantan Barat,com_14,Cabai Merah Keriting,30000
+2017-04-12,Kalimantan Barat,com_15,Cabai Rawit Hijau,47500
+2017-04-12,Kalimantan Barat,com_16,Cabai Rawit Merah,57500
+2017-04-12,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-12,Kalimantan Barat,com_7,Daging Ayam Ras Segar,28150
+2017-04-12,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,19650
+2017-04-12,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,34750
+2017-04-12,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,39250
+2017-04-12,Kalimantan Selatan,com_13,Cabai Merah Besar,30900
+2017-04-12,Kalimantan Selatan,com_14,Cabai Merah Keriting,32400
+2017-04-12,Kalimantan Selatan,com_15,Cabai Rawit Hijau,30650
+2017-04-12,Kalimantan Selatan,com_16,Cabai Rawit Merah,75000
+2017-04-12,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-12,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,34400
+2017-04-12,Kalimantan Tengah,com_10,Telur Ayam Ras Segar,21600
+2017-04-12,Kalimantan Tengah,com_11,Bawang Merah Ukuran Sedang,38000
+2017-04-12,Kalimantan Tengah,com_12,Bawang Putih Ukuran Sedang,39500
+2017-04-12,Kalimantan Tengah,com_13,Cabai Merah Besar,58750
+2017-04-12,Kalimantan Tengah,com_14,Cabai Merah Keriting,65000
+2017-04-12,Kalimantan Tengah,com_15,Cabai Rawit Hijau,56250
+2017-04-12,Kalimantan Tengah,com_16,Cabai Rawit Merah,92500
+2017-04-12,Kalimantan Tengah,com_3,Beras Kualitas Medium I,14000
+2017-04-12,Kalimantan Tengah,com_7,Daging Ayam Ras Segar,34500
+2017-04-12,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,23800
+2017-04-12,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,35250
+2017-04-12,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,36500
+2017-04-12,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,42000
+2017-04-12,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,31250
+2017-04-12,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,47500
+2017-04-12,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,73750
+2017-04-12,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11350
+2017-04-12,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,30250
+2017-04-12,Papua Barat,com_10,Telur Ayam Ras Segar,28250
+2017-04-12,Papua Barat,com_11,Bawang Merah Ukuran Sedang,49000
+2017-04-12,Papua Barat,com_12,Bawang Putih Ukuran Sedang,47500
+2017-04-12,Papua Barat,com_13,Cabai Merah Besar,46250
+2017-04-12,Papua Barat,com_14,Cabai Merah Keriting,40000
+2017-04-12,Papua Barat,com_15,Cabai Rawit Hijau,45000
+2017-04-12,Papua Barat,com_16,Cabai Rawit Merah,65000
+2017-04-12,Papua Barat,com_3,Beras Kualitas Medium I,14250
+2017-04-12,Papua Barat,com_7,Daging Ayam Ras Segar,33500
+2017-04-12,Semua Provinsi,com_10,Telur Ayam Ras Segar,20550
+2017-04-12,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,32950
+2017-04-12,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,39300
+2017-04-12,Semua Provinsi,com_13,Cabai Merah Besar,34450
+2017-04-12,Semua Provinsi,com_14,Cabai Merah Keriting,31200
+2017-04-12,Semua Provinsi,com_15,Cabai Rawit Hijau,40350
+2017-04-12,Semua Provinsi,com_16,Cabai Rawit Merah,59000
+2017-04-12,Semua Provinsi,com_3,Beras Kualitas Medium I,11650
+2017-04-12,Semua Provinsi,com_7,Daging Ayam Ras Segar,30100
+2017-04-12,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-12,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,40000
+2017-04-12,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,41000
+2017-04-12,Sulawesi Utara,com_13,Cabai Merah Besar,29500
+2017-04-12,Sulawesi Utara,com_14,Cabai Merah Keriting,27250
+2017-04-12,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-12,Sulawesi Utara,com_16,Cabai Rawit Merah,63250
+2017-04-12,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-12,Sulawesi Utara,com_7,Daging Ayam Ras Segar,27000
+2017-04-12,Sumatera Barat,com_10,Telur Ayam Ras Segar,20000
+2017-04-12,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,25500
+2017-04-12,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-12,Sumatera Barat,com_14,Cabai Merah Keriting,24750
+2017-04-12,Sumatera Barat,com_15,Cabai Rawit Hijau,26750
+2017-04-12,Sumatera Barat,com_3,Beras Kualitas Medium I,14100
+2017-04-12,Sumatera Barat,com_7,Daging Ayam Ras Segar,36400
+2017-04-12,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-12,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,24500
+2017-04-12,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,35000
+2017-04-12,Sumatera Utara,com_14,Cabai Merah Keriting,20000
+2017-04-12,Sumatera Utara,com_15,Cabai Rawit Hijau,24000
+2017-04-12,Sumatera Utara,com_16,Cabai Rawit Merah,24000
+2017-04-12,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-12,Sumatera Utara,com_7,Daging Ayam Ras Segar,24000
+2017-04-13,Aceh,com_10,Telur Ayam Ras Segar,19500
+2017-04-13,Aceh,com_11,Bawang Merah Ukuran Sedang,29750
+2017-04-13,Aceh,com_12,Bawang Putih Ukuran Sedang,37150
+2017-04-13,Aceh,com_13,Cabai Merah Besar,19500
+2017-04-13,Aceh,com_14,Cabai Merah Keriting,20000
+2017-04-13,Aceh,com_15,Cabai Rawit Hijau,24900
+2017-04-13,Aceh,com_16,Cabai Rawit Merah,20000
+2017-04-13,Aceh,com_3,Beras Kualitas Medium I,11000
+2017-04-13,Aceh,com_7,Daging Ayam Ras Segar,23250
+2017-04-13,Jawa Barat,com_10,Telur Ayam Ras Segar,17600
+2017-04-13,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-13,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,39000
+2017-04-13,Jawa Barat,com_13,Cabai Merah Besar,34750
+2017-04-13,Jawa Barat,com_14,Cabai Merah Keriting,31750
+2017-04-13,Jawa Barat,com_15,Cabai Rawit Hijau,50000
+2017-04-13,Jawa Barat,com_16,Cabai Rawit Merah,72500
+2017-04-13,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-13,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-13,Jawa Tengah,com_10,Telur Ayam Ras Segar,17750
+2017-04-13,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,28200
+2017-04-13,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,44750
+2017-04-13,Jawa Tengah,com_13,Cabai Merah Besar,28650
+2017-04-13,Jawa Tengah,com_14,Cabai Merah Keriting,23250
+2017-04-13,Jawa Tengah,com_15,Cabai Rawit Hijau,40650
+2017-04-13,Jawa Tengah,com_16,Cabai Rawit Merah,54450
+2017-04-13,Jawa Tengah,com_3,Beras Kualitas Medium I,9450
+2017-04-13,Jawa Tengah,com_7,Daging Ayam Ras Segar,30550
+2017-04-13,Jawa Timur,com_10,Telur Ayam Ras Segar,16700
+2017-04-13,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29750
+2017-04-13,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,37000
+2017-04-13,Jawa Timur,com_13,Cabai Merah Besar,24900
+2017-04-13,Jawa Timur,com_14,Cabai Merah Keriting,26850
+2017-04-13,Jawa Timur,com_15,Cabai Rawit Hijau,28000
+2017-04-13,Jawa Timur,com_16,Cabai Rawit Merah,53150
+2017-04-13,Jawa Timur,com_3,Beras Kualitas Medium I,9550
+2017-04-13,Jawa Timur,com_7,Daging Ayam Ras Segar,27000
+2017-04-13,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20600
+2017-04-13,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32150
+2017-04-13,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,38900
+2017-04-13,Kalimantan Barat,com_13,Cabai Merah Besar,28400
+2017-04-13,Kalimantan Barat,com_14,Cabai Merah Keriting,27500
+2017-04-13,Kalimantan Barat,com_15,Cabai Rawit Hijau,46250
+2017-04-13,Kalimantan Barat,com_16,Cabai Rawit Merah,57500
+2017-04-13,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-13,Kalimantan Barat,com_7,Daging Ayam Ras Segar,28250
+2017-04-13,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,19650
+2017-04-13,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,34400
+2017-04-13,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,39250
+2017-04-13,Kalimantan Selatan,com_13,Cabai Merah Besar,31500
+2017-04-13,Kalimantan Selatan,com_14,Cabai Merah Keriting,32400
+2017-04-13,Kalimantan Selatan,com_15,Cabai Rawit Hijau,30650
+2017-04-13,Kalimantan Selatan,com_16,Cabai Rawit Merah,75000
+2017-04-13,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-13,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,34400
+2017-04-13,Kalimantan Tengah,com_10,Telur Ayam Ras Segar,22400
+2017-04-13,Kalimantan Tengah,com_11,Bawang Merah Ukuran Sedang,37250
+2017-04-13,Kalimantan Tengah,com_12,Bawang Putih Ukuran Sedang,39500
+2017-04-13,Kalimantan Tengah,com_13,Cabai Merah Besar,53750
+2017-04-13,Kalimantan Tengah,com_14,Cabai Merah Keriting,65000
+2017-04-13,Kalimantan Tengah,com_15,Cabai Rawit Hijau,50000
+2017-04-13,Kalimantan Tengah,com_16,Cabai Rawit Merah,98750
+2017-04-13,Kalimantan Tengah,com_3,Beras Kualitas Medium I,14400
+2017-04-13,Kalimantan Tengah,com_7,Daging Ayam Ras Segar,34500
+2017-04-13,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,24250
+2017-04-13,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,36250
+2017-04-13,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,37500
+2017-04-13,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,44000
+2017-04-13,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,33000
+2017-04-13,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,47500
+2017-04-13,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,75000
+2017-04-13,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11350
+2017-04-13,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,29500
+2017-04-13,Papua Barat,com_10,Telur Ayam Ras Segar,28250
+2017-04-13,Papua Barat,com_11,Bawang Merah Ukuran Sedang,49000
+2017-04-13,Papua Barat,com_12,Bawang Putih Ukuran Sedang,47500
+2017-04-13,Papua Barat,com_13,Cabai Merah Besar,46250
+2017-04-13,Papua Barat,com_14,Cabai Merah Keriting,40000
+2017-04-13,Papua Barat,com_15,Cabai Rawit Hijau,45000
+2017-04-13,Papua Barat,com_16,Cabai Rawit Merah,66250
+2017-04-13,Papua Barat,com_3,Beras Kualitas Medium I,14250
+2017-04-13,Papua Barat,com_7,Daging Ayam Ras Segar,33500
+2017-04-13,Semua Provinsi,com_10,Telur Ayam Ras Segar,20650
+2017-04-13,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,32700
+2017-04-13,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,39650
+2017-04-13,Semua Provinsi,com_13,Cabai Merah Besar,34100
+2017-04-13,Semua Provinsi,com_14,Cabai Merah Keriting,30950
+2017-04-13,Semua Provinsi,com_15,Cabai Rawit Hijau,40200
+2017-04-13,Semua Provinsi,com_16,Cabai Rawit Merah,60500
+2017-04-13,Semua Provinsi,com_3,Beras Kualitas Medium I,11700
+2017-04-13,Semua Provinsi,com_7,Daging Ayam Ras Segar,30000
+2017-04-13,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-13,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,40000
+2017-04-13,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,41500
+2017-04-13,Sulawesi Utara,com_13,Cabai Merah Besar,29500
+2017-04-13,Sulawesi Utara,com_14,Cabai Merah Keriting,27000
+2017-04-13,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-13,Sulawesi Utara,com_16,Cabai Rawit Merah,68750
+2017-04-13,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-13,Sulawesi Utara,com_7,Daging Ayam Ras Segar,26400
+2017-04-13,Sumatera Barat,com_10,Telur Ayam Ras Segar,20000
+2017-04-13,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,25750
+2017-04-13,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,38750
+2017-04-13,Sumatera Barat,com_14,Cabai Merah Keriting,24500
+2017-04-13,Sumatera Barat,com_15,Cabai Rawit Hijau,26900
+2017-04-13,Sumatera Barat,com_3,Beras Kualitas Medium I,14050
+2017-04-13,Sumatera Barat,com_7,Daging Ayam Ras Segar,36400
+2017-04-13,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-13,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,23000
+2017-04-13,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,35000
+2017-04-13,Sumatera Utara,com_14,Cabai Merah Keriting,20000
+2017-04-13,Sumatera Utara,com_15,Cabai Rawit Hijau,24000
+2017-04-13,Sumatera Utara,com_16,Cabai Rawit Merah,24000
+2017-04-13,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-13,Sumatera Utara,com_7,Daging Ayam Ras Segar,24000
+2017-04-14,Jawa Tengah,com_10,Telur Ayam Ras Segar,17550
+2017-04-14,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,28750
+2017-04-14,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,42650
+2017-04-14,Jawa Tengah,com_13,Cabai Merah Besar,23750
+2017-04-14,Jawa Tengah,com_14,Cabai Merah Keriting,23250
+2017-04-14,Jawa Tengah,com_15,Cabai Rawit Hijau,37900
+2017-04-14,Jawa Tengah,com_16,Cabai Rawit Merah,52650
+2017-04-14,Jawa Tengah,com_3,Beras Kualitas Medium I,9500
+2017-04-14,Jawa Tengah,com_7,Daging Ayam Ras Segar,31000
+2017-04-14,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,19000
+2017-04-14,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,32500
+2017-04-14,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,39000
+2017-04-14,Kalimantan Selatan,com_13,Cabai Merah Besar,29000
+2017-04-14,Kalimantan Selatan,com_14,Cabai Merah Keriting,26500
+2017-04-14,Kalimantan Selatan,com_15,Cabai Rawit Hijau,22500
+2017-04-14,Kalimantan Selatan,com_16,Cabai Rawit Merah,65000
+2017-04-14,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11250
+2017-04-14,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,40000
+2017-04-14,Semua Provinsi,com_10,Telur Ayam Ras Segar,18300
+2017-04-14,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,30650
+2017-04-14,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,40850
+2017-04-14,Semua Provinsi,com_13,Cabai Merah Besar,26400
+2017-04-14,Semua Provinsi,com_14,Cabai Merah Keriting,24900
+2017-04-14,Semua Provinsi,com_15,Cabai Rawit Hijau,30200
+2017-04-14,Semua Provinsi,com_16,Cabai Rawit Merah,58850
+2017-04-14,Semua Provinsi,com_3,Beras Kualitas Medium I,10400
+2017-04-14,Semua Provinsi,com_7,Daging Ayam Ras Segar,35500
+2017-04-17,Aceh,com_10,Telur Ayam Ras Segar,19450
+2017-04-17,Aceh,com_11,Bawang Merah Ukuran Sedang,30350
+2017-04-17,Aceh,com_12,Bawang Putih Ukuran Sedang,37100
+2017-04-17,Aceh,com_13,Cabai Merah Besar,20750
+2017-04-17,Aceh,com_14,Cabai Merah Keriting,20600
+2017-04-17,Aceh,com_15,Cabai Rawit Hijau,26400
+2017-04-17,Aceh,com_16,Cabai Rawit Merah,24000
+2017-04-17,Aceh,com_3,Beras Kualitas Medium I,10650
+2017-04-17,Aceh,com_7,Daging Ayam Ras Segar,23100
+2017-04-17,Jawa Barat,com_10,Telur Ayam Ras Segar,17600
+2017-04-17,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-17,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,39000
+2017-04-17,Jawa Barat,com_13,Cabai Merah Besar,35000
+2017-04-17,Jawa Barat,com_14,Cabai Merah Keriting,31500
+2017-04-17,Jawa Barat,com_15,Cabai Rawit Hijau,41250
+2017-04-17,Jawa Barat,com_16,Cabai Rawit Merah,63750
+2017-04-17,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-17,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-17,Jawa Tengah,com_10,Telur Ayam Ras Segar,17700
+2017-04-17,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,27950
+2017-04-17,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,45750
+2017-04-17,Jawa Tengah,com_13,Cabai Merah Besar,29450
+2017-04-17,Jawa Tengah,com_14,Cabai Merah Keriting,22700
+2017-04-17,Jawa Tengah,com_15,Cabai Rawit Hijau,41200
+2017-04-17,Jawa Tengah,com_16,Cabai Rawit Merah,56300
+2017-04-17,Jawa Tengah,com_3,Beras Kualitas Medium I,9450
+2017-04-17,Jawa Tengah,com_7,Daging Ayam Ras Segar,30450
+2017-04-17,Jawa Timur,com_10,Telur Ayam Ras Segar,16600
+2017-04-17,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,30300
+2017-04-17,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,37200
+2017-04-17,Jawa Timur,com_13,Cabai Merah Besar,24650
+2017-04-17,Jawa Timur,com_14,Cabai Merah Keriting,27650
+2017-04-17,Jawa Timur,com_15,Cabai Rawit Hijau,29300
+2017-04-17,Jawa Timur,com_16,Cabai Rawit Merah,50400
+2017-04-17,Jawa Timur,com_3,Beras Kualitas Medium I,9550
+2017-04-17,Jawa Timur,com_7,Daging Ayam Ras Segar,26300
+2017-04-17,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20500
+2017-04-17,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32150
+2017-04-17,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,38900
+2017-04-17,Kalimantan Barat,com_13,Cabai Merah Besar,27500
+2017-04-17,Kalimantan Barat,com_14,Cabai Merah Keriting,27500
+2017-04-17,Kalimantan Barat,com_15,Cabai Rawit Hijau,47500
+2017-04-17,Kalimantan Barat,com_16,Cabai Rawit Merah,56900
+2017-04-17,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-17,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27750
+2017-04-17,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,19650
+2017-04-17,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,31650
+2017-04-17,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,39250
+2017-04-17,Kalimantan Selatan,com_13,Cabai Merah Besar,31900
+2017-04-17,Kalimantan Selatan,com_14,Cabai Merah Keriting,31250
+2017-04-17,Kalimantan Selatan,com_15,Cabai Rawit Hijau,25650
+2017-04-17,Kalimantan Selatan,com_16,Cabai Rawit Merah,57500
+2017-04-17,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-17,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,34950
+2017-04-17,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20300
+2017-04-17,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,35500
+2017-04-17,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,39750
+2017-04-17,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,48750
+2017-04-17,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,31250
+2017-04-17,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,49150
+2017-04-17,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,72900
+2017-04-17,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11350
+2017-04-17,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,29250
+2017-04-17,Papua Barat,com_10,Telur Ayam Ras Segar,28250
+2017-04-17,Papua Barat,com_11,Bawang Merah Ukuran Sedang,49500
+2017-04-17,Papua Barat,com_12,Bawang Putih Ukuran Sedang,47500
+2017-04-17,Papua Barat,com_13,Cabai Merah Besar,48750
+2017-04-17,Papua Barat,com_14,Cabai Merah Keriting,38750
+2017-04-17,Papua Barat,com_15,Cabai Rawit Hijau,45000
+2017-04-17,Papua Barat,com_16,Cabai Rawit Merah,66250
+2017-04-17,Papua Barat,com_3,Beras Kualitas Medium I,14250
+2017-04-17,Papua Barat,com_7,Daging Ayam Ras Segar,34200
+2017-04-17,Semua Provinsi,com_10,Telur Ayam Ras Segar,20100
+2017-04-17,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,32350
+2017-04-17,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,40300
+2017-04-17,Semua Provinsi,com_13,Cabai Merah Besar,32900
+2017-04-17,Semua Provinsi,com_14,Cabai Merah Keriting,27200
+2017-04-17,Semua Provinsi,com_15,Cabai Rawit Hijau,38300
+2017-04-17,Semua Provinsi,com_16,Cabai Rawit Merah,53400
+2017-04-17,Semua Provinsi,com_3,Beras Kualitas Medium I,11400
+2017-04-17,Semua Provinsi,com_7,Daging Ayam Ras Segar,29500
+2017-04-17,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-17,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,39000
+2017-04-17,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,41500
+2017-04-17,Sulawesi Utara,com_13,Cabai Merah Besar,29500
+2017-04-17,Sulawesi Utara,com_14,Cabai Merah Keriting,26500
+2017-04-17,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-17,Sulawesi Utara,com_16,Cabai Rawit Merah,65750
+2017-04-17,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-17,Sulawesi Utara,com_7,Daging Ayam Ras Segar,26400
+2017-04-17,Sumatera Barat,com_10,Telur Ayam Ras Segar,19900
+2017-04-17,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,25250
+2017-04-17,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,38500
+2017-04-17,Sumatera Barat,com_14,Cabai Merah Keriting,24750
+2017-04-17,Sumatera Barat,com_15,Cabai Rawit Hijau,26900
+2017-04-17,Sumatera Barat,com_3,Beras Kualitas Medium I,14050
+2017-04-17,Sumatera Barat,com_7,Daging Ayam Ras Segar,36850
+2017-04-17,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-17,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-17,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,39000
+2017-04-17,Sumatera Utara,com_14,Cabai Merah Keriting,17000
+2017-04-17,Sumatera Utara,com_15,Cabai Rawit Hijau,20000
+2017-04-17,Sumatera Utara,com_16,Cabai Rawit Merah,20000
+2017-04-17,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-17,Sumatera Utara,com_7,Daging Ayam Ras Segar,23000
+2017-04-18,Aceh,com_10,Telur Ayam Ras Segar,19350
+2017-04-18,Aceh,com_11,Bawang Merah Ukuran Sedang,29750
+2017-04-18,Aceh,com_12,Bawang Putih Ukuran Sedang,37000
+2017-04-18,Aceh,com_13,Cabai Merah Besar,20250
+2017-04-18,Aceh,com_14,Cabai Merah Keriting,20350
+2017-04-18,Aceh,com_15,Cabai Rawit Hijau,24750
+2017-04-18,Aceh,com_16,Cabai Rawit Merah,22750
+2017-04-18,Aceh,com_3,Beras Kualitas Medium I,10650
+2017-04-18,Aceh,com_7,Daging Ayam Ras Segar,23100
+2017-04-18,Jawa Barat,com_10,Telur Ayam Ras Segar,17600
+2017-04-18,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-18,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,39000
+2017-04-18,Jawa Barat,com_13,Cabai Merah Besar,35000
+2017-04-18,Jawa Barat,com_14,Cabai Merah Keriting,31500
+2017-04-18,Jawa Barat,com_15,Cabai Rawit Hijau,40000
+2017-04-18,Jawa Barat,com_16,Cabai Rawit Merah,62500
+2017-04-18,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-18,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-18,Jawa Tengah,com_10,Telur Ayam Ras Segar,17650
+2017-04-18,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,27500
+2017-04-18,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,45900
+2017-04-18,Jawa Tengah,com_13,Cabai Merah Besar,29050
+2017-04-18,Jawa Tengah,com_14,Cabai Merah Keriting,22200
+2017-04-18,Jawa Tengah,com_15,Cabai Rawit Hijau,42200
+2017-04-18,Jawa Tengah,com_16,Cabai Rawit Merah,55950
+2017-04-18,Jawa Tengah,com_3,Beras Kualitas Medium I,9450
+2017-04-18,Jawa Tengah,com_7,Daging Ayam Ras Segar,30650
+2017-04-18,Jawa Timur,com_10,Telur Ayam Ras Segar,16900
+2017-04-18,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29900
+2017-04-18,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,38750
+2017-04-18,Jawa Timur,com_13,Cabai Merah Besar,25450
+2017-04-18,Jawa Timur,com_14,Cabai Merah Keriting,26700
+2017-04-18,Jawa Timur,com_15,Cabai Rawit Hijau,29000
+2017-04-18,Jawa Timur,com_16,Cabai Rawit Merah,51850
+2017-04-18,Jawa Timur,com_3,Beras Kualitas Medium I,9800
+2017-04-18,Jawa Timur,com_7,Daging Ayam Ras Segar,26200
+2017-04-18,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20500
+2017-04-18,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32150
+2017-04-18,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,38900
+2017-04-18,Kalimantan Barat,com_13,Cabai Merah Besar,27900
+2017-04-18,Kalimantan Barat,com_14,Cabai Merah Keriting,27500
+2017-04-18,Kalimantan Barat,com_15,Cabai Rawit Hijau,46900
+2017-04-18,Kalimantan Barat,com_16,Cabai Rawit Merah,56900
+2017-04-18,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-18,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27750
+2017-04-18,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,19650
+2017-04-18,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,31650
+2017-04-18,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,39250
+2017-04-18,Kalimantan Selatan,com_13,Cabai Merah Besar,31900
+2017-04-18,Kalimantan Selatan,com_14,Cabai Merah Keriting,31250
+2017-04-18,Kalimantan Selatan,com_15,Cabai Rawit Hijau,25650
+2017-04-18,Kalimantan Selatan,com_16,Cabai Rawit Merah,56250
+2017-04-18,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-18,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,34950
+2017-04-18,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20300
+2017-04-18,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,36750
+2017-04-18,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,39750
+2017-04-18,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,63150
+2017-04-18,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,29900
+2017-04-18,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,46250
+2017-04-18,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,73750
+2017-04-18,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11450
+2017-04-18,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,29650
+2017-04-18,Papua Barat,com_10,Telur Ayam Ras Segar,28250
+2017-04-18,Papua Barat,com_11,Bawang Merah Ukuran Sedang,49500
+2017-04-18,Papua Barat,com_12,Bawang Putih Ukuran Sedang,47500
+2017-04-18,Papua Barat,com_13,Cabai Merah Besar,48750
+2017-04-18,Papua Barat,com_14,Cabai Merah Keriting,40000
+2017-04-18,Papua Barat,com_15,Cabai Rawit Hijau,45000
+2017-04-18,Papua Barat,com_16,Cabai Rawit Merah,66250
+2017-04-18,Papua Barat,com_3,Beras Kualitas Medium I,14250
+2017-04-18,Papua Barat,com_7,Daging Ayam Ras Segar,35000
+2017-04-18,Semua Provinsi,com_10,Telur Ayam Ras Segar,19850
+2017-04-18,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,31700
+2017-04-18,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,40100
+2017-04-18,Semua Provinsi,com_13,Cabai Merah Besar,32800
+2017-04-18,Semua Provinsi,com_14,Cabai Merah Keriting,27050
+2017-04-18,Semua Provinsi,com_15,Cabai Rawit Hijau,37750
+2017-04-18,Semua Provinsi,com_16,Cabai Rawit Merah,51450
+2017-04-18,Semua Provinsi,com_3,Beras Kualitas Medium I,11300
+2017-04-18,Semua Provinsi,com_7,Daging Ayam Ras Segar,29000
+2017-04-18,Sulawesi Selatan,com_10,Telur Ayam Ras Segar,17350
+2017-04-18,Sulawesi Selatan,com_11,Bawang Merah Ukuran Sedang,28700
+2017-04-18,Sulawesi Selatan,com_12,Bawang Putih Ukuran Sedang,35750
+2017-04-18,Sulawesi Selatan,com_13,Cabai Merah Besar,15800
+2017-04-18,Sulawesi Selatan,com_14,Cabai Merah Keriting,25400
+2017-04-18,Sulawesi Selatan,com_16,Cabai Rawit Merah,43950
+2017-04-18,Sulawesi Selatan,com_3,Beras Kualitas Medium I,9700
+2017-04-18,Sulawesi Selatan,com_7,Daging Ayam Ras Segar,22400
+2017-04-18,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-18,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,35750
+2017-04-18,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,42500
+2017-04-18,Sulawesi Utara,com_13,Cabai Merah Besar,30500
+2017-04-18,Sulawesi Utara,com_14,Cabai Merah Keriting,26750
+2017-04-18,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-18,Sulawesi Utara,com_16,Cabai Rawit Merah,55750
+2017-04-18,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-18,Sulawesi Utara,com_7,Daging Ayam Ras Segar,26400
+2017-04-18,Sumatera Barat,com_10,Telur Ayam Ras Segar,19900
+2017-04-18,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,25000
+2017-04-18,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,38900
+2017-04-18,Sumatera Barat,com_14,Cabai Merah Keriting,24750
+2017-04-18,Sumatera Barat,com_15,Cabai Rawit Hijau,26900
+2017-04-18,Sumatera Barat,com_3,Beras Kualitas Medium I,14050
+2017-04-18,Sumatera Barat,com_7,Daging Ayam Ras Segar,36850
+2017-04-18,Sumatera Utara,com_10,Telur Ayam Ras Segar,19500
+2017-04-18,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-18,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-18,Sumatera Utara,com_14,Cabai Merah Keriting,18000
+2017-04-18,Sumatera Utara,com_15,Cabai Rawit Hijau,20000
+2017-04-18,Sumatera Utara,com_16,Cabai Rawit Merah,20000
+2017-04-18,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-18,Sumatera Utara,com_7,Daging Ayam Ras Segar,23000
+2017-04-19,Aceh,com_10,Telur Ayam Ras Segar,18950
+2017-04-19,Aceh,com_11,Bawang Merah Ukuran Sedang,29600
+2017-04-19,Aceh,com_12,Bawang Putih Ukuran Sedang,37150
+2017-04-19,Aceh,com_13,Cabai Merah Besar,21250
+2017-04-19,Aceh,com_14,Cabai Merah Keriting,19900
+2017-04-19,Aceh,com_15,Cabai Rawit Hijau,24000
+2017-04-19,Aceh,com_16,Cabai Rawit Merah,22250
+2017-04-19,Aceh,com_3,Beras Kualitas Medium I,10650
+2017-04-19,Aceh,com_7,Daging Ayam Ras Segar,23100
+2017-04-19,Jambi,com_3,Beras Kualitas Medium I,10000
+2017-04-19,Jawa Barat,com_10,Telur Ayam Ras Segar,17600
+2017-04-19,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-19,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,39000
+2017-04-19,Jawa Barat,com_13,Cabai Merah Besar,35000
+2017-04-19,Jawa Barat,com_14,Cabai Merah Keriting,31500
+2017-04-19,Jawa Barat,com_15,Cabai Rawit Hijau,40000
+2017-04-19,Jawa Barat,com_16,Cabai Rawit Merah,60000
+2017-04-19,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-19,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-19,Jawa Tengah,com_10,Telur Ayam Ras Segar,17650
+2017-04-19,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,27450
+2017-04-19,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,48500
+2017-04-19,Jawa Tengah,com_13,Cabai Merah Besar,28750
+2017-04-19,Jawa Tengah,com_14,Cabai Merah Keriting,22300
+2017-04-19,Jawa Tengah,com_15,Cabai Rawit Hijau,41300
+2017-04-19,Jawa Tengah,com_16,Cabai Rawit Merah,55750
+2017-04-19,Jawa Tengah,com_3,Beras Kualitas Medium I,9450
+2017-04-19,Jawa Tengah,com_7,Daging Ayam Ras Segar,30650
+2017-04-19,Jawa Timur,com_10,Telur Ayam Ras Segar,16700
+2017-04-19,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,30250
+2017-04-19,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,38200
+2017-04-19,Jawa Timur,com_13,Cabai Merah Besar,25000
+2017-04-19,Jawa Timur,com_14,Cabai Merah Keriting,26350
+2017-04-19,Jawa Timur,com_15,Cabai Rawit Hijau,28550
+2017-04-19,Jawa Timur,com_16,Cabai Rawit Merah,51150
+2017-04-19,Jawa Timur,com_3,Beras Kualitas Medium I,9550
+2017-04-19,Jawa Timur,com_7,Daging Ayam Ras Segar,26500
+2017-04-19,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20500
+2017-04-19,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32150
+2017-04-19,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,38900
+2017-04-19,Kalimantan Barat,com_13,Cabai Merah Besar,27900
+2017-04-19,Kalimantan Barat,com_14,Cabai Merah Keriting,27500
+2017-04-19,Kalimantan Barat,com_15,Cabai Rawit Hijau,46900
+2017-04-19,Kalimantan Barat,com_16,Cabai Rawit Merah,56900
+2017-04-19,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-19,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27750
+2017-04-19,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,19650
+2017-04-19,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,29900
+2017-04-19,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,38650
+2017-04-19,Kalimantan Selatan,com_13,Cabai Merah Besar,33900
+2017-04-19,Kalimantan Selatan,com_14,Cabai Merah Keriting,32250
+2017-04-19,Kalimantan Selatan,com_15,Cabai Rawit Hijau,24500
+2017-04-19,Kalimantan Selatan,com_16,Cabai Rawit Merah,55000
+2017-04-19,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-19,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,35750
+2017-04-19,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20300
+2017-04-19,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,35900
+2017-04-19,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,39250
+2017-04-19,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,61900
+2017-04-19,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,29900
+2017-04-19,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,47650
+2017-04-19,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,73000
+2017-04-19,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11350
+2017-04-19,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,29750
+2017-04-19,Papua Barat,com_10,Telur Ayam Ras Segar,28250
+2017-04-19,Papua Barat,com_11,Bawang Merah Ukuran Sedang,49500
+2017-04-19,Papua Barat,com_12,Bawang Putih Ukuran Sedang,47500
+2017-04-19,Papua Barat,com_13,Cabai Merah Besar,48750
+2017-04-19,Papua Barat,com_14,Cabai Merah Keriting,40000
+2017-04-19,Papua Barat,com_15,Cabai Rawit Hijau,50000
+2017-04-19,Papua Barat,com_16,Cabai Rawit Merah,63750
+2017-04-19,Papua Barat,com_3,Beras Kualitas Medium I,14250
+2017-04-19,Papua Barat,com_7,Daging Ayam Ras Segar,35850
+2017-04-19,Semua Provinsi,com_10,Telur Ayam Ras Segar,20150
+2017-04-19,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,31850
+2017-04-19,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,40550
+2017-04-19,Semua Provinsi,com_13,Cabai Merah Besar,34750
+2017-04-19,Semua Provinsi,com_14,Cabai Merah Keriting,27350
+2017-04-19,Semua Provinsi,com_15,Cabai Rawit Hijau,38150
+2017-04-19,Semua Provinsi,com_16,Cabai Rawit Merah,51650
+2017-04-19,Semua Provinsi,com_3,Beras Kualitas Medium I,11300
+2017-04-19,Semua Provinsi,com_7,Daging Ayam Ras Segar,29800
+2017-04-19,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-19,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,36250
+2017-04-19,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,42000
+2017-04-19,Sulawesi Utara,com_13,Cabai Merah Besar,30500
+2017-04-19,Sulawesi Utara,com_14,Cabai Merah Keriting,28000
+2017-04-19,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-19,Sulawesi Utara,com_16,Cabai Rawit Merah,58750
+2017-04-19,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-19,Sulawesi Utara,com_7,Daging Ayam Ras Segar,26400
+2017-04-19,Sumatera Barat,com_10,Telur Ayam Ras Segar,19900
+2017-04-19,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,25400
+2017-04-19,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,38900
+2017-04-19,Sumatera Barat,com_14,Cabai Merah Keriting,25400
+2017-04-19,Sumatera Barat,com_15,Cabai Rawit Hijau,27900
+2017-04-19,Sumatera Barat,com_3,Beras Kualitas Medium I,14050
+2017-04-19,Sumatera Barat,com_7,Daging Ayam Ras Segar,36850
+2017-04-19,Sumatera Utara,com_10,Telur Ayam Ras Segar,20500
+2017-04-19,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-19,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-19,Sumatera Utara,com_14,Cabai Merah Keriting,18000
+2017-04-19,Sumatera Utara,com_15,Cabai Rawit Hijau,20000
+2017-04-19,Sumatera Utara,com_16,Cabai Rawit Merah,20000
+2017-04-19,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-19,Sumatera Utara,com_7,Daging Ayam Ras Segar,23000
+2017-04-20,Aceh,com_10,Telur Ayam Ras Segar,18900
+2017-04-20,Aceh,com_11,Bawang Merah Ukuran Sedang,29600
+2017-04-20,Aceh,com_12,Bawang Putih Ukuran Sedang,37150
+2017-04-20,Aceh,com_13,Cabai Merah Besar,20750
+2017-04-20,Aceh,com_14,Cabai Merah Keriting,20100
+2017-04-20,Aceh,com_15,Cabai Rawit Hijau,22650
+2017-04-20,Aceh,com_16,Cabai Rawit Merah,19750
+2017-04-20,Aceh,com_3,Beras Kualitas Medium I,10700
+2017-04-20,Aceh,com_7,Daging Ayam Ras Segar,23100
+2017-04-20,Jambi,com_10,Telur Ayam Ras Segar,22100
+2017-04-20,Jambi,com_3,Beras Kualitas Medium I,10000
+2017-04-20,Jawa Barat,com_10,Telur Ayam Ras Segar,17600
+2017-04-20,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-20,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,39500
+2017-04-20,Jawa Barat,com_13,Cabai Merah Besar,35000
+2017-04-20,Jawa Barat,com_14,Cabai Merah Keriting,31500
+2017-04-20,Jawa Barat,com_15,Cabai Rawit Hijau,37500
+2017-04-20,Jawa Barat,com_16,Cabai Rawit Merah,58750
+2017-04-20,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-20,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-20,Jawa Tengah,com_10,Telur Ayam Ras Segar,17750
+2017-04-20,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,27950
+2017-04-20,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,50500
+2017-04-20,Jawa Tengah,com_13,Cabai Merah Besar,28250
+2017-04-20,Jawa Tengah,com_14,Cabai Merah Keriting,22250
+2017-04-20,Jawa Tengah,com_15,Cabai Rawit Hijau,40900
+2017-04-20,Jawa Tengah,com_16,Cabai Rawit Merah,55200
+2017-04-20,Jawa Tengah,com_3,Beras Kualitas Medium I,9450
+2017-04-20,Jawa Tengah,com_7,Daging Ayam Ras Segar,30500
+2017-04-20,Jawa Timur,com_10,Telur Ayam Ras Segar,16700
+2017-04-20,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29550
+2017-04-20,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,39550
+2017-04-20,Jawa Timur,com_13,Cabai Merah Besar,24450
+2017-04-20,Jawa Timur,com_14,Cabai Merah Keriting,25750
+2017-04-20,Jawa Timur,com_15,Cabai Rawit Hijau,29200
+2017-04-20,Jawa Timur,com_16,Cabai Rawit Merah,52400
+2017-04-20,Jawa Timur,com_3,Beras Kualitas Medium I,9550
+2017-04-20,Jawa Timur,com_7,Daging Ayam Ras Segar,26500
+2017-04-20,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20500
+2017-04-20,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32150
+2017-04-20,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,39500
+2017-04-20,Kalimantan Barat,com_13,Cabai Merah Besar,26400
+2017-04-20,Kalimantan Barat,com_14,Cabai Merah Keriting,27500
+2017-04-20,Kalimantan Barat,com_15,Cabai Rawit Hijau,46900
+2017-04-20,Kalimantan Barat,com_16,Cabai Rawit Merah,56900
+2017-04-20,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-20,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27400
+2017-04-20,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,19650
+2017-04-20,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,28900
+2017-04-20,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,38150
+2017-04-20,Kalimantan Selatan,com_13,Cabai Merah Besar,33650
+2017-04-20,Kalimantan Selatan,com_14,Cabai Merah Keriting,32250
+2017-04-20,Kalimantan Selatan,com_15,Cabai Rawit Hijau,24500
+2017-04-20,Kalimantan Selatan,com_16,Cabai Rawit Merah,55000
+2017-04-20,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-20,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,35750
+2017-04-20,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20300
+2017-04-20,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,35250
+2017-04-20,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,38750
+2017-04-20,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,63150
+2017-04-20,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,30500
+2017-04-20,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,49150
+2017-04-20,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,74500
+2017-04-20,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11450
+2017-04-20,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,29500
+2017-04-20,Papua Barat,com_10,Telur Ayam Ras Segar,28250
+2017-04-20,Papua Barat,com_11,Bawang Merah Ukuran Sedang,49500
+2017-04-20,Papua Barat,com_12,Bawang Putih Ukuran Sedang,47500
+2017-04-20,Papua Barat,com_13,Cabai Merah Besar,50000
+2017-04-20,Papua Barat,com_14,Cabai Merah Keriting,40000
+2017-04-20,Papua Barat,com_15,Cabai Rawit Hijau,40000
+2017-04-20,Papua Barat,com_16,Cabai Rawit Merah,70000
+2017-04-20,Papua Barat,com_3,Beras Kualitas Medium I,14250
+2017-04-20,Papua Barat,com_7,Daging Ayam Ras Segar,35400
+2017-04-20,Semua Provinsi,com_10,Telur Ayam Ras Segar,20300
+2017-04-20,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,31650
+2017-04-20,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,41000
+2017-04-20,Semua Provinsi,com_13,Cabai Merah Besar,34650
+2017-04-20,Semua Provinsi,com_14,Cabai Merah Keriting,27200
+2017-04-20,Semua Provinsi,com_15,Cabai Rawit Hijau,36950
+2017-04-20,Semua Provinsi,com_16,Cabai Rawit Merah,52350
+2017-04-20,Semua Provinsi,com_3,Beras Kualitas Medium I,11300
+2017-04-20,Semua Provinsi,com_7,Daging Ayam Ras Segar,29800
+2017-04-20,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-20,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,36000
+2017-04-20,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,43250
+2017-04-20,Sulawesi Utara,com_13,Cabai Merah Besar,30000
+2017-04-20,Sulawesi Utara,com_14,Cabai Merah Keriting,26250
+2017-04-20,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-20,Sulawesi Utara,com_16,Cabai Rawit Merah,61000
+2017-04-20,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-20,Sulawesi Utara,com_7,Daging Ayam Ras Segar,26650
+2017-04-20,Sumatera Barat,com_10,Telur Ayam Ras Segar,19800
+2017-04-20,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,25150
+2017-04-20,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,39150
+2017-04-20,Sumatera Barat,com_14,Cabai Merah Keriting,25150
+2017-04-20,Sumatera Barat,com_15,Cabai Rawit Hijau,26650
+2017-04-20,Sumatera Barat,com_3,Beras Kualitas Medium I,14050
+2017-04-20,Sumatera Barat,com_7,Daging Ayam Ras Segar,36850
+2017-04-20,Sumatera Utara,com_10,Telur Ayam Ras Segar,20500
+2017-04-20,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-20,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-20,Sumatera Utara,com_14,Cabai Merah Keriting,18000
+2017-04-20,Sumatera Utara,com_15,Cabai Rawit Hijau,20000
+2017-04-20,Sumatera Utara,com_16,Cabai Rawit Merah,20000
+2017-04-20,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-20,Sumatera Utara,com_7,Daging Ayam Ras Segar,24000
+2017-04-21,Aceh,com_10,Telur Ayam Ras Segar,18900
+2017-04-21,Aceh,com_11,Bawang Merah Ukuran Sedang,30350
+2017-04-21,Aceh,com_12,Bawang Putih Ukuran Sedang,37750
+2017-04-21,Aceh,com_13,Cabai Merah Besar,17500
+2017-04-21,Aceh,com_14,Cabai Merah Keriting,18900
+2017-04-21,Aceh,com_15,Cabai Rawit Hijau,21650
+2017-04-21,Aceh,com_16,Cabai Rawit Merah,16000
+2017-04-21,Aceh,com_3,Beras Kualitas Medium I,10450
+2017-04-21,Aceh,com_7,Daging Ayam Ras Segar,22750
+2017-04-21,Jambi,com_3,Beras Kualitas Medium I,10000
+2017-04-21,Jambi,com_7,Daging Ayam Ras Segar,28000
+2017-04-21,Jawa Barat,com_10,Telur Ayam Ras Segar,17650
+2017-04-21,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-21,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,39500
+2017-04-21,Jawa Barat,com_13,Cabai Merah Besar,35000
+2017-04-21,Jawa Barat,com_14,Cabai Merah Keriting,31500
+2017-04-21,Jawa Barat,com_15,Cabai Rawit Hijau,37500
+2017-04-21,Jawa Barat,com_16,Cabai Rawit Merah,58750
+2017-04-21,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-21,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-21,Jawa Tengah,com_10,Telur Ayam Ras Segar,17800
+2017-04-21,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,28450
+2017-04-21,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,51300
+2017-04-21,Jawa Tengah,com_13,Cabai Merah Besar,28250
+2017-04-21,Jawa Tengah,com_14,Cabai Merah Keriting,22200
+2017-04-21,Jawa Tengah,com_15,Cabai Rawit Hijau,41200
+2017-04-21,Jawa Tengah,com_16,Cabai Rawit Merah,54950
+2017-04-21,Jawa Tengah,com_3,Beras Kualitas Medium I,9450
+2017-04-21,Jawa Tengah,com_7,Daging Ayam Ras Segar,30450
+2017-04-21,Jawa Timur,com_10,Telur Ayam Ras Segar,16700
+2017-04-21,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29450
+2017-04-21,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,39950
+2017-04-21,Jawa Timur,com_13,Cabai Merah Besar,25000
+2017-04-21,Jawa Timur,com_14,Cabai Merah Keriting,25650
+2017-04-21,Jawa Timur,com_15,Cabai Rawit Hijau,29150
+2017-04-21,Jawa Timur,com_16,Cabai Rawit Merah,49850
+2017-04-21,Jawa Timur,com_3,Beras Kualitas Medium I,9550
+2017-04-21,Jawa Timur,com_7,Daging Ayam Ras Segar,26900
+2017-04-21,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20500
+2017-04-21,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,32150
+2017-04-21,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,39500
+2017-04-21,Kalimantan Barat,com_13,Cabai Merah Besar,26400
+2017-04-21,Kalimantan Barat,com_14,Cabai Merah Keriting,27500
+2017-04-21,Kalimantan Barat,com_15,Cabai Rawit Hijau,46900
+2017-04-21,Kalimantan Barat,com_16,Cabai Rawit Merah,56650
+2017-04-21,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-21,Kalimantan Barat,com_7,Daging Ayam Ras Segar,27000
+2017-04-21,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,19650
+2017-04-21,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,28900
+2017-04-21,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,39400
+2017-04-21,Kalimantan Selatan,com_13,Cabai Merah Besar,33650
+2017-04-21,Kalimantan Selatan,com_14,Cabai Merah Keriting,32250
+2017-04-21,Kalimantan Selatan,com_15,Cabai Rawit Hijau,24500
+2017-04-21,Kalimantan Selatan,com_16,Cabai Rawit Merah,55000
+2017-04-21,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-21,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,36200
+2017-04-21,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20300
+2017-04-21,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,34650
+2017-04-21,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,37650
+2017-04-21,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,59500
+2017-04-21,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,30250
+2017-04-21,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,48750
+2017-04-21,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,73250
+2017-04-21,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11450
+2017-04-21,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,29500
+2017-04-21,Papua Barat,com_10,Telur Ayam Ras Segar,28250
+2017-04-21,Papua Barat,com_11,Bawang Merah Ukuran Sedang,49500
+2017-04-21,Papua Barat,com_12,Bawang Putih Ukuran Sedang,47500
+2017-04-21,Papua Barat,com_13,Cabai Merah Besar,50000
+2017-04-21,Papua Barat,com_14,Cabai Merah Keriting,40000
+2017-04-21,Papua Barat,com_15,Cabai Rawit Hijau,40000
+2017-04-21,Papua Barat,com_16,Cabai Rawit Merah,70000
+2017-04-21,Papua Barat,com_3,Beras Kualitas Medium I,14250
+2017-04-21,Papua Barat,com_7,Daging Ayam Ras Segar,35400
+2017-04-21,Semua Provinsi,com_10,Telur Ayam Ras Segar,20100
+2017-04-21,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,31550
+2017-04-21,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,41050
+2017-04-21,Semua Provinsi,com_13,Cabai Merah Besar,33900
+2017-04-21,Semua Provinsi,com_14,Cabai Merah Keriting,26850
+2017-04-21,Semua Provinsi,com_15,Cabai Rawit Hijau,36800
+2017-04-21,Semua Provinsi,com_16,Cabai Rawit Merah,51800
+2017-04-21,Semua Provinsi,com_3,Beras Kualitas Medium I,11250
+2017-04-21,Semua Provinsi,com_7,Daging Ayam Ras Segar,29700
+2017-04-21,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-21,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,35000
+2017-04-21,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,44000
+2017-04-21,Sulawesi Utara,com_13,Cabai Merah Besar,30000
+2017-04-21,Sulawesi Utara,com_14,Cabai Merah Keriting,25000
+2017-04-21,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-21,Sulawesi Utara,com_16,Cabai Rawit Merah,63500
+2017-04-21,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-21,Sulawesi Utara,com_7,Daging Ayam Ras Segar,26650
+2017-04-21,Sumatera Barat,com_10,Telur Ayam Ras Segar,19300
+2017-04-21,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,24400
+2017-04-21,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,39150
+2017-04-21,Sumatera Barat,com_14,Cabai Merah Keriting,24250
+2017-04-21,Sumatera Barat,com_15,Cabai Rawit Hijau,26400
+2017-04-21,Sumatera Barat,com_3,Beras Kualitas Medium I,13900
+2017-04-21,Sumatera Barat,com_7,Daging Ayam Ras Segar,36850
+2017-04-21,Sumatera Utara,com_10,Telur Ayam Ras Segar,20500
+2017-04-21,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,27000
+2017-04-21,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,36000
+2017-04-21,Sumatera Utara,com_14,Cabai Merah Keriting,18000
+2017-04-21,Sumatera Utara,com_15,Cabai Rawit Hijau,20000
+2017-04-21,Sumatera Utara,com_16,Cabai Rawit Merah,20000
+2017-04-21,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-21,Sumatera Utara,com_7,Daging Ayam Ras Segar,24500
+2017-04-24,Jawa Tengah,com_10,Telur Ayam Ras Segar,18400
+2017-04-24,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,30650
+2017-04-24,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,50150
+2017-04-24,Jawa Tengah,com_13,Cabai Merah Besar,23000
+2017-04-24,Jawa Tengah,com_14,Cabai Merah Keriting,22500
+2017-04-24,Jawa Tengah,com_15,Cabai Rawit Hijau,38150
+2017-04-24,Jawa Tengah,com_16,Cabai Rawit Merah,51250
+2017-04-24,Jawa Tengah,com_3,Beras Kualitas Medium I,9600
+2017-04-24,Jawa Tengah,com_7,Daging Ayam Ras Segar,30500
+2017-04-24,Semua Provinsi,com_10,Telur Ayam Ras Segar,18400
+2017-04-24,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,30650
+2017-04-24,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,50150
+2017-04-24,Semua Provinsi,com_13,Cabai Merah Besar,23000
+2017-04-24,Semua Provinsi,com_14,Cabai Merah Keriting,22500
+2017-04-24,Semua Provinsi,com_15,Cabai Rawit Hijau,38150
+2017-04-24,Semua Provinsi,com_16,Cabai Rawit Merah,51250
+2017-04-24,Semua Provinsi,com_3,Beras Kualitas Medium I,9600
+2017-04-24,Semua Provinsi,com_7,Daging Ayam Ras Segar,30500
+2017-04-25,Aceh,com_10,Telur Ayam Ras Segar,19050
+2017-04-25,Aceh,com_11,Bawang Merah Ukuran Sedang,29850
+2017-04-25,Aceh,com_12,Bawang Putih Ukuran Sedang,38750
+2017-04-25,Aceh,com_13,Cabai Merah Besar,19500
+2017-04-25,Aceh,com_14,Cabai Merah Keriting,19400
+2017-04-25,Aceh,com_15,Cabai Rawit Hijau,21750
+2017-04-25,Aceh,com_16,Cabai Rawit Merah,18750
+2017-04-25,Aceh,com_3,Beras Kualitas Medium I,10400
+2017-04-25,Aceh,com_7,Daging Ayam Ras Segar,23000
+2017-04-25,Jawa Barat,com_10,Telur Ayam Ras Segar,18850
+2017-04-25,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,27750
+2017-04-25,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,44750
+2017-04-25,Jawa Barat,com_13,Cabai Merah Besar,34250
+2017-04-25,Jawa Barat,com_14,Cabai Merah Keriting,31500
+2017-04-25,Jawa Barat,com_15,Cabai Rawit Hijau,38750
+2017-04-25,Jawa Barat,com_16,Cabai Rawit Merah,52500
+2017-04-25,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-25,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-25,Jawa Tengah,com_10,Telur Ayam Ras Segar,19400
+2017-04-25,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,27150
+2017-04-25,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,53250
+2017-04-25,Jawa Tengah,com_13,Cabai Merah Besar,28050
+2017-04-25,Jawa Tengah,com_14,Cabai Merah Keriting,23050
+2017-04-25,Jawa Tengah,com_15,Cabai Rawit Hijau,39800
+2017-04-25,Jawa Tengah,com_16,Cabai Rawit Merah,54800
+2017-04-25,Jawa Tengah,com_3,Beras Kualitas Medium I,9500
+2017-04-25,Jawa Tengah,com_7,Daging Ayam Ras Segar,30800
+2017-04-25,Jawa Timur,com_10,Telur Ayam Ras Segar,18100
+2017-04-25,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29550
+2017-04-25,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,49400
+2017-04-25,Jawa Timur,com_13,Cabai Merah Besar,27450
+2017-04-25,Jawa Timur,com_14,Cabai Merah Keriting,28400
+2017-04-25,Jawa Timur,com_15,Cabai Rawit Hijau,29550
+2017-04-25,Jawa Timur,com_16,Cabai Rawit Merah,51750
+2017-04-25,Jawa Timur,com_3,Beras Kualitas Medium I,9900
+2017-04-25,Jawa Timur,com_7,Daging Ayam Ras Segar,27400
+2017-04-25,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20350
+2017-04-25,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,31000
+2017-04-25,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,44500
+2017-04-25,Kalimantan Barat,com_13,Cabai Merah Besar,27150
+2017-04-25,Kalimantan Barat,com_14,Cabai Merah Keriting,30000
+2017-04-25,Kalimantan Barat,com_15,Cabai Rawit Hijau,42900
+2017-04-25,Kalimantan Barat,com_16,Cabai Rawit Merah,51750
+2017-04-25,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-25,Kalimantan Barat,com_7,Daging Ayam Ras Segar,26500
+2017-04-25,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,20000
+2017-04-25,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,30400
+2017-04-25,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,44000
+2017-04-25,Kalimantan Selatan,com_13,Cabai Merah Besar,30900
+2017-04-25,Kalimantan Selatan,com_14,Cabai Merah Keriting,31250
+2017-04-25,Kalimantan Selatan,com_15,Cabai Rawit Hijau,23250
+2017-04-25,Kalimantan Selatan,com_16,Cabai Rawit Merah,52500
+2017-04-25,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-25,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,36200
+2017-04-25,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20900
+2017-04-25,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,33900
+2017-04-25,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,38750
+2017-04-25,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,60150
+2017-04-25,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,29250
+2017-04-25,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,46650
+2017-04-25,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,75650
+2017-04-25,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11450
+2017-04-25,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,30400
+2017-04-25,Papua Barat,com_10,Telur Ayam Ras Segar,38000
+2017-04-25,Papua Barat,com_11,Bawang Merah Ukuran Sedang,48250
+2017-04-25,Papua Barat,com_12,Bawang Putih Ukuran Sedang,48750
+2017-04-25,Papua Barat,com_13,Cabai Merah Besar,46250
+2017-04-25,Papua Barat,com_14,Cabai Merah Keriting,38750
+2017-04-25,Papua Barat,com_15,Cabai Rawit Hijau,40000
+2017-04-25,Papua Barat,com_16,Cabai Rawit Merah,70000
+2017-04-25,Papua Barat,com_3,Beras Kualitas Medium I,14250
+2017-04-25,Papua Barat,com_7,Daging Ayam Ras Segar,35300
+2017-04-25,Semua Provinsi,com_10,Telur Ayam Ras Segar,21300
+2017-04-25,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,31650
+2017-04-25,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,44900
+2017-04-25,Semua Provinsi,com_13,Cabai Merah Besar,33150
+2017-04-25,Semua Provinsi,com_14,Cabai Merah Keriting,28000
+2017-04-25,Semua Provinsi,com_15,Cabai Rawit Hijau,36350
+2017-04-25,Semua Provinsi,com_16,Cabai Rawit Merah,50750
+2017-04-25,Semua Provinsi,com_3,Beras Kualitas Medium I,11350
+2017-04-25,Semua Provinsi,com_7,Daging Ayam Ras Segar,29900
+2017-04-25,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-25,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,32500
+2017-04-25,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,49500
+2017-04-25,Sulawesi Utara,com_13,Cabai Merah Besar,29000
+2017-04-25,Sulawesi Utara,com_14,Cabai Merah Keriting,22250
+2017-04-25,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-25,Sulawesi Utara,com_16,Cabai Rawit Merah,58000
+2017-04-25,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-25,Sulawesi Utara,com_7,Daging Ayam Ras Segar,26650
+2017-04-25,Sumatera Barat,com_10,Telur Ayam Ras Segar,19100
+2017-04-25,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,24250
+2017-04-25,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,42900
+2017-04-25,Sumatera Barat,com_14,Cabai Merah Keriting,24000
+2017-04-25,Sumatera Barat,com_15,Cabai Rawit Hijau,25750
+2017-04-25,Sumatera Barat,com_3,Beras Kualitas Medium I,13900
+2017-04-25,Sumatera Barat,com_7,Daging Ayam Ras Segar,36600
+2017-04-25,Sumatera Selatan,com_10,Telur Ayam Ras Segar,19900
+2017-04-25,Sumatera Selatan,com_11,Bawang Merah Ukuran Sedang,36400
+2017-04-25,Sumatera Selatan,com_12,Bawang Putih Ukuran Sedang,46150
+2017-04-25,Sumatera Selatan,com_13,Cabai Merah Besar,28750
+2017-04-25,Sumatera Selatan,com_14,Cabai Merah Keriting,38000
+2017-04-25,Sumatera Selatan,com_15,Cabai Rawit Hijau,39000
+2017-04-25,Sumatera Selatan,com_16,Cabai Rawit Merah,52750
+2017-04-25,Sumatera Selatan,com_3,Beras Kualitas Medium I,10350
+2017-04-25,Sumatera Selatan,com_7,Daging Ayam Ras Segar,28400
+2017-04-25,Sumatera Utara,com_10,Telur Ayam Ras Segar,20500
+2017-04-25,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,29000
+2017-04-25,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,38000
+2017-04-25,Sumatera Utara,com_14,Cabai Merah Keriting,20000
+2017-04-25,Sumatera Utara,com_15,Cabai Rawit Hijau,20000
+2017-04-25,Sumatera Utara,com_16,Cabai Rawit Merah,20000
+2017-04-25,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-25,Sumatera Utara,com_7,Daging Ayam Ras Segar,25500
+2017-04-26,Aceh,com_10,Telur Ayam Ras Segar,19200
+2017-04-26,Aceh,com_11,Bawang Merah Ukuran Sedang,29500
+2017-04-26,Aceh,com_12,Bawang Putih Ukuran Sedang,41000
+2017-04-26,Aceh,com_13,Cabai Merah Besar,60500
+2017-04-26,Aceh,com_14,Cabai Merah Keriting,19600
+2017-04-26,Aceh,com_15,Cabai Rawit Hijau,20100
+2017-04-26,Aceh,com_16,Cabai Rawit Merah,17250
+2017-04-26,Aceh,com_3,Beras Kualitas Medium I,10400
+2017-04-26,Aceh,com_7,Daging Ayam Ras Segar,23050
+2017-04-26,Jawa Barat,com_10,Telur Ayam Ras Segar,18950
+2017-04-26,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,27750
+2017-04-26,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,46250
+2017-04-26,Jawa Barat,com_13,Cabai Merah Besar,34250
+2017-04-26,Jawa Barat,com_14,Cabai Merah Keriting,31500
+2017-04-26,Jawa Barat,com_15,Cabai Rawit Hijau,38750
+2017-04-26,Jawa Barat,com_16,Cabai Rawit Merah,50000
+2017-04-26,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-26,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-26,Jawa Tengah,com_10,Telur Ayam Ras Segar,19600
+2017-04-26,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,28950
+2017-04-26,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,56750
+2017-04-26,Jawa Tengah,com_13,Cabai Merah Besar,29650
+2017-04-26,Jawa Tengah,com_14,Cabai Merah Keriting,23300
+2017-04-26,Jawa Tengah,com_15,Cabai Rawit Hijau,39300
+2017-04-26,Jawa Tengah,com_16,Cabai Rawit Merah,54650
+2017-04-26,Jawa Tengah,com_3,Beras Kualitas Medium I,9450
+2017-04-26,Jawa Tengah,com_7,Daging Ayam Ras Segar,30650
+2017-04-26,Jawa Timur,com_10,Telur Ayam Ras Segar,18450
+2017-04-26,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29400
+2017-04-26,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,48950
+2017-04-26,Jawa Timur,com_13,Cabai Merah Besar,27200
+2017-04-26,Jawa Timur,com_14,Cabai Merah Keriting,25100
+2017-04-26,Jawa Timur,com_15,Cabai Rawit Hijau,29150
+2017-04-26,Jawa Timur,com_16,Cabai Rawit Merah,50000
+2017-04-26,Jawa Timur,com_3,Beras Kualitas Medium I,9550
+2017-04-26,Jawa Timur,com_7,Daging Ayam Ras Segar,26750
+2017-04-26,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20350
+2017-04-26,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,31000
+2017-04-26,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,44500
+2017-04-26,Kalimantan Barat,com_13,Cabai Merah Besar,27150
+2017-04-26,Kalimantan Barat,com_14,Cabai Merah Keriting,30000
+2017-04-26,Kalimantan Barat,com_15,Cabai Rawit Hijau,41000
+2017-04-26,Kalimantan Barat,com_16,Cabai Rawit Merah,51750
+2017-04-26,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-26,Kalimantan Barat,com_7,Daging Ayam Ras Segar,26500
+2017-04-26,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,20000
+2017-04-26,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,30400
+2017-04-26,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,44000
+2017-04-26,Kalimantan Selatan,com_13,Cabai Merah Besar,29000
+2017-04-26,Kalimantan Selatan,com_14,Cabai Merah Keriting,29250
+2017-04-26,Kalimantan Selatan,com_15,Cabai Rawit Hijau,23250
+2017-04-26,Kalimantan Selatan,com_16,Cabai Rawit Merah,48750
+2017-04-26,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-26,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,35700
+2017-04-26,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20900
+2017-04-26,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,34500
+2017-04-26,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,39750
+2017-04-26,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,61400
+2017-04-26,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,28900
+2017-04-26,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,45150
+2017-04-26,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,75000
+2017-04-26,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11450
+2017-04-26,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,30900
+2017-04-26,Papua Barat,com_10,Telur Ayam Ras Segar,33750
+2017-04-26,Papua Barat,com_11,Bawang Merah Ukuran Sedang,49500
+2017-04-26,Papua Barat,com_12,Bawang Putih Ukuran Sedang,48750
+2017-04-26,Papua Barat,com_13,Cabai Merah Besar,47500
+2017-04-26,Papua Barat,com_14,Cabai Merah Keriting,40000
+2017-04-26,Papua Barat,com_15,Cabai Rawit Hijau,40000
+2017-04-26,Papua Barat,com_16,Cabai Rawit Merah,67500
+2017-04-26,Papua Barat,com_3,Beras Kualitas Medium I,14400
+2017-04-26,Papua Barat,com_7,Daging Ayam Ras Segar,35300
+2017-04-26,Semua Provinsi,com_10,Telur Ayam Ras Segar,20800
+2017-04-26,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,31900
+2017-04-26,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,46050
+2017-04-26,Semua Provinsi,com_13,Cabai Merah Besar,38150
+2017-04-26,Semua Provinsi,com_14,Cabai Merah Keriting,28150
+2017-04-26,Semua Provinsi,com_15,Cabai Rawit Hijau,36250
+2017-04-26,Semua Provinsi,com_16,Cabai Rawit Merah,52500
+2017-04-26,Semua Provinsi,com_3,Beras Kualitas Medium I,11350
+2017-04-26,Semua Provinsi,com_7,Daging Ayam Ras Segar,29650
+2017-04-26,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-26,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,32250
+2017-04-26,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,49500
+2017-04-26,Sulawesi Utara,com_13,Cabai Merah Besar,29000
+2017-04-26,Sulawesi Utara,com_14,Cabai Merah Keriting,22750
+2017-04-26,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-26,Sulawesi Utara,com_16,Cabai Rawit Merah,58500
+2017-04-26,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-26,Sulawesi Utara,com_7,Daging Ayam Ras Segar,27000
+2017-04-26,Sumatera Barat,com_10,Telur Ayam Ras Segar,19100
+2017-04-26,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,25250
+2017-04-26,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,44900
+2017-04-26,Sumatera Barat,com_14,Cabai Merah Keriting,24150
+2017-04-26,Sumatera Barat,com_15,Cabai Rawit Hijau,24750
+2017-04-26,Sumatera Barat,com_3,Beras Kualitas Medium I,13900
+2017-04-26,Sumatera Barat,com_7,Daging Ayam Ras Segar,36350
+2017-04-26,Sumatera Selatan,com_10,Telur Ayam Ras Segar,17400
+2017-04-26,Sumatera Selatan,com_11,Bawang Merah Ukuran Sedang,40250
+2017-04-26,Sumatera Selatan,com_12,Bawang Putih Ukuran Sedang,48250
+2017-04-26,Sumatera Selatan,com_13,Cabai Merah Besar,36000
+2017-04-26,Sumatera Selatan,com_14,Cabai Merah Keriting,45500
+2017-04-26,Sumatera Selatan,com_15,Cabai Rawit Hijau,48750
+2017-04-26,Sumatera Selatan,com_16,Cabai Rawit Merah,88000
+2017-04-26,Sumatera Selatan,com_3,Beras Kualitas Medium I,10900
+2017-04-26,Sumatera Selatan,com_7,Daging Ayam Ras Segar,28750
+2017-04-26,Sumatera Utara,com_10,Telur Ayam Ras Segar,20500
+2017-04-26,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,24000
+2017-04-26,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,40000
+2017-04-26,Sumatera Utara,com_14,Cabai Merah Keriting,17750
+2017-04-26,Sumatera Utara,com_15,Cabai Rawit Hijau,16250
+2017-04-26,Sumatera Utara,com_16,Cabai Rawit Merah,16250
+2017-04-26,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-26,Sumatera Utara,com_7,Daging Ayam Ras Segar,23000
+2017-04-27,Aceh,com_10,Telur Ayam Ras Segar,19200
+2017-04-27,Aceh,com_11,Bawang Merah Ukuran Sedang,28900
+2017-04-27,Aceh,com_12,Bawang Putih Ukuran Sedang,42850
+2017-04-27,Aceh,com_13,Cabai Merah Besar,20000
+2017-04-27,Aceh,com_14,Cabai Merah Keriting,19400
+2017-04-27,Aceh,com_15,Cabai Rawit Hijau,20100
+2017-04-27,Aceh,com_16,Cabai Rawit Merah,17250
+2017-04-27,Aceh,com_3,Beras Kualitas Medium I,10400
+2017-04-27,Aceh,com_7,Daging Ayam Ras Segar,23400
+2017-04-27,Jawa Barat,com_10,Telur Ayam Ras Segar,18950
+2017-04-27,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,27750
+2017-04-27,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,46750
+2017-04-27,Jawa Barat,com_13,Cabai Merah Besar,33750
+2017-04-27,Jawa Barat,com_14,Cabai Merah Keriting,31500
+2017-04-27,Jawa Barat,com_15,Cabai Rawit Hijau,37500
+2017-04-27,Jawa Barat,com_16,Cabai Rawit Merah,56250
+2017-04-27,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-27,Jawa Barat,com_7,Daging Ayam Ras Segar,32000
+2017-04-27,Jawa Tengah,com_10,Telur Ayam Ras Segar,19900
+2017-04-27,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,29250
+2017-04-27,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,58750
+2017-04-27,Jawa Tengah,com_13,Cabai Merah Besar,29900
+2017-04-27,Jawa Tengah,com_14,Cabai Merah Keriting,24200
+2017-04-27,Jawa Tengah,com_15,Cabai Rawit Hijau,40150
+2017-04-27,Jawa Tengah,com_16,Cabai Rawit Merah,53050
+2017-04-27,Jawa Tengah,com_3,Beras Kualitas Medium I,9450
+2017-04-27,Jawa Tengah,com_7,Daging Ayam Ras Segar,30550
+2017-04-27,Jawa Timur,com_10,Telur Ayam Ras Segar,18300
+2017-04-27,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,29200
+2017-04-27,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,49550
+2017-04-27,Jawa Timur,com_13,Cabai Merah Besar,27900
+2017-04-27,Jawa Timur,com_14,Cabai Merah Keriting,27250
+2017-04-27,Jawa Timur,com_15,Cabai Rawit Hijau,28750
+2017-04-27,Jawa Timur,com_16,Cabai Rawit Merah,49850
+2017-04-27,Jawa Timur,com_3,Beras Kualitas Medium I,9550
+2017-04-27,Jawa Timur,com_7,Daging Ayam Ras Segar,26650
+2017-04-27,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20350
+2017-04-27,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,30400
+2017-04-27,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,44500
+2017-04-27,Kalimantan Barat,com_13,Cabai Merah Besar,27150
+2017-04-27,Kalimantan Barat,com_14,Cabai Merah Keriting,30000
+2017-04-27,Kalimantan Barat,com_15,Cabai Rawit Hijau,42250
+2017-04-27,Kalimantan Barat,com_16,Cabai Rawit Merah,52900
+2017-04-27,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-27,Kalimantan Barat,com_7,Daging Ayam Ras Segar,25900
+2017-04-27,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,20150
+2017-04-27,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,29250
+2017-04-27,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,43750
+2017-04-27,Kalimantan Selatan,com_13,Cabai Merah Besar,28650
+2017-04-27,Kalimantan Selatan,com_14,Cabai Merah Keriting,29250
+2017-04-27,Kalimantan Selatan,com_15,Cabai Rawit Hijau,22900
+2017-04-27,Kalimantan Selatan,com_16,Cabai Rawit Merah,48750
+2017-04-27,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-27,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,35700
+2017-04-27,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20600
+2017-04-27,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,35150
+2017-04-27,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,40500
+2017-04-27,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,61400
+2017-04-27,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,29000
+2017-04-27,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,47900
+2017-04-27,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,75250
+2017-04-27,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11400
+2017-04-27,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,31150
+2017-04-27,Papua Barat,com_10,Telur Ayam Ras Segar,29100
+2017-04-27,Papua Barat,com_11,Bawang Merah Ukuran Sedang,50000
+2017-04-27,Papua Barat,com_12,Bawang Putih Ukuran Sedang,50000
+2017-04-27,Papua Barat,com_13,Cabai Merah Besar,47500
+2017-04-27,Papua Barat,com_14,Cabai Merah Keriting,38750
+2017-04-27,Papua Barat,com_15,Cabai Rawit Hijau,40000
+2017-04-27,Papua Barat,com_16,Cabai Rawit Merah,67500
+2017-04-27,Papua Barat,com_3,Beras Kualitas Medium I,14400
+2017-04-27,Papua Barat,com_7,Daging Ayam Ras Segar,35700
+2017-04-27,Semua Provinsi,com_10,Telur Ayam Ras Segar,20400
+2017-04-27,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,31650
+2017-04-27,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,46500
+2017-04-27,Semua Provinsi,com_13,Cabai Merah Besar,35400
+2017-04-27,Semua Provinsi,com_14,Cabai Merah Keriting,28450
+2017-04-27,Semua Provinsi,com_15,Cabai Rawit Hijau,36500
+2017-04-27,Semua Provinsi,com_16,Cabai Rawit Merah,53150
+2017-04-27,Semua Provinsi,com_3,Beras Kualitas Medium I,11350
+2017-04-27,Semua Provinsi,com_7,Daging Ayam Ras Segar,29700
+2017-04-27,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-27,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,32500
+2017-04-27,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,47250
+2017-04-27,Sulawesi Utara,com_13,Cabai Merah Besar,45000
+2017-04-27,Sulawesi Utara,com_14,Cabai Merah Keriting,22500
+2017-04-27,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-27,Sulawesi Utara,com_16,Cabai Rawit Merah,60750
+2017-04-27,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-27,Sulawesi Utara,com_7,Daging Ayam Ras Segar,26400
+2017-04-27,Sumatera Barat,com_10,Telur Ayam Ras Segar,18900
+2017-04-27,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,24900
+2017-04-27,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,45750
+2017-04-27,Sumatera Barat,com_14,Cabai Merah Keriting,24400
+2017-04-27,Sumatera Barat,com_15,Cabai Rawit Hijau,26150
+2017-04-27,Sumatera Barat,com_3,Beras Kualitas Medium I,13900
+2017-04-27,Sumatera Barat,com_7,Daging Ayam Ras Segar,36450
+2017-04-27,Sumatera Selatan,com_10,Telur Ayam Ras Segar,17650
+2017-04-27,Sumatera Selatan,com_11,Bawang Merah Ukuran Sedang,38750
+2017-04-27,Sumatera Selatan,com_12,Bawang Putih Ukuran Sedang,48250
+2017-04-27,Sumatera Selatan,com_13,Cabai Merah Besar,32500
+2017-04-27,Sumatera Selatan,com_14,Cabai Merah Keriting,47500
+2017-04-27,Sumatera Selatan,com_15,Cabai Rawit Hijau,48750
+2017-04-27,Sumatera Selatan,com_16,Cabai Rawit Merah,88000
+2017-04-27,Sumatera Selatan,com_3,Beras Kualitas Medium I,10900
+2017-04-27,Sumatera Selatan,com_7,Daging Ayam Ras Segar,28750
+2017-04-27,Sumatera Utara,com_10,Telur Ayam Ras Segar,20500
+2017-04-27,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,24000
+2017-04-27,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,40000
+2017-04-27,Sumatera Utara,com_14,Cabai Merah Keriting,17500
+2017-04-27,Sumatera Utara,com_15,Cabai Rawit Hijau,15000
+2017-04-27,Sumatera Utara,com_16,Cabai Rawit Merah,15000
+2017-04-27,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-27,Sumatera Utara,com_7,Daging Ayam Ras Segar,23500
+2017-04-28,Aceh,com_10,Telur Ayam Ras Segar,19250
+2017-04-28,Aceh,com_11,Bawang Merah Ukuran Sedang,29750
+2017-04-28,Aceh,com_12,Bawang Putih Ukuran Sedang,45150
+2017-04-28,Aceh,com_13,Cabai Merah Besar,20000
+2017-04-28,Aceh,com_14,Cabai Merah Keriting,19400
+2017-04-28,Aceh,com_15,Cabai Rawit Hijau,20350
+2017-04-28,Aceh,com_16,Cabai Rawit Merah,17250
+2017-04-28,Aceh,com_3,Beras Kualitas Medium I,10300
+2017-04-28,Aceh,com_7,Daging Ayam Ras Segar,23400
+2017-04-28,Jawa Barat,com_10,Telur Ayam Ras Segar,18950
+2017-04-28,Jawa Barat,com_11,Bawang Merah Ukuran Sedang,27750
+2017-04-28,Jawa Barat,com_12,Bawang Putih Ukuran Sedang,47000
+2017-04-28,Jawa Barat,com_13,Cabai Merah Besar,33750
+2017-04-28,Jawa Barat,com_14,Cabai Merah Keriting,31500
+2017-04-28,Jawa Barat,com_15,Cabai Rawit Hijau,36250
+2017-04-28,Jawa Barat,com_16,Cabai Rawit Merah,60000
+2017-04-28,Jawa Barat,com_3,Beras Kualitas Medium I,9650
+2017-04-28,Jawa Barat,com_7,Daging Ayam Ras Segar,31500
+2017-04-28,Jawa Tengah,com_10,Telur Ayam Ras Segar,19750
+2017-04-28,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,28000
+2017-04-28,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,55050
+2017-04-28,Jawa Tengah,com_13,Cabai Merah Besar,28100
+2017-04-28,Jawa Tengah,com_14,Cabai Merah Keriting,24250
+2017-04-28,Jawa Tengah,com_15,Cabai Rawit Hijau,40650
+2017-04-28,Jawa Tengah,com_16,Cabai Rawit Merah,54350
+2017-04-28,Jawa Tengah,com_3,Beras Kualitas Medium I,9600
+2017-04-28,Jawa Tengah,com_7,Daging Ayam Ras Segar,30700
+2017-04-28,Jawa Timur,com_10,Telur Ayam Ras Segar,18300
+2017-04-28,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,28950
+2017-04-28,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,50900
+2017-04-28,Jawa Timur,com_13,Cabai Merah Besar,28550
+2017-04-28,Jawa Timur,com_14,Cabai Merah Keriting,29550
+2017-04-28,Jawa Timur,com_15,Cabai Rawit Hijau,29250
+2017-04-28,Jawa Timur,com_16,Cabai Rawit Merah,52750
+2017-04-28,Jawa Timur,com_3,Beras Kualitas Medium I,9900
+2017-04-28,Jawa Timur,com_7,Daging Ayam Ras Segar,27050
+2017-04-28,Kalimantan Barat,com_10,Telur Ayam Ras Segar,20350
+2017-04-28,Kalimantan Barat,com_11,Bawang Merah Ukuran Sedang,29750
+2017-04-28,Kalimantan Barat,com_12,Bawang Putih Ukuran Sedang,44750
+2017-04-28,Kalimantan Barat,com_13,Cabai Merah Besar,27150
+2017-04-28,Kalimantan Barat,com_14,Cabai Merah Keriting,30000
+2017-04-28,Kalimantan Barat,com_15,Cabai Rawit Hijau,39750
+2017-04-28,Kalimantan Barat,com_16,Cabai Rawit Merah,50400
+2017-04-28,Kalimantan Barat,com_3,Beras Kualitas Medium I,12800
+2017-04-28,Kalimantan Barat,com_7,Daging Ayam Ras Segar,25900
+2017-04-28,Kalimantan Selatan,com_10,Telur Ayam Ras Segar,20150
+2017-04-28,Kalimantan Selatan,com_11,Bawang Merah Ukuran Sedang,28650
+2017-04-28,Kalimantan Selatan,com_12,Bawang Putih Ukuran Sedang,44400
+2017-04-28,Kalimantan Selatan,com_13,Cabai Merah Besar,26750
+2017-04-28,Kalimantan Selatan,com_14,Cabai Merah Keriting,28650
+2017-04-28,Kalimantan Selatan,com_15,Cabai Rawit Hijau,21650
+2017-04-28,Kalimantan Selatan,com_16,Cabai Rawit Merah,45000
+2017-04-28,Kalimantan Selatan,com_3,Beras Kualitas Medium I,11300
+2017-04-28,Kalimantan Selatan,com_7,Daging Ayam Ras Segar,36000
+2017-04-28,Kalimantan Tengah,com_10,Telur Ayam Ras Segar,22900
+2017-04-28,Kalimantan Tengah,com_11,Bawang Merah Ukuran Sedang,31150
+2017-04-28,Kalimantan Tengah,com_12,Bawang Putih Ukuran Sedang,47150
+2017-04-28,Kalimantan Tengah,com_13,Cabai Merah Besar,48150
+2017-04-28,Kalimantan Tengah,com_14,Cabai Merah Keriting,50650
+2017-04-28,Kalimantan Tengah,com_15,Cabai Rawit Hijau,31900
+2017-04-28,Kalimantan Tengah,com_16,Cabai Rawit Merah,61250
+2017-04-28,Kalimantan Tengah,com_3,Beras Kualitas Medium I,13600
+2017-04-28,Kalimantan Tengah,com_7,Daging Ayam Ras Segar,32000
+2017-04-28,Kepulauan Bangka Belitung,com_10,Telur Ayam Ras Segar,20700
+2017-04-28,Kepulauan Bangka Belitung,com_11,Bawang Merah Ukuran Sedang,35750
+2017-04-28,Kepulauan Bangka Belitung,com_12,Bawang Putih Ukuran Sedang,40500
+2017-04-28,Kepulauan Bangka Belitung,com_13,Cabai Merah Besar,61400
+2017-04-28,Kepulauan Bangka Belitung,com_14,Cabai Merah Keriting,28150
+2017-04-28,Kepulauan Bangka Belitung,com_15,Cabai Rawit Hijau,47900
+2017-04-28,Kepulauan Bangka Belitung,com_16,Cabai Rawit Merah,75250
+2017-04-28,Kepulauan Bangka Belitung,com_3,Beras Kualitas Medium I,11400
+2017-04-28,Kepulauan Bangka Belitung,com_7,Daging Ayam Ras Segar,30650
+2017-04-28,Lampung,com_10,Telur Ayam Ras Segar,19500
+2017-04-28,Lampung,com_11,Bawang Merah Ukuran Sedang,25000
+2017-04-28,Lampung,com_12,Bawang Putih Ukuran Sedang,48000
+2017-04-28,Lampung,com_13,Cabai Merah Besar,18500
+2017-04-28,Lampung,com_14,Cabai Merah Keriting,20000
+2017-04-28,Lampung,com_15,Cabai Rawit Hijau,27500
+2017-04-28,Lampung,com_16,Cabai Rawit Merah,50000
+2017-04-28,Lampung,com_3,Beras Kualitas Medium I,12500
+2017-04-28,Lampung,com_7,Daging Ayam Ras Segar,30000
+2017-04-28,Papua Barat,com_10,Telur Ayam Ras Segar,29100
+2017-04-28,Papua Barat,com_11,Bawang Merah Ukuran Sedang,50000
+2017-04-28,Papua Barat,com_12,Bawang Putih Ukuran Sedang,51250
+2017-04-28,Papua Barat,com_13,Cabai Merah Besar,46250
+2017-04-28,Papua Barat,com_14,Cabai Merah Keriting,38750
+2017-04-28,Papua Barat,com_15,Cabai Rawit Hijau,40000
+2017-04-28,Papua Barat,com_16,Cabai Rawit Merah,65000
+2017-04-28,Papua Barat,com_3,Beras Kualitas Medium I,14400
+2017-04-28,Papua Barat,com_7,Daging Ayam Ras Segar,35700
+2017-04-28,Semua Provinsi,com_10,Telur Ayam Ras Segar,20500
+2017-04-28,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,31100
+2017-04-28,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,47150
+2017-04-28,Semua Provinsi,com_13,Cabai Merah Besar,35450
+2017-04-28,Semua Provinsi,com_14,Cabai Merah Keriting,29400
+2017-04-28,Semua Provinsi,com_15,Cabai Rawit Hijau,35250
+2017-04-28,Semua Provinsi,com_16,Cabai Rawit Merah,53500
+2017-04-28,Semua Provinsi,com_3,Beras Kualitas Medium I,11600
+2017-04-28,Semua Provinsi,com_7,Daging Ayam Ras Segar,29850
+2017-04-28,Sulawesi Utara,com_10,Telur Ayam Ras Segar,21400
+2017-04-28,Sulawesi Utara,com_11,Bawang Merah Ukuran Sedang,34250
+2017-04-28,Sulawesi Utara,com_12,Bawang Putih Ukuran Sedang,50000
+2017-04-28,Sulawesi Utara,com_13,Cabai Merah Besar,54050
+2017-04-28,Sulawesi Utara,com_14,Cabai Merah Keriting,22500
+2017-04-28,Sulawesi Utara,com_15,Cabai Rawit Hijau,68750
+2017-04-28,Sulawesi Utara,com_16,Cabai Rawit Merah,61250
+2017-04-28,Sulawesi Utara,com_3,Beras Kualitas Medium I,10900
+2017-04-28,Sulawesi Utara,com_7,Daging Ayam Ras Segar,26400
+2017-04-28,Sumatera Barat,com_10,Telur Ayam Ras Segar,18800
+2017-04-28,Sumatera Barat,com_11,Bawang Merah Ukuran Sedang,24150
+2017-04-28,Sumatera Barat,com_12,Bawang Putih Ukuran Sedang,46250
+2017-04-28,Sumatera Barat,com_14,Cabai Merah Keriting,24400
+2017-04-28,Sumatera Barat,com_15,Cabai Rawit Hijau,25650
+2017-04-28,Sumatera Barat,com_3,Beras Kualitas Medium I,13900
+2017-04-28,Sumatera Barat,com_7,Daging Ayam Ras Segar,36350
+2017-04-28,Sumatera Selatan,com_10,Telur Ayam Ras Segar,17650
+2017-04-28,Sumatera Selatan,com_11,Bawang Merah Ukuran Sedang,38250
+2017-04-28,Sumatera Selatan,com_12,Bawang Putih Ukuran Sedang,49750
+2017-04-28,Sumatera Selatan,com_13,Cabai Merah Besar,32500
+2017-04-28,Sumatera Selatan,com_14,Cabai Merah Keriting,46500
+2017-04-28,Sumatera Selatan,com_15,Cabai Rawit Hijau,48750
+2017-04-28,Sumatera Selatan,com_16,Cabai Rawit Merah,88000
+2017-04-28,Sumatera Selatan,com_3,Beras Kualitas Medium I,10900
+2017-04-28,Sumatera Selatan,com_7,Daging Ayam Ras Segar,28750
+2017-04-28,Sumatera Utara,com_10,Telur Ayam Ras Segar,20500
+2017-04-28,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,24000
+2017-04-28,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,40000
+2017-04-28,Sumatera Utara,com_14,Cabai Merah Keriting,17500
+2017-04-28,Sumatera Utara,com_15,Cabai Rawit Hijau,15000
+2017-04-28,Sumatera Utara,com_16,Cabai Rawit Merah,15000
+2017-04-28,Sumatera Utara,com_3,Beras Kualitas Medium I,11500
+2017-04-28,Sumatera Utara,com_7,Daging Ayam Ras Segar,23500
