@@ -25,16 +25,16 @@ jobs:
       - name: Quality check
         if: always() # still report and save whatever chunks succeeded
         run: python quality.py
-      - name: Forecast next 14 days
+      - name: Gate, forecast next 14 days, spike alerts
         if: always()
         run: python live.py
-      - name: Commit new prices and forecasts
+      - name: Commit prices, forecasts, alerts, model status
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw data/forecasts
-          git diff --cached --quiet || git commit -m "data: prices and forecasts up to $(date -u +%F)"
+          git add data
+          git diff --cached --quiet || git commit -m "data: update up to $(date -u +%F)"
           git push
 
   dashboard:

@@ -39,11 +39,15 @@ def seasonal(history: pd.DataFrame) -> dict[str, np.ndarray]:
     return {"seasonal": np.where(np.isnan(ratio), 1, ratio) * k.iloc[-1].to_numpy()}  # no last-year data: naive
 
 
-def run(df: pd.DataFrame, forecasters: list) -> pd.DataFrame:
-    """One row per (origin, horizon, series) that has an actual price, with every forecaster's prediction."""
+def run(df: pd.DataFrame, forecasters: list, origins: pd.DatetimeIndex | None = None) -> pd.DataFrame:
+    """One row per (origin, horizon, series) that has an actual price, with every forecaster's prediction.
+
+    Default origins: every Monday of the last TEST_YEARS whose 14 days are already over.
+    """
     wide = to_wide(df)
-    end = wide.index.max() - pd.Timedelta(days=HORIZON)
-    origins = pd.date_range(end - pd.DateOffset(years=TEST_YEARS), end, freq="W-MON")
+    if origins is None:
+        end = wide.index.max() - pd.Timedelta(days=HORIZON)
+        origins = pd.date_range(end - pd.DateOffset(years=TEST_YEARS), end, freq="W-MON")
     parts = []
     for origin in origins:
         history = wide.loc[:origin]  # forecasters never see anything after the origin

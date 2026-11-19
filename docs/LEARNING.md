@@ -103,3 +103,47 @@ LightGBM tidak pernah kalah dari naive, dan menang paling besar di bawang merah 
 **Pertanyaan interview**
 1. Gimana kamu tahu model rusak di produksi kalau labelnya baru datang 2 minggu kemudian? *(Horizon 1 hari sudah bisa dinilai besoknya, jadi sinyal paling awal datang dalam sehari. Coverage P10–P90 yang turun jauh dari 80% juga tanda bahaya.)*
 2. Kenapa simpan naive juga? *(Supaya akurasi live model selalu dibandingkan dengan baseline di hari yang sama. Error 5% di bulan Lebaran bisa jadi bagus kalau naive 8%.)*
+
+## Rilis 3: peringatan dini lonjakan
+
+### `spike.py`: definisi "lonjakan"
+- **Batas waspada** = median 20 laporan terakhir (~4 minggu) × (1 + ambang). Ambang beda per komoditas: beras 5%, ayam/telur/bawang putih 10%, bawang merah 20%, cabai rawit hijau 30%, cabai merah 40%, cabai rawit merah 50%.
+- **Cara milih ambangnya:** dari data 2017–2024 (sebelum periode tes, biar tidak curang), dipilih ambang yang bikin lonjakan baru terjadi di ~10% hari. Kalau pakai 10% untuk semua, cabai "waspada" hampir tiap hari (alert yang terus bunyi akhirnya diabaikan), dan beras hampir tidak pernah.
+- **Yang ditebak cuma lonjakan BARU:** deret yang hari ini sudah di atas batas sudah kelihatan di tabel waspada, tidak perlu ditebak. Nilai sebuah peringatan dini ada di deret yang sekarang masih tenang.
+- **Label:** 1 kalau dalam 14 hari ke depan ada harga yang menembus batas, 0 kalau tidak. Label hari ini baru diketahui 14 hari lagi.
+
+### Classifier dan cara menilainya
+- **Model:** LightGBM klasifikasi (`objective="binary"`), keluarannya **peluang** 0–100%.
+- **Kenapa tidak pakai akurasi:** cuma 7,5% hari yang jadi lonjakan. Model yang selalu bilang "tidak akan melonjak" sudah 92,5% akurat tapi tidak berguna sama sekali.
+- **Precision** = dari semua peringatan, berapa persen yang benar-benar melonjak. **Recall** = dari semua lonjakan, berapa persen yang sempat diperingatkan. Dua-duanya saling tarik-menarik.
+- **Average precision (AP)** = ringkasan precision di semua tingkat recall. Model acak dapat AP = 7,5% (sama dengan frekuensi lonjakan).
+
+| | AP |
+|---|---|
+| Acak | 0,075 |
+| Heuristik: "yang harganya sudah paling dekat ke batas" | 0,193 |
+| **Classifier** | **0,490** |
+
+- **Cut-off peluang:** dashboard pakai ≥ 50%, jadi ~9 peringatan per hari, 65% benar, menangkap 27% lonjakan. Cut-off 70% artinya 2,7 peringatan per hari, 81% benar, tapi cuma menangkap 10%. Ini **keputusan bisnis, bukan keputusan teknis**: user mau daftar pendek yang hampir pasti benar, atau daftar panjang yang menangkap lebih banyak?
+
+### Tes anti-leakage
+Di backtest spike, fitur dihitung sekali untuk seluruh data supaya cepat. Itu cuma aman kalau fitur di tanggal X tidak berubah saat data setelah X ditambahkan. `tests/test_spike.py` membuktikan ini: fitur dihitung dari data penuh vs data yang dipotong di tanggal X, hasilnya harus sama persis.
+
+### Gerbang rilis (`live.py`)
+Setiap hari, sebelum model baru dipublikasikan:
+1. Latih ulang dengan resep yang sama, **seolah-olah 4 minggu lalu**.
+2. Uji di 4 minggu terakhir yang tidak pernah dilihat model.
+3. Lolos hanya kalau: forecast tidak kalah dari naive (toleransi 2%), rentang P10–P90 memuat 70–90% harga asli, dan AP classifier mengalahkan heuristik.
+4. Kalau gagal: tidak ada yang dipublikasikan, forecast terakhir yang lolos tetap tampil, job merah, email masuk.
+
+Kenapa perlu: data bisa rusak, kode bisa berubah, pola harga bisa bergeser. Tanpa gerbang, model rusak langsung tayang ke user.
+
+### `MODEL_CARD.md`
+Dokumen standar di industri: model ini untuk apa, **tidak** untuk apa, datanya apa, hasil evaluasinya, dan keterbatasannya. Yang paling sering ditanya interviewer justru bagian keterbatasan.
+
+**Pertanyaan interview**
+1. Kenapa ambangnya beda per komoditas? *(Cabai wajar naik 30% dalam 2 minggu, beras naik 5% sudah luar biasa. Satu ambang = alert cabai bunyi terus, alert beras tidak pernah.)*
+2. Kenapa AP, bukan akurasi? *(Kelas tidak seimbang, 7,5% positif. Akurasi bisa tinggi dengan model yang tidak berguna.)*
+3. Model kamu benar 65%. Itu bagus? *(Dibanding acak 7,5% dan heuristik 19%, jauh lebih baik. Dan cut-off bisa digeser kalau user butuh lebih yakin.)*
+4. Apa yang terjadi kalau besok modelnya rusak? *(Gerbang rilis gagal, tidak ada yang dipublikasikan, versi terakhir yang lolos tetap tampil, dan saya dapat email.)*
+5. Apa risiko etis sistem ini? *(Peringatan publik bisa memicu penimbunan. Karena itu peringatan ditampilkan bersama track record-nya, sebagai peluang, dan ditujukan ke pengelola pasokan.)*

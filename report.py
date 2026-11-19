@@ -2,6 +2,7 @@
 
 Run: python report.py
 """
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -13,27 +14,62 @@ import backtest
 import lebaran
 import live
 import quality
+import spike
 from model import HORIZON
 
 SITE = Path(__file__).parent / "site"
 NATIONAL = "Semua Provinsi"
-SPIKE = 1.10  # price above 110% of its 4-week median = "waspada"; the same label the model will predict
+
+
+def names(df: pd.DataFrame) -> pd.Series:
+    return df.drop_duplicates("commodity_id").set_index("commodity_id")["commodity"]
 
 
 def status(df: pd.DataFrame) -> pd.DataFrame:
-    """Latest price of every active series vs the median of its previous 20 reports (~4 weeks)."""
-    latest = df["date"].max()
-    rows = []
-    for (commodity, province), s in df.groupby(["commodity", "province"]):
-        if s["date"].iloc[-1] < latest - pd.Timedelta(days=quality.STALE_DAYS) or len(s) < 21:
-            continue  # stopped reporting, or too short to compare
-        median = s["price"].iloc[-21:-1].median()
-        rows.append({
-            "Komoditas": commodity, "Provinsi": province, "Tanggal": s["date"].iloc[-1].strftime("%d %b %Y"),
-            "Harga (Rp/kg)": s["price"].iloc[-1], "Median 4 minggu": median,
-            "Perubahan": s["price"].iloc[-1] / median - 1,
-        })
-    return pd.DataFrame(rows).sort_values("Perubahan", ascending=False, ignore_index=True)
+    """Latest price of every active series vs its 4-week median and its commodity's alert level."""
+    wide = backtest.to_wide(df)
+    price = wide.ffill(limit=quality.STALE_DAYS).iloc[-1]
+    theta = pd.Series(wide.columns.get_level_values("commodity_id").map(spike.THRESHOLDS), index=wide.columns)
+    median = spike.levels(wide).iloc[-1] / (1 + theta)
+    out = pd.DataFrame({
+        "Komoditas": wide.columns.get_level_values("commodity_id").map(names(df)),
+        "Provinsi": wide.columns.get_level_values("province"),
+        "Tanggal": wide.apply(lambda s: s.last_valid_index()).dt.strftime("%d %b %Y").to_numpy(),
+        "Harga (Rp/kg)": price.to_numpy(), "Median 4 minggu": median.to_numpy(),
+        "Perubahan": (price / median - 1).to_numpy(), "Batas waspada": theta.to_numpy(),
+    }).dropna()  # stopped or too-short series
+    return out.sort_values("Perubahan", ascending=False, ignore_index=True)
+
+
+def alert_section(df: pd.DataFrame) -> str:
+    """Today's early warnings, and how past warnings turned out once their 14 days were over."""
+    alerts = live.load(live.ALERTS)
+    if alerts.empty:
+        return "<p>Belum ada peringatan.</p>"
+    today = alerts[alerts["origin"] == alerts["origin"].max()]
+    hot = today[today["p"] >= spike.ALERT_CUTOFF].sort_values("p", ascending=False)
+    table = pd.DataFrame({
+        "Komoditas": hot["commodity_id"].map(names(df)), "Provinsi": hot["province"],
+        "Harga (Rp/kg)": hot["price"], "Batas waspada (Rp/kg)": hot["level"], "Peluang melonjak": hot["p"],
+    }).to_html(index=False, border=0, formatters={
+        "Harga (Rp/kg)": "{:,.0f}".format, "Batas waspada (Rp/kg)": "{:,.0f}".format, "Peluang melonjak": "{:.0%}".format,
+    })
+    past = spike.score_alerts(alerts[alerts["p"] >= spike.ALERT_CUTOFF], backtest.to_wide(df))
+    track = (f"Dari {len(past):,} peringatan yang 14 harinya sudah lewat, <b>{past['spike'].mean():.0%}</b> benar-benar melonjak."
+             if len(past) else "Belum ada peringatan yang 14 harinya sudah lewat untuk dinilai.")
+    return (f"<p>Deret yang hari ini masih normal tapi berpeluang &ge; {spike.ALERT_CUTOFF:.0%} menembus batas waspadanya "
+            f"dalam 14 hari (data {today['origin'].max():%d %b %Y}): <b>{len(hot)}</b> deret. "
+            f"Di backtest 2 tahun, 65% peringatan seperti ini benar-benar melonjak. {track}</p>\n{table}")
+
+
+def gate_line() -> str:
+    if not live.STATUS.exists():
+        return ""
+    s = json.loads(live.STATUS.read_text())
+    verdict = "<b>lolos</b>" if s["passed"] else "<b>GAGAL</b>, forecast dan peringatan terakhir yang lolos tetap ditampilkan"
+    return (f'<p class="muted">Gerbang rilis model {s["date"]}: {verdict}. Diuji ulang pada {s["holdout"]} yang tidak dilihat model: '
+            f'error forecast {s["forecast_mape"]:.1f}% vs naive {s["naive_mape"]:.1f}%, rentang P10-P90 memuat {s["coverage"]:.0%} harga asli, '
+            f'kualitas peringatan (average precision) {s["spike_ap"]:.2f} vs heuristik {s["heuristic_ap"]:.2f}.</p>')
 
 
 def national_weekly(df: pd.DataFrame) -> pd.DataFrame:
@@ -114,9 +150,10 @@ def live_section(df: pd.DataFrame) -> str:
 
 def html(df: pd.DataFrame) -> str:
     st = status(df)
-    waspada = st[st["Perubahan"] > SPIKE - 1]
-    table = st.head(20).to_html(index=False, border=0, formatters={
-        "Harga (Rp/kg)": "{:,.0f}".format, "Median 4 minggu": "{:,.0f}".format, "Perubahan": "{:+.1%}".format,
+    waspada = st[st["Perubahan"] > st["Batas waspada"]]
+    table = waspada.to_html(index=False, border=0, formatters={
+        "Harga (Rp/kg)": "{:,.0f}".format, "Median 4 minggu": "{:,.0f}".format,
+        "Perubahan": "{:+.1%}".format, "Batas waspada": "+{:.0%}".format,
     })
     figs = "\n".join(f.to_html(full_html=False, include_plotlyjs=False) for f in (trend_fig(df), region_fig(df), lebaran_fig(df)))
     built = datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC")
@@ -133,12 +170,15 @@ th:nth-child(-n+3), td:nth-child(-n+3) {{ text-align: left; }} .muted {{ color: 
 <p class="muted">Harga harian pasar tradisional dari <a href="https://www.bi.go.id/hargapangan">PIHPS Bank Indonesia</a>,
 data sampai <b>{df["date"].max():%d %b %Y}</b>. Diperbarui otomatis setiap hari ({built}).
 <a href="https://github.com/Sidqixx/harga-pangan-forecast">Kode &amp; metodologi</a>.</p>
-<h2>Status hari ini</h2>
-<p><b>{len(waspada)}</b> dari {len(st)} deret harga sedang <b>waspada</b>: lebih dari {SPIKE - 1:.0%} di atas median 4 minggu terakhirnya.
-Tabel: 20 kenaikan tertinggi.</p>
-{table}
+<h2>Status hari ini: waspada</h2>
+<p><b>{len(waspada)}</b> dari {len(st)} deret harga sedang <b>waspada</b>: di atas median 4 minggu terakhirnya lebih dari
+batas komoditasnya (beras 5%, cabai rawit merah 50%; batas per komoditas karena cabai wajar bergerak 3x lebih liar dari beras).</p>
+{table if len(waspada) else ""}
+<h2>Peringatan dini: lonjakan dalam 14 hari</h2>
+{alert_section(df)}
 <h2>Akurasi forecast (live)</h2>
 {live_section(df)}
+{gate_line()}
 {figs}
 </body></html>"""
 
