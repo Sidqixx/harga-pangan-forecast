@@ -1,6 +1,8 @@
 # Catatan Belajar
 
-Panduan belajar proyek ini, diisi bertahap seiring proyek jalan. Tiap bagian: apa yang dibikin, konsepnya, dan pertanyaan interview yang harus bisa dijawab.
+Ringkasan proyek per rilis: apa yang dibikin, konsepnya, dan pertanyaan interview yang harus bisa dijawab.
+
+**Belum paham istilahnya? Mulai dari [`belajar/`](belajar/README.md):** 7 modul dari nol, tiap konsep dibuktikan dengan data proyek ini, plus [kamus istilah](belajar/00_kamus.md). Ringkasan di bawah paling enak dibaca setelah modul-modul itu.
 
 ## Rilis 1: pipeline data
 
@@ -55,7 +57,7 @@ Yang paling susah: cabai rawit merah, 13,6% di horizon 8-14 hari. Yang paling ga
 - **Fitur (semuanya dihitung dari data sampai hari origin):**
   - `ret_k`: perubahan harga k hari terakhir (momentum)
   - `vol_28`: seberapa liar harga 4 minggu terakhir
-  - `dev_28`, `dev_91`: harga sekarang vs median 1 dan 3 bulan. Harga yang sudah jauh di atas median cenderung turun lagi (*mean reversion*)
+  - `dev_28`, `dev_91`: harga sekarang vs median 1 dan 3 bulan. Di data cabai, harga sedikit di atas median cenderung terus naik (*momentum*), tapi yang sudah ~40% di atas median cenderung turun lagi (*mean reversion*). Polanya berbelok, dan tree bisa menangkapnya (lihat `docs/belajar/03_fitur_leakage.py`)
   - `vs_national`: provinsi ini lebih mahal atau lebih murah dari nasional
   - `lebaran_until`, `lebaran_since`: jarak ke Lebaran, dibatasi maksimal 60 hari
 - **Dilatih ulang di dalam backtest** (tiap 6 bulan), dan hanya pakai contoh yang harga aslinya sudah keluar sebelum origin. Kalau model dilatih sekali pakai semua data lalu diuji di 2 tahun terakhir, model sudah "melihat" jawaban ujiannya.
