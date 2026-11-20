@@ -2,7 +2,7 @@ name: daily
 
 on:
   schedule:
-    - cron: "0 3 * * *" # 10:00 WIB
+    - cron: "17 3 * * *" # 10:17 WIB; GitHub delays or drops schedules at the top of the hour under load
   workflow_dispatch:
 
 permissions:
