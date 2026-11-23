@@ -35,6 +35,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data
           git diff --cached --quiet || git commit -m "data: update up to $(date -u +%F)"
+          git pull --rebase # code may have been pushed while the job ran; data and code files do not overlap
           git push
 
   dashboard:
