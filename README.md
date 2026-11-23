@@ -38,6 +38,8 @@ Only 23 of 724,890 rows (0.003%) are dropped. The outlier rule compares against 
 
 Seven series stopped reporting (mostly cabai merah besar: Gorontalo 2020, Bangka Belitung 2022, Sulawesi Utara 2023, Maluku Jul 2026). They get no forecast and no alert.
 
+**Province coverage:** PIHPS reports the 34 provinces that existed before 2022. Indonesia now has 38: the four provinces split from Papua in 2022 (Papua Selatan, Papua Tengah, Papua Pegunungan, Papua Barat Daya) are not reported separately, so this project covers what the source publishes and keeps PIHPS's own "Papua" and "Papua Barat" series as they are.
+
 ## Findings (data up to 19 Nov 2026)
 
 **1. Spikiness differs by two orders of magnitude, so one alert threshold cannot fit every commodity.** Annualized volatility of the national daily price ranges from 0.34 (beras) to 1.18 (cabai rawit merah). Using "more than 10% above its 4-week median" as the alert, a province-day is flagged 27.6% of the time for cabai rawit merah but 0.1% for beras. Alerting on 28% of days is noise, so the spike warning uses commodity-specific thresholds.

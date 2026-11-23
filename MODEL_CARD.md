@@ -20,7 +20,7 @@
 
 ## Data
 
-PIHPS Nasional (Bank Indonesia), traditional-market daily prices, 9 commodities x 34 provinces + national average, Mar 2017 onwards, weekdays only. 23 of 724,890 rows are removed by `quality.py` (typos and a test province). Series that stopped reporting for more than 10 days get no forecast and no alert.
+PIHPS Nasional (Bank Indonesia), traditional-market daily prices, 9 commodities x 34 provinces + national average, Mar 2017 onwards, weekdays only. The 34 are PIHPS's provinces from before 2022; the four provinces split from Papua in 2022 are not reported separately by the source. 23 of 724,890 rows are removed by `quality.py` (typos and a test province). Series that stopped reporting for more than 10 days get no forecast and no alert.
 
 Features (all computed from data up to the forecast date; a test asserts that adding later data does not change them): price changes over 1–364 days, 28-day volatility, distance from the 28- and 91-day median, gap and momentum vs the national price, horizon, month, days until and since Lebaran, commodity, province, and (warning only) today's price relative to the alert level.
 
