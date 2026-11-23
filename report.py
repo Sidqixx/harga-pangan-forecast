@@ -21,6 +21,10 @@ ROOT = Path(__file__).parent
 SITE = ROOT / "site"
 TEMPLATE = ROOT / "web" / "index.html"
 NATIONAL = "Semua Provinsi"
+SHORT = {  # chip labels; full names are too long for a phone row
+    "com_3": "Beras", "com_7": "Ayam", "com_10": "Telur", "com_11": "Bawang merah", "com_12": "Bawang putih",
+    "com_13": "Cabai merah besar", "com_14": "Cabai keriting", "com_15": "Cabai rawit hijau", "com_16": "Cabai rawit merah",
+}
 
 
 def ints(values) -> list:
@@ -66,12 +70,14 @@ def series_files(df: pd.DataFrame, wide: pd.DataFrame, level: pd.Series) -> None
     recent = recent[recent.notna().any(axis=1)]  # report days only
     weekly = wide.resample("W").median()
     forecast = latest(live.FORECASTS)
+    alerts = latest(live.ALERTS)
     curves, years = lebaran_curves(df)
     out = SITE / "series"
     out.mkdir(parents=True, exist_ok=True)
     for cid in wide.columns.unique("commodity_id"):
         provinces = wide[cid].columns
         f = forecast[forecast["commodity_id"] == cid]
+        a = alerts[alerts["commodity_id"] == cid] if len(alerts) else alerts
         days = sorted(f["date"].unique())
         grid = {q: f.pivot(index="date", columns="province", values=q).reindex(days) for q in ("p10", "p50", "p90")}
         data = {
@@ -82,6 +88,7 @@ def series_files(df: pd.DataFrame, wide: pd.DataFrame, level: pd.Series) -> None
             "forecast": {"dates": [f"{d:%Y-%m-%d}" for d in days],
                          **{q: {p: ints(g[p]) for p in g.columns} for q, g in grid.items()}},
             "lebaran": {"offsets": list(curves.index), "values": [round(v, 1) for v in curves[cid].fillna(0)], "years": years},
+            "p": dict(zip(a["province"], a["p"])) if len(a) else {},  # spike probability of every calm series today
         }
         (out / f"{cid}.json").write_text(json.dumps(data, separators=(",", ":")), encoding="utf-8")
 
@@ -92,11 +99,18 @@ def summary(df: pd.DataFrame, wide: pd.DataFrame, level: pd.Series) -> dict:
     alerts = latest(live.ALERTS)
     hot = alerts[alerts["p"] >= spike.ALERT_CUTOFF].sort_values("p", ascending=False) if len(alerts) else alerts
     n = names(df)
+    notices = []
+    age = (pd.Timestamp(datetime.now(timezone.utc).date()) - df["date"].max()).days
+    if age > quality.STALE_DAYS:
+        notices.append(f"Harga terbaru dari PIHPS sudah {age} hari. Angka di halaman ini mungkin belum mencerminkan pasar saat ini.")
+    if live.STATUS.exists() and not json.loads(live.STATUS.read_text())["passed"]:
+        notices.append("Pemeriksaan model terakhir tidak lolos. Perkiraan dan peringatan di bawah adalah versi terakhir yang lolos.")
     return {
         "dataDate": tanggal(df["date"].max()),
         "built": f"{tanggal(datetime.now(timezone.utc))} {datetime.now(timezone.utc):%H:%M} UTC",
         "national": NATIONAL,
-        "commodities": [{"id": c, "name": n[c], "threshold": spike.THRESHOLDS[c]} for c in sorted(n.index, key=n.get)],
+        "notices": notices,
+        "commodities": [{"id": c, "name": n[c], "short": SHORT[c], "threshold": spike.THRESHOLDS[c]} for c in sorted(n.index, key=SHORT.get)],
         "series": len(st),
         "waspada": [{"cid": r.cid, "province": r.province, "price": int(r.price), "change": round(r.change, 3),
                      "threshold": r.threshold} for r in waspada.itertuples()],
@@ -148,7 +162,8 @@ def live_table(df: pd.DataFrame) -> str:
     })
     return (f"<p>Setiap perkiraan dicocokkan dengan harga asli begitu harganya keluar. Perkiraan harian berjalan sejak "
             f"<b>{tanggal(s['origin'].min())}</b>, dan {angka(len(s), 0)} sudah dinilai. Meleset adalah rata-rata selisih "
-            f"dalam persen, makin kecil makin baik. Kolom terakhir idealnya sekitar 80%.</p>\n{table}")
+            f"dalam persen, makin kecil makin baik. Kolom terakhir idealnya sekitar 80%.</p>\n"
+            f'<div class="table-wrap" tabindex="0" role="region" aria-label="Tabel akurasi perkiraan">{table}</div>')
 
 
 def gate_line() -> str:

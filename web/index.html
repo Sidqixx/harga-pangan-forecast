@@ -4,93 +4,203 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pemantau Harga Pangan</title>
+<meta name="description" content="Harga harian 9 bahan pangan pokok di 34 provinsi, perkiraan 2 minggu ke depan, dan peringatan lonjakan harga.">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js" defer></script>
 <style>
-  :root { --fg: #1f2328; --muted: #656d76; --line: #d0d7de; --bg2: #f6f8fa; --red: #cf222e; --amber: #bf8700; --blue: #0969da; }
+  /* Direction: DESIGN.md (warm paper canvas, hairline borders, one cyan accent) + ref-ui.jpg layout.
+     Accent marks the forecast and the current selection; the warning color marks the alert level only. */
+  :root {
+    --canvas: #fafaf9; --card: #ffffff; --line: #e8e6e5; --ink: #0c0a09; --soot: #1c1917; --muted: #78716c;
+    --accent: #3398e1; --wash: #c1e1f7; --warn: #c2410c; --warn-wash: #fff7ed;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
   * { box-sizing: border-box; }
-  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--fg); max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 3rem; line-height: 1.5; }
-  h1 { margin: 0 0 .25rem; font-size: 1.7rem; }
-  h2 { margin: 2rem 0 .5rem; font-size: 1.2rem; }
-  .muted { color: var(--muted); font-size: .9rem; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .6rem; }
-  .card { text-align: left; font: inherit; color: inherit; background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--amber); border-radius: 8px; padding: .6rem .8rem; cursor: pointer; }
-  .card:hover, .card:focus-visible { background: var(--bg2); outline: 2px solid var(--blue); outline-offset: 1px; }
-  .card.waspada { border-left-color: var(--red); }
-  .card b { display: block; }
-  .card .big { font-size: 1.3rem; font-weight: 700; }
-  .controls { display: flex; flex-wrap: wrap; gap: .8rem; align-items: end; padding: .8rem; background: var(--bg2); border-radius: 8px; position: sticky; top: 0; z-index: 1; }
-  .controls label { display: flex; flex-direction: column; font-size: .85rem; color: var(--muted); }
-  select { font: inherit; padding: .35rem .5rem; border: 1px solid var(--line); border-radius: 6px; min-width: 200px; cursor: pointer; }
-  .card .big small { font-size: .8rem; font-weight: 400; color: var(--muted); }
-  .note { color: var(--muted); font-size: .8rem; margin: .5rem 0 0; }
-  footer { margin-top: 3rem; border-top: 1px solid var(--line); }
-  .chart { position: relative; height: 380px; margin-top: .8rem; }
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } .controls { position: static; } }
-  table { border-collapse: collapse; font-size: .9rem; display: block; max-width: 100%; overflow-x: auto; }
-  th, td { padding: .3rem .7rem; border-bottom: 1px solid var(--line); text-align: right; }
+  body { margin: 0; background: var(--canvas); color: var(--ink); font: 15px/1.6 var(--font); }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 32px 20px 48px; }
+  a { color: var(--ink); text-underline-offset: 2px; }
+  button, select, a { cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 500; letter-spacing: -0.025em; line-height: 1.15; margin: 0 0 8px; }
+  h2 { font-size: 18px; font-weight: 500; letter-spacing: -0.01em; margin: 0; }
+  .lede { font-size: 17px; max-width: 62ch; margin: 0 0 8px; }
+  .meta, .note, .intro { color: var(--muted); font-size: 13px; margin: 0; }
+  .note { margin-top: 12px; }
+  .intro { margin: 4px 0 8px; }
+  section, .notices { margin-top: 32px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px; min-width: 0; }
+
+  .notice { background: var(--warn-wash); border: 1px solid var(--warn); border-radius: 10px; padding: 12px 16px; margin: 0 0 8px; }
+
+  .panels, .grid2 { display: grid; gap: 16px; }
+  .rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; width: 100%; min-height: 56px;
+         padding: 10px 12px; border: 0; border-bottom: 1px solid var(--line); background: none; font: inherit; color: inherit; text-align: left; }
+  .row:hover { background: var(--canvas); }
+  .row:active { background: var(--line); }
+  .row[aria-pressed="true"] { box-shadow: inset 3px 0 0 var(--accent); background: var(--canvas); }
+  .row b { font-weight: 600; }
+  .row .sub { display: block; color: var(--muted); font-size: 13px; }
+  .row .val { text-align: right; font-size: 20px; font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .row .val small { display: block; color: var(--muted); font-size: 12px; font-weight: 400; }
+  .row .val.warn { color: var(--warn); }
+  .rows .empty { padding: 14px 12px; color: var(--muted); border-bottom: 1px solid var(--line); }
+  .more { margin-top: 8px; min-height: 44px; padding: 8px 16px; border: 1px solid var(--line); border-radius: 9999px; background: var(--card); font: inherit; color: var(--ink); }
+  .more:hover { border-color: var(--ink); }
+  .more:active, .chip:active { background: var(--line); }
+
+  .explore { display: grid; gap: 16px; }
+  .chart-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 12px; }
+  .chip { min-height: 44px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 9999px; background: var(--card); font: inherit; font-size: 14px; color: var(--ink); }
+  .chip:hover { border-color: var(--ink); }
+  .chip[aria-pressed="true"] { background: var(--soot); border-color: var(--soot); color: #fff; }
+  label.field { display: flex; flex-direction: column; gap: 4px; color: var(--muted); font-size: 13px; }
+  select { min-height: 44px; min-width: 200px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); font: inherit; color: var(--ink); }
+  .status-line { color: var(--muted); font-size: 13px; min-height: 1.6em; margin: 8px 0 0; }
+  .chart { position: relative; height: 340px; margin-top: 8px; }
+
+  .status-card h2 { margin-bottom: 4px; }
+  .status-card dl { margin: 16px 0 0; display: grid; gap: 14px; }
+  .status-card dt { color: var(--muted); font-size: 13px; }
+  .status-card dd { margin: 0; font-size: 20px; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .status-card dd small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; }
+  .status-card .warn { color: var(--warn); }
+  .status-card .forecast { box-shadow: inset 3px 0 0 var(--accent); padding-left: 12px; }
+  .download { margin-top: 20px; min-height: 44px; width: 100%; border: 1px solid var(--accent); border-radius: 9999px;
+              background: var(--accent); color: var(--ink); font: inherit; font-weight: 500; }
+  .download:hover { background: #5cb5f3; }
+  .download:active { background: var(--wash); }
+
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+  th, td { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: right; }
   th:first-child, td:first-child { text-align: left; }
+  th { font-weight: 500; }
+  .accuracy p { margin: 8px 0 12px; }
+
+  footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 16px; }
+
+  @media (min-width: 700px) {
+    .panels, .grid2 { grid-template-columns: 1fr 1fr; }
+    .status-card dl { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1000px) {
+    .explore { grid-template-columns: minmax(0, 1fr) 320px; }
+    .status-card dl { grid-template-columns: 1fr; }
+    .chart { height: 380px; }
+  }
+  @media (max-width: 699px) {
+    .wrap { padding: 20px 14px 40px; }
+    section, .notices { margin-top: 24px; }
+    .card { padding: 16px; }
+    .chart { height: 280px; }
+    select { min-width: 0; width: 100%; }
+    label.field { width: 100%; }
+  }
 </style>
 </head>
 <body>
+<div class="wrap">
 <header>
-<h1>Pemantau Harga Pangan</h1>
-<p>Harga 9 bahan pangan pokok di pasar tradisional 34 provinsi, perkiraan 2 minggu ke depan, dan peringatan untuk harga yang kemungkinan melonjak.</p>
-<p class="muted">Sumber: <a href="https://www.bi.go.id/hargapangan">PIHPS Bank Indonesia</a>. Data sampai <b id="data-date"></b>, diperbarui otomatis setiap hari (<span id="built"></span>).
-<a href="https://github.com/Sidqixx/harga-pangan-forecast">Kode dan metodologi</a> ·
-<a href="https://github.com/Sidqixx/harga-pangan-forecast/blob/main/MODEL_CARD.md">Model card</a></p>
+  <h1>Pemantau Harga Pangan</h1>
+  <p class="lede">Harga 9 bahan pangan pokok di pasar tradisional 34 provinsi, perkiraan 2 minggu ke depan, dan peringatan untuk harga yang kemungkinan melonjak.</p>
+  <p class="meta">Sumber: <a href="https://www.bi.go.id/hargapangan">PIHPS Bank Indonesia</a>. Data sampai <b id="data-date"></b>, diperbarui otomatis setiap hari (<span id="built"></span>).
+  <a href="https://github.com/Sidqixx/harga-pangan-forecast">Kode dan metodologi</a> ·
+  <a href="https://github.com/Sidqixx/harga-pangan-forecast/blob/main/MODEL_CARD.md">Model card</a></p>
 </header>
 
 <main>
-<h2>Bisa melonjak dalam 2 minggu</h2>
-<p class="muted" id="alert-intro"></p>
-<div class="cards" id="alerts"></div>
-<p class="note" id="alert-note"></p>
+  <div class="notices" id="notices" role="status" hidden></div>
 
-<h2>Sudah di atas batas waspada</h2>
-<p class="muted" id="waspada-intro"></p>
-<div class="cards" id="waspada"></div>
-<p class="note">Batas waspada: harga normal 4 minggu terakhir + ambang per komoditas (beras 5%, cabai rawit merah 50%).</p>
+  <section class="panels" aria-label="Peringatan hari ini">
+    <div class="card">
+      <h2 id="alerts-title">Bisa melonjak dalam 2 minggu</h2>
+      <p class="intro" id="alert-intro"></p>
+      <ul class="rows" id="alerts" aria-labelledby="alerts-title"></ul>
+      <button class="more" id="alerts-more" type="button" hidden></button>
+      <p class="note" id="alert-note"></p>
+    </div>
+    <div class="card">
+      <h2 id="waspada-title">Sudah di atas batas waspada</h2>
+      <p class="intro" id="waspada-intro"></p>
+      <ul class="rows" id="waspada" aria-labelledby="waspada-title"></ul>
+      <button class="more" id="waspada-more" type="button" hidden></button>
+      <p class="note">Batas waspada: harga normal 4 minggu terakhir + ambang per komoditas (beras 5%, cabai rawit merah 50%).</p>
+    </div>
+  </section>
 
-<h2>Grafik harga dan perkiraan</h2>
-<div class="controls">
-  <label>Komoditas <select id="commodity"></select></label>
-  <label>Provinsi <select id="province"></select></label>
-  <label>Periode <select id="range"><option value="3m">3 bulan terakhir</option><option value="year">1 tahun terakhir</option><option value="all">Sejak 2017 (per minggu)</option></select></label>
-</div>
-<p class="muted" id="chart-status" role="status">Memuat data…</p>
-<div class="chart"><canvas id="price-chart" role="img" aria-label="Grafik harga dan perkiraan 14 hari"></canvas></div>
-<p class="muted">Area oranye: perkiraan 14 hari ke depan. Harga asli kemungkinan 80% berada di dalam area ini. Garis merah putus-putus: batas waspada.</p>
+  <section class="explore" id="explore" aria-labelledby="chart-title">
+    <div class="card">
+      <div class="chart-head">
+        <h2 id="chart-title">Harga dan perkiraan 14 hari</h2>
+        <label class="field">Periode
+          <select id="range"><option value="3m">3 bulan terakhir</option><option value="year">1 tahun terakhir</option><option value="all">Sejak 2017 (per minggu)</option></select>
+        </label>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Komoditas"></div>
+      <label class="field">Provinsi <select id="province"></select></label>
+      <p class="status-line" id="chart-status" role="status">Memuat data…</p>
+      <div class="chart"><canvas id="price-chart" role="img" aria-label="Grafik harga dan perkiraan 14 hari"></canvas></div>
+      <p class="note">Garis hitam: harga. Area biru: perkiraan 14 hari, harga asli kemungkinan 80% berada di dalamnya. Garis oranye titik-titik: batas waspada.</p>
+    </div>
 
-<div class="grid2">
-  <div>
-    <h2 id="rank-title">Harga terakhir per provinsi</h2>
-    <div class="chart" id="rank-box"><canvas id="rank-chart" role="img" aria-label="Harga terakhir per provinsi"></canvas></div>
-  </div>
-  <div>
-    <h2>Pola harga sekitar Lebaran</h2>
-    <div class="chart"><canvas id="lebaran-chart" role="img" aria-label="Pola harga sekitar Lebaran"></canvas></div>
-    <p class="muted" id="lebaran-note"></p>
-  </div>
-</div>
+    <aside class="card status-card" aria-labelledby="status-title">
+      <h2 id="status-title">Deret terpilih</h2>
+      <p class="meta" id="status-sub"></p>
+      <dl>
+        <div><dt>Harga terakhir</dt><dd id="st-price"></dd></div>
+        <div><dt>Harga normal 4 minggu</dt><dd id="st-normal"></dd></div>
+        <div><dt>Batas waspada</dt><dd id="st-level"></dd></div>
+        <div><dt>Peluang menembus batas dalam 14 hari</dt><dd id="st-p"></dd></div>
+        <div class="forecast"><dt id="st-fc-label">Perkiraan 14 hari</dt><dd id="st-fc"></dd></div>
+      </dl>
+      <button class="download" id="download" type="button">Unduh CSV deret ini</button>
+    </aside>
+  </section>
 
-<h2>Seberapa tepat perkiraannya</h2>
-__LIVE_TABLE__
-<p class="muted">__GATE__</p>
+  <section class="grid2" aria-label="Perbandingan">
+    <div class="card">
+      <h2 id="rank-title">Harga terakhir per provinsi</h2>
+      <div class="chart" id="rank-box"><canvas id="rank-chart" role="img" aria-label="Harga terakhir per provinsi"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>Pola harga sekitar Lebaran</h2>
+      <div class="chart"><canvas id="lebaran-chart" role="img" aria-label="Pola harga sekitar Lebaran"></canvas></div>
+      <p class="note" id="lebaran-note"></p>
+    </div>
+  </section>
+
+  <section class="card accuracy" aria-labelledby="acc-title">
+    <h2 id="acc-title">Seberapa tepat perkiraannya</h2>
+    __LIVE_TABLE__
+    <p class="note">__GATE__</p>
+  </section>
 </main>
 
 <footer>
-<p class="muted">Proyek independen, tidak berafiliasi dengan Bank Indonesia. Perkiraan dan peringatan di halaman ini adalah peluang, bukan kepastian, dan bukan statistik resmi.</p>
+  <p class="meta">Proyek independen, tidak berafiliasi dengan Bank Indonesia. Perkiraan dan peringatan di halaman ini adalah peluang, bukan kepastian, dan bukan statistik resmi.</p>
 </footer>
+</div>
 
 <script id="summary" type="application/json">__SUMMARY__</script>
 <script>
 const S = JSON.parse(document.getElementById("summary").textContent);
 const $ = id => document.getElementById(id);
+const C = { ink: "#0c0a09", muted: "#78716c", line: "#e8e6e5", accent: "#3398e1", wash: "rgba(193,225,247,.75)", warn: "#c2410c" };
 const NAME = Object.fromEntries(S.commodities.map(c => [c.id, c.name]));
+const SHORT = Object.fromEntries(S.commodities.map(c => [c.id, c.short]));
+const THRESHOLD = Object.fromEntries(S.commodities.map(c => [c.id, c.threshold]));
+const BULAN = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
 const rp = v => v == null ? "tidak ada data" : "Rp " + Math.round(v).toLocaleString("id-ID");
 const pct = (v, d = 0) => (v * 100).toLocaleString("id-ID", { minimumFractionDigits: d, maximumFractionDigits: d }) + "%";
+const tgl = iso => { const [y, m, d] = iso.split("-").map(Number); return `${d} ${BULAN[m - 1]} ${y}`; };
 const place = p => p === S.national ? "Nasional" : p;
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
+const lastIndex = arr => { for (let i = arr.length - 1; i >= 0; i--) if (arr[i] != null) return i; return -1; };
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ROWS_SHOWN = 6;
+
+const state = { cid: null, prov: S.national };
 const cache = {};
 const charts = {};
 const load = cid => cache[cid] ??= fetch(`series/${cid}.json`).then(r => {
@@ -100,45 +210,112 @@ const load = cid => cache[cid] ??= fetch(`series/${cid}.json`).then(r => {
 
 $("data-date").textContent = S.dataDate;
 $("built").textContent = S.built;
+if (S.notices.length) {
+  $("notices").hidden = false;
+  $("notices").innerHTML = S.notices.map(n => `<p class="notice">${esc(n)}</p>`).join("");
+}
 
-function card(container, cls, cid, province, html) {
-  const b = document.createElement("button");
-  b.className = "card " + cls;
-  b.innerHTML = html;
-  b.onclick = () => select(cid, province);
-  container.append(b);
+// Today's lists: one row per series, newest risk first; a row opens that series below.
+function list(id, items, row, emptyText) {
+  const ul = $(id), more = $(id + "-more");
+  if (!items.length) { ul.innerHTML = `<li class="empty">${emptyText}</li>`; return; }
+  ul.innerHTML = items.map((it, i) => `<li${i >= ROWS_SHOWN ? " hidden" : ""}><button class="row" type="button" aria-pressed="false"
+    data-cid="${it.cid}" data-prov="${esc(it.province)}">${row(it)}</button></li>`).join("");
+  ul.querySelectorAll(".row").forEach(b => b.onclick = () => select(b.dataset.cid, b.dataset.prov, true));
+  if (items.length > ROWS_SHOWN) {
+    more.hidden = false;
+    more.setAttribute("aria-expanded", "false");
+    more.textContent = `Tampilkan semua (${items.length})`;
+    more.onclick = () => {
+      const open = more.getAttribute("aria-expanded") !== "true";
+      ul.querySelectorAll("li").forEach((li, i) => li.hidden = !open && i >= ROWS_SHOWN);
+      more.setAttribute("aria-expanded", String(open));
+      more.textContent = open ? "Tampilkan lebih sedikit" : `Tampilkan semua (${items.length})`;
+    };
+  }
 }
 
 $("alert-intro").textContent = S.alerts.length
   ? `Masih normal hari ini, tapi berpeluang ${pct(S.alertCutoff)} atau lebih menembus batas waspada dalam 14 hari.`
   : `Hari ini tidak ada harga normal dengan peluang melonjak ${pct(S.alertCutoff)} atau lebih.`;
-$("alert-note").innerHTML = (S.alerts.length ? "Ketuk kartu untuk melihat grafiknya. " : "")
+$("alert-note").innerHTML = (S.alerts.length ? "Pilih baris untuk melihat grafiknya. " : "")
   + "Dalam uji 2 tahun, sekitar 2 dari 3 peringatan seperti ini terjadi. __ALERT_TRACK__";
-S.alerts.forEach(a => card($("alerts"), "", a.cid, a.province,
-  `<b>${NAME[a.cid]}</b>${place(a.province)}<div class="big">${pct(a.p)} <small>peluang melonjak</small></div>
-   <span class="muted">${rp(a.price)} sekarang. Waspada di atas ${rp(a.level)}, ${pct(a.level / a.price - 1, 1)} lagi.</span>`));
+list("alerts", S.alerts, a => `<span><b>${SHORT[a.cid]}</b> · ${esc(place(a.province))}
+  <span class="sub">${rp(a.price)} sekarang, waspada di atas ${rp(a.level)}</span></span>
+  <span class="val">${pct(a.p)}<small>peluang</small></span>`, "Kosong untuk hari ini.");
 
 $("waspada-intro").textContent = S.waspada.length
   ? "Harga yang sudah melewati batas waspadanya."
   : "Hari ini tidak ada harga di atas batas waspada.";
-S.waspada.forEach(w => card($("waspada"), "waspada", w.cid, w.province,
-  `<b>${NAME[w.cid]}</b>${place(w.province)}<div class="big">+${pct(w.change, 1)} <small>di atas harga normal</small></div>
-   <span class="muted">${rp(w.price)} sekarang. Batas waspada komoditas ini +${pct(w.threshold)}.</span>`));
+list("waspada", S.waspada, w => `<span><b>${SHORT[w.cid]}</b> · ${esc(place(w.province))}
+  <span class="sub">${rp(w.price)} sekarang, batas komoditas ini +${pct(w.threshold)}</span></span>
+  <span class="val warn">+${pct(w.change, 1)}<small>di atas normal</small></span>`, "Kosong untuk hari ini.");
 
-S.commodities.forEach(c => $("commodity").add(new Option(c.name, c.id)));
+$("chips").innerHTML = S.commodities.map(c =>
+  `<button class="chip" type="button" aria-pressed="false" data-cid="${c.id}">${c.short}</button>`).join("");
+$("chips").querySelectorAll(".chip").forEach(b => b.onclick = () => select(b.dataset.cid, state.prov));
+$("province").onchange = () => select(state.cid, $("province").value);
+$("range").onchange = () => show();
 
-async function select(cid, province) {
-  $("commodity").value = cid;
-  await show(true, province);
-  $("commodity").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+async function select(cid, prov, scroll) {
+  state.cid = cid;
+  state.prov = prov;
+  await show();
+  if (scroll) $("explore").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
 }
 
-async function fillProvinces(keep) {
-  const d = await load($("commodity").value);
-  const current = keep ?? $("province").value;
-  const list = Object.keys(d.prices).sort((a, b) => a === S.national ? -1 : b === S.national ? 1 : a.localeCompare(b));
-  $("province").replaceChildren(...list.map(p => new Option(place(p), p)));
-  $("province").value = list.includes(current) ? current : S.national;
+async function show() {  // loading and error states around every redraw
+  $("chart-status").textContent = "Memuat data…";
+  try {
+    const d = await load(state.cid);
+    const provinces = Object.keys(d.prices).sort((a, b) => a === S.national ? -1 : b === S.national ? 1 : a.localeCompare(b));
+    if (!provinces.includes(state.prov)) state.prov = S.national;
+    $("province").replaceChildren(...provinces.map(p => new Option(place(p), p)));
+    $("province").value = state.prov;
+    document.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.cid === state.cid)));
+    document.querySelectorAll(".row").forEach(b =>
+      b.setAttribute("aria-pressed", String(b.dataset.cid === state.cid && b.dataset.prov === state.prov)));
+    draw(d);
+    panel(d);
+    $("chart-status").textContent = "";
+  } catch {
+    $("chart-status").textContent = "Data komoditas ini gagal dimuat. Coba muat ulang halaman.";
+  }
+}
+
+function panel(d) {
+  const { cid, prov } = state, prices = d.prices[prov], i = lastIndex(prices);
+  $("status-title").textContent = `${SHORT[cid]} · ${place(prov)}`;
+  $("status-sub").textContent = NAME[cid];
+  const level = d.level[prov], price = i >= 0 ? prices[i] : null;
+  $("st-price").innerHTML = price == null ? "Tidak ada laporan dalam setahun terakhir" : `${rp(price)}<small>${tgl(d.dates[i])}</small>`;
+  $("st-normal").textContent = level ? rp(level / (1 + THRESHOLD[cid])) : "Belum cukup data";
+  $("st-level").innerHTML = level ? `${rp(level)}<small>normal + ${pct(THRESHOLD[cid])}</small>` : "Belum cukup data";
+  const over = level && price != null && price > level;
+  $("st-p").className = over ? "warn" : "";
+  $("st-p").innerHTML = over ? "Sudah di atas batas"
+    : d.p[prov] != null ? `${pct(d.p[prov])}<small>${d.p[prov] >= S.alertCutoff ? "masuk daftar peringatan" : "di bawah ambang peringatan " + pct(S.alertCutoff)}</small>`
+    : "Belum ada skor hari ini";
+  const f = d.forecast, n = f.dates.length - 1;
+  if (n >= 0 && f.p50[prov]) {
+    $("st-fc-label").textContent = `Perkiraan ${tgl(f.dates[n])}`;
+    $("st-fc").innerHTML = `${rp(f.p50[prov][n])}<small>80% kemungkinan antara ${rp(f.p10[prov][n])} dan ${rp(f.p90[prov][n])}</small>`;
+  } else {
+    $("st-fc-label").textContent = "Perkiraan 14 hari";
+    $("st-fc").textContent = "Tidak ada perkiraan: deret ini berhenti melapor";
+  }
+  $("download").onclick = () => download(d);
+}
+
+function download(d) {
+  const { cid, prov } = state, f = d.forecast;
+  const lines = ["tanggal,jenis,harga,perkiraan_batas_bawah_80,perkiraan_batas_atas_80"];
+  d.dates.forEach((t, i) => { if (d.prices[prov][i] != null) lines.push(`${t},harga,${d.prices[prov][i]},,`); });
+  if (f.p50[prov]) f.dates.forEach((t, i) => lines.push(`${t},perkiraan,${f.p50[prov][i]},${f.p10[prov][i]},${f.p90[prov][i]}`));
+  const url = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
+  const a = Object.assign(document.createElement("a"), { href: url, download: `harga-${SHORT[cid]}-${place(prov)}.csv`.toLowerCase().replace(/\s+/g, "-") });
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
 function chart(id, config) {
@@ -146,11 +323,11 @@ function chart(id, config) {
   charts[id] = new Chart($(id), config);
 }
 
-const lastIndex = arr => { for (let i = arr.length - 1; i >= 0; i--) if (arr[i] != null) return i; return -1; };
-
-async function draw() {
-  const cid = $("commodity").value, prov = $("province").value, d = await load(cid);
-  const range = $("range").value;
+function draw(d) {
+  const { cid, prov } = state, range = $("range").value;
+  Chart.defaults.font.family = getComputedStyle(document.body).fontFamily;
+  Chart.defaults.color = C.muted;
+  Chart.defaults.borderColor = C.line;
   const cut = range === "3m" ? Math.max(0, d.dates.length - 65) : 0;  // ~13 weeks of weekday reports
   const hist = range === "all" ? d.weekly
     : { dates: d.dates.slice(cut), prices: Object.fromEntries(Object.entries(d.prices).map(([p, a]) => [p, a.slice(cut)])) };
@@ -165,69 +342,54 @@ async function draw() {
     return a;
   };
   const datasets = [
-    { label: `Harga ${place(prov)}`, data: own, borderColor: "#0969da", borderWidth: 2 },
-    prov !== S.national && { label: "Nasional", data: hist.prices[S.national].concat(Array(nf).fill(null)), borderColor: "#8c959f", borderDash: [4, 4], borderWidth: 1 },
+    { label: `Harga ${place(prov)}`, data: own, borderColor: C.ink, borderWidth: 2 },
+    prov !== S.national && { label: "Nasional", data: hist.prices[S.national].concat(Array(nf).fill(null)), borderColor: C.muted, borderDash: [4, 4], borderWidth: 1 },
     { label: "P10", data: band("p10"), borderWidth: 0, spanGaps: true },
-    { label: "Rentang perkiraan 80%", data: band("p90"), borderWidth: 0, fill: "-1", backgroundColor: "rgba(191,135,0,.25)", spanGaps: true },
-    { label: "Perkiraan tengah", data: band("p50"), borderColor: "#bf8700", borderDash: [6, 4], borderWidth: 2, spanGaps: true },
-    range !== "all" && d.level[prov] && { label: "Batas waspada", data: labels.map(() => d.level[prov]), borderColor: "#cf222e", borderDash: [2, 3], borderWidth: 1 },
+    { label: "Rentang perkiraan 80%", data: band("p90"), borderWidth: 0, fill: "-1", backgroundColor: C.wash, spanGaps: true },
+    { label: "Perkiraan tengah", data: band("p50"), borderColor: C.accent, borderDash: [6, 4], borderWidth: 2, spanGaps: true },
+    range !== "all" && d.level[prov] && { label: "Batas waspada", data: labels.map(() => d.level[prov]), borderColor: C.warn, borderDash: [2, 3], borderWidth: 1.5 },
   ].filter(Boolean).map(s => ({ pointRadius: 0, ...s }));
+  $("chart-title").textContent = `Harga dan perkiraan 14 hari: ${SHORT[cid]}, ${place(prov)}`;
   chart("price-chart", {
-    type: "line", data: { labels, datasets },
+    type: "line", data: { labels: labels.map(tgl), datasets },
     options: {
       maintainAspectRatio: false, animation: false, interaction: { mode: "index", intersect: false },
-      scales: { x: { ticks: { maxTicksLimit: 8 } }, y: { ticks: { callback: rp } } },
+      scales: { x: { ticks: { maxTicksLimit: 6 }, grid: { display: false } }, y: { ticks: { callback: rp } } },
       plugins: {
-        title: { display: true, text: `${NAME[cid]} · ${place(prov)}` },
-        legend: { labels: { filter: i => i.text !== "P10" } },
+        legend: { labels: { filter: i => i.text !== "P10", boxWidth: 14 } },
         tooltip: { filter: i => i.dataset.label !== "P10", callbacks: { label: c => `${c.dataset.label}: ${rp(c.raw)}` } },
       },
     },
   });
 
   const latest = Object.entries(d.prices).map(([p, a]) => [p, a[lastIndex(a)]]).filter(([, v]) => v != null).sort((a, b) => b[1] - a[1]);
-  $("rank-title").textContent = `Harga terakhir per provinsi: ${NAME[cid]}`;
+  $("rank-title").textContent = `Harga terakhir per provinsi: ${SHORT[cid]}`;
   $("rank-box").style.height = `${latest.length * 18 + 60}px`;
   chart("rank-chart", {
     type: "bar",
     data: { labels: latest.map(([p]) => place(p)), datasets: [{ data: latest.map(([, v]) => v),
-      backgroundColor: latest.map(([p]) => p === prov ? "#0969da" : p === S.national ? "#8c959f" : "#d0d7de") }] },
+      backgroundColor: latest.map(([p]) => p === prov ? C.accent : p === S.national ? C.ink : C.muted) }] },
     options: { indexAxis: "y", maintainAspectRatio: false, animation: false,
       plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => rp(c.raw) } } },
-      scales: { x: { ticks: { callback: rp, maxTicksLimit: 5 } }, y: { ticks: { autoSkip: false, font: { size: 11 } } } } },
+      scales: { x: { ticks: { callback: rp, maxTicksLimit: 4 } },
+                y: { grid: { display: false }, ticks: { autoSkip: false, font: c => ({ size: 11, weight: latest[c.index]?.[0] === prov ? "bold" : "normal" }) } } } },
   });
 
   chart("lebaran-chart", {
     type: "line",
-    data: { labels: d.lebaran.offsets, datasets: [{ data: d.lebaran.values, borderColor: "#0969da", pointRadius: 0, borderWidth: 2 }] },
+    data: { labels: d.lebaran.offsets, datasets: [{ data: d.lebaran.values, borderColor: C.ink, pointRadius: 0, borderWidth: 2 }] },
     options: { maintainAspectRatio: false, animation: false,
-      plugins: { legend: { display: false }, title: { display: true, text: `${NAME[cid]}, nasional` },
+      plugins: { legend: { display: false }, title: { display: true, text: `${NAME[cid]}, nasional`, color: C.ink },
                  tooltip: { callbacks: { title: c => `H${c[0].label >= 0 ? "+" : ""}${c[0].label}`, label: c => `${c.raw > 0 ? "+" : ""}${c.raw.toLocaleString("id-ID")}% dibanding H-60 sampai H-45` } } },
-      scales: { x: { title: { display: true, text: "Hari terhadap 1 Syawal" }, ticks: { maxTicksLimit: 7 } },
+      scales: { x: { title: { display: true, text: "Hari terhadap 1 Syawal" }, ticks: { maxTicksLimit: 7 }, grid: { display: false } },
                 y: { ticks: { callback: v => v + "%" } } } },
   });
   $("lebaran-note").textContent = `Harga nasional dibanding harga 45 sampai 60 hari sebelum Lebaran, median dari ${d.lebaran.years} Lebaran sejak 2017.`;
 }
 
-async function show(fill, keep) {  // loading and error states around every redraw
-  $("chart-status").textContent = "Memuat data…";
-  try {
-    if (fill) await fillProvinces(keep);
-    await draw();
-    $("chart-status").textContent = "";
-  } catch {
-    $("chart-status").textContent = "Data komoditas ini gagal dimuat. Coba muat ulang halaman.";
-  }
-}
-
-$("commodity").onchange = () => show(true);
-$("province").onchange = () => show(false);
-$("range").onchange = () => show(false);
-
 window.addEventListener("DOMContentLoaded", () => {
   const first = S.alerts[0] ?? S.waspada[0] ?? { cid: S.commodities[0].id, province: S.national };
-  $("commodity").value = first.cid;
-  show(true, first.province);
+  select(first.cid, first.province, false);
 });
 </script>
 </body>
