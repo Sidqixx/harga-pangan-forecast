@@ -4,3 +4,5 @@ __pycache__/
 site/
 docs/
 .vscode/
+DESIGN.md
+ref-ui.jpg

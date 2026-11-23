@@ -70,6 +70,7 @@
               background: var(--accent); color: var(--ink); font: inherit; font-weight: 500; }
   .download:hover { background: #5cb5f3; }
   .download:active { background: var(--wash); }
+  .download:disabled { background: var(--line); border-color: var(--line); color: var(--muted); cursor: not-allowed; }
 
   .table-wrap { overflow-x: auto; }
   table { border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
@@ -105,7 +106,7 @@
   <h1>Pemantau Harga Pangan</h1>
   <p class="lede">Harga 9 bahan pangan pokok di pasar tradisional 34 provinsi, perkiraan 2 minggu ke depan, dan peringatan untuk harga yang kemungkinan melonjak.</p>
   <p class="meta">Sumber: <a href="https://www.bi.go.id/hargapangan">PIHPS Bank Indonesia</a>. Data sampai <b id="data-date"></b>, diperbarui otomatis setiap hari (<span id="built"></span>).
-  <a href="https://github.com/Sidqixx/harga-pangan-forecast">Kode dan metodologi</a> ·
+  <a href="https://github.com/Sidqixx/harga-pangan-forecast">Kode &amp; cara kerja</a> ·
   <a href="https://github.com/Sidqixx/harga-pangan-forecast/blob/main/MODEL_CARD.md">Model card</a></p>
 </header>
 
@@ -145,7 +146,7 @@
     </div>
 
     <aside class="card status-card" aria-labelledby="status-title">
-      <h2 id="status-title">Deret terpilih</h2>
+      <h2 id="status-title">Harga terpilih</h2>
       <p class="meta" id="status-sub"></p>
       <dl>
         <div><dt>Harga terakhir</dt><dd id="st-price"></dd></div>
@@ -154,7 +155,8 @@
         <div><dt>Peluang menembus batas dalam 14 hari</dt><dd id="st-p"></dd></div>
         <div class="forecast"><dt id="st-fc-label">Perkiraan 14 hari</dt><dd id="st-fc"></dd></div>
       </dl>
-      <button class="download" id="download" type="button">Unduh CSV deret ini</button>
+      <button class="download" id="download" type="button">Unduh data harga (CSV)</button>
+      <p class="note" id="download-note"></p>
     </aside>
   </section>
 
@@ -302,14 +304,19 @@ function panel(d) {
     $("st-fc").innerHTML = `${rp(f.p50[prov][n])}<small>80% kemungkinan antara ${rp(f.p10[prov][n])} dan ${rp(f.p90[prov][n])}</small>`;
   } else {
     $("st-fc-label").textContent = "Perkiraan 14 hari";
-    $("st-fc").textContent = "Tidak ada perkiraan: deret ini berhenti melapor";
+    $("st-fc").textContent = "Tidak ada perkiraan: provinsi ini berhenti melaporkan harga komoditas ini.";
   }
+  const first = prices.findIndex(v => v != null);
+  $("download").disabled = i < 0;
+  $("download-note").textContent = i < 0 ? "Tidak ada harga dalam setahun terakhir untuk diunduh."
+    : `${SHORT[cid]} di ${place(prov)}: harga harian ${tgl(d.dates[first])} sampai ${tgl(d.dates[i])}`
+      + (n >= 0 && f.p50[prov] ? `, ditambah perkiraan sampai ${tgl(f.dates[n])} dengan rentang 80%.` : ".");
   $("download").onclick = () => download(d);
 }
 
 function download(d) {
   const { cid, prov } = state, f = d.forecast;
-  const lines = ["tanggal,jenis,harga,perkiraan_batas_bawah_80,perkiraan_batas_atas_80"];
+  const lines = ["tanggal,jenis,harga_rp,batas_bawah_80persen,batas_atas_80persen"];
   d.dates.forEach((t, i) => { if (d.prices[prov][i] != null) lines.push(`${t},harga,${d.prices[prov][i]},,`); });
   if (f.p50[prov]) f.dates.forEach((t, i) => lines.push(`${t},perkiraan,${f.p50[prov][i]},${f.p10[prov][i]},${f.p90[prov][i]}`));
   const url = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
