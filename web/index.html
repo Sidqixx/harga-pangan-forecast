@@ -22,6 +22,7 @@
   .controls label { display: flex; flex-direction: column; font-size: .85rem; color: var(--muted); }
   select { font: inherit; padding: .35rem .5rem; border: 1px solid var(--line); border-radius: 6px; min-width: 200px; cursor: pointer; }
   .card .big small { font-size: .8rem; font-weight: 400; color: var(--muted); }
+  .note { color: var(--muted); font-size: .8rem; margin: .5rem 0 0; }
   footer { margin-top: 3rem; border-top: 1px solid var(--line); }
   .chart { position: relative; height: 380px; margin-top: .8rem; }
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
@@ -44,10 +45,12 @@
 <h2>Bisa melonjak dalam 2 minggu</h2>
 <p class="muted" id="alert-intro"></p>
 <div class="cards" id="alerts"></div>
+<p class="note" id="alert-note"></p>
 
 <h2>Sudah di atas batas waspada</h2>
 <p class="muted" id="waspada-intro"></p>
 <div class="cards" id="waspada"></div>
+<p class="note">Batas waspada: harga normal 4 minggu terakhir + ambang per komoditas (beras 5%, cabai rawit merah 50%).</p>
 
 <h2>Grafik harga dan perkiraan</h2>
 <div class="controls">
@@ -106,18 +109,18 @@ function card(container, cls, cid, province, html) {
   container.append(b);
 }
 
-$("alert-intro").innerHTML = S.alerts.length
-  ? `${S.alerts.length} harga yang hari ini masih normal punya peluang ${pct(S.alertCutoff)} atau lebih untuk menembus batas waspadanya dalam 14 hari.
-     Dalam pengujian pada data 2 tahun terakhir, sekitar 2 dari 3 peringatan seperti ini memang terjadi. __ALERT_TRACK__ Pilih kartu untuk melihat grafiknya.`
-  : `Hari ini tidak ada harga normal yang peluangnya ${pct(S.alertCutoff)} atau lebih untuk melonjak dalam 14 hari. __ALERT_TRACK__`;
+$("alert-intro").textContent = S.alerts.length
+  ? `Masih normal hari ini, tapi berpeluang ${pct(S.alertCutoff)} atau lebih menembus batas waspada dalam 14 hari.`
+  : `Hari ini tidak ada harga normal dengan peluang melonjak ${pct(S.alertCutoff)} atau lebih.`;
+$("alert-note").innerHTML = (S.alerts.length ? "Ketuk kartu untuk melihat grafiknya. " : "")
+  + "Dalam uji 2 tahun, sekitar 2 dari 3 peringatan seperti ini terjadi. __ALERT_TRACK__";
 S.alerts.forEach(a => card($("alerts"), "", a.cid, a.province,
   `<b>${NAME[a.cid]}</b>${place(a.province)}<div class="big">${pct(a.p)} <small>peluang melonjak</small></div>
    <span class="muted">${rp(a.price)} sekarang. Waspada di atas ${rp(a.level)}, ${pct(a.level / a.price - 1, 1)} lagi.</span>`));
 
-const rule = "Batas waspada adalah harga normal 4 minggu terakhir ditambah ambang per komoditas: 5% untuk beras sampai 50% untuk cabai rawit merah, karena harga cabai wajar bergerak jauh lebih liar.";
-$("waspada-intro").textContent = (S.waspada.length
-  ? `${S.waspada.length} harga sudah lebih tinggi dari batas waspadanya. `
-  : "Hari ini tidak ada harga yang di atas batas waspadanya. ") + rule;
+$("waspada-intro").textContent = S.waspada.length
+  ? "Harga yang sudah melewati batas waspadanya."
+  : "Hari ini tidak ada harga di atas batas waspada.";
 S.waspada.forEach(w => card($("waspada"), "waspada", w.cid, w.province,
   `<b>${NAME[w.cid]}</b>${place(w.province)}<div class="big">+${pct(w.change, 1)} <small>di atas harga normal</small></div>
    <span class="muted">${rp(w.price)} sekarang. Batas waspada komoditas ini +${pct(w.threshold)}.</span>`));

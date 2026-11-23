@@ -123,9 +123,9 @@ def alert_track(df: pd.DataFrame, wide: pd.DataFrame) -> str:
     alerts = live.load(live.ALERTS)
     past = spike.score_alerts(alerts[alerts["p"] >= spike.ALERT_CUTOFF], wide) if len(alerts) else alerts
     if not len(past):
-        return "Rekam jejak harian muncul setelah peringatan pertama lewat 14 hari."
-    return (f"Sejauh ini {angka(len(past), 0)} peringatan sudah lewat 14 hari, "
-            f"dan <b>{angka(past['spike'].mean() * 100, 0)}%</b> di antaranya memang melonjak.")
+        return "Rekam jejak live mulai tampil setelah 14 hari."
+    return (f"Live: <b>{angka(past['spike'].mean() * 100, 0)}%</b> dari {angka(len(past), 0)} peringatan "
+            f"yang sudah lewat 14 hari memang melonjak.")
 
 
 def live_table(df: pd.DataFrame) -> str:
