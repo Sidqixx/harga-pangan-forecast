@@ -4473,3 +4473,134 @@ date,province,commodity_id,commodity,price
 2026-11-20,Sumatera Utara,com_16,Cabai Rawit Merah,53400
 2026-11-20,Sumatera Utara,com_3,Beras Kualitas Medium I,15600
 2026-11-20,Sumatera Utara,com_7,Daging Ayam Ras Segar,40550
+2026-11-23,Bali,com_10,Telur Ayam Ras Segar,27550
+2026-11-23,Bali,com_11,Bawang Merah Ukuran Sedang,26750
+2026-11-23,Bali,com_12,Bawang Putih Ukuran Sedang,28750
+2026-11-23,Bali,com_13,Cabai Merah Besar,37500
+2026-11-23,Bali,com_14,Cabai Merah Keriting,37500
+2026-11-23,Bali,com_15,Cabai Rawit Hijau,50000
+2026-11-23,Bali,com_16,Cabai Rawit Merah,58750
+2026-11-23,Bali,com_3,Beras Kualitas Medium I,15750
+2026-11-23,Bali,com_7,Daging Ayam Ras Segar,40000
+2026-11-23,Banten,com_10,Telur Ayam Ras Segar,25600
+2026-11-23,Banten,com_11,Bawang Merah Ukuran Sedang,40650
+2026-11-23,Banten,com_12,Bawang Putih Ukuran Sedang,35150
+2026-11-23,Banten,com_13,Cabai Merah Besar,53000
+2026-11-23,Banten,com_14,Cabai Merah Keriting,63850
+2026-11-23,Banten,com_15,Cabai Rawit Hijau,54850
+2026-11-23,Banten,com_16,Cabai Rawit Merah,77850
+2026-11-23,Banten,com_3,Beras Kualitas Medium I,16400
+2026-11-23,Banten,com_7,Daging Ayam Ras Segar,39000
+2026-11-23,Gorontalo,com_10,Telur Ayam Ras Segar,32800
+2026-11-23,Gorontalo,com_11,Bawang Merah Ukuran Sedang,42500
+2026-11-23,Gorontalo,com_12,Bawang Putih Ukuran Sedang,38750
+2026-11-23,Gorontalo,com_14,Cabai Merah Keriting,107500
+2026-11-23,Gorontalo,com_16,Cabai Rawit Merah,143150
+2026-11-23,Gorontalo,com_3,Beras Kualitas Medium I,16250
+2026-11-23,Gorontalo,com_7,Daging Ayam Ras Segar,34650
+2026-11-23,Jambi,com_10,Telur Ayam Ras Segar,25850
+2026-11-23,Jambi,com_11,Bawang Merah Ukuran Sedang,35650
+2026-11-23,Jambi,com_12,Bawang Putih Ukuran Sedang,33150
+2026-11-23,Jambi,com_13,Cabai Merah Besar,69500
+2026-11-23,Jambi,com_14,Cabai Merah Keriting,68750
+2026-11-23,Jambi,com_15,Cabai Rawit Hijau,57650
+2026-11-23,Jambi,com_16,Cabai Rawit Merah,70000
+2026-11-23,Jambi,com_3,Beras Kualitas Medium I,17750
+2026-11-23,Jambi,com_7,Daging Ayam Ras Segar,34700
+2026-11-23,Jawa Tengah,com_10,Telur Ayam Ras Segar,23900
+2026-11-23,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,34150
+2026-11-23,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,35900
+2026-11-23,Jawa Tengah,com_13,Cabai Merah Besar,42800
+2026-11-23,Jawa Tengah,com_14,Cabai Merah Keriting,52450
+2026-11-23,Jawa Tengah,com_15,Cabai Rawit Hijau,49600
+2026-11-23,Jawa Tengah,com_16,Cabai Rawit Merah,62350
+2026-11-23,Jawa Tengah,com_3,Beras Kualitas Medium I,16250
+2026-11-23,Jawa Tengah,com_7,Daging Ayam Ras Segar,34200
+2026-11-23,Jawa Timur,com_10,Telur Ayam Ras Segar,22900
+2026-11-23,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,34150
+2026-11-23,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,28650
+2026-11-23,Jawa Timur,com_13,Cabai Merah Besar,37500
+2026-11-23,Jawa Timur,com_14,Cabai Merah Keriting,58750
+2026-11-23,Jawa Timur,com_15,Cabai Rawit Hijau,47000
+2026-11-23,Jawa Timur,com_16,Cabai Rawit Merah,57750
+2026-11-23,Jawa Timur,com_3,Beras Kualitas Medium I,16100
+2026-11-23,Jawa Timur,com_7,Daging Ayam Ras Segar,32500
+2026-11-23,Kalimantan Timur,com_10,Telur Ayam Ras Segar,29600
+2026-11-23,Kalimantan Timur,com_11,Bawang Merah Ukuran Sedang,47500
+2026-11-23,Kalimantan Timur,com_12,Bawang Putih Ukuran Sedang,45000
+2026-11-23,Kalimantan Timur,com_13,Cabai Merah Besar,80000
+2026-11-23,Kalimantan Timur,com_14,Cabai Merah Keriting,82500
+2026-11-23,Kalimantan Timur,com_15,Cabai Rawit Hijau,90000
+2026-11-23,Kalimantan Timur,com_16,Cabai Rawit Merah,95000
+2026-11-23,Kalimantan Timur,com_3,Beras Kualitas Medium I,17000
+2026-11-23,Kalimantan Timur,com_7,Daging Ayam Ras Segar,38350
+2026-11-23,Kalimantan Utara,com_10,Telur Ayam Ras Segar,29200
+2026-11-23,Kalimantan Utara,com_11,Bawang Merah Ukuran Sedang,44000
+2026-11-23,Kalimantan Utara,com_12,Bawang Putih Ukuran Sedang,42000
+2026-11-23,Kalimantan Utara,com_13,Cabai Merah Besar,85850
+2026-11-23,Kalimantan Utara,com_14,Cabai Merah Keriting,99150
+2026-11-23,Kalimantan Utara,com_15,Cabai Rawit Hijau,77900
+2026-11-23,Kalimantan Utara,com_16,Cabai Rawit Merah,107500
+2026-11-23,Kalimantan Utara,com_3,Beras Kualitas Medium I,17300
+2026-11-23,Kalimantan Utara,com_7,Daging Ayam Ras Segar,46250
+2026-11-23,Lampung,com_10,Telur Ayam Ras Segar,25200
+2026-11-23,Lampung,com_11,Bawang Merah Ukuran Sedang,32750
+2026-11-23,Lampung,com_12,Bawang Putih Ukuran Sedang,35150
+2026-11-23,Lampung,com_13,Cabai Merah Besar,66000
+2026-11-23,Lampung,com_14,Cabai Merah Keriting,64150
+2026-11-23,Lampung,com_15,Cabai Rawit Hijau,57400
+2026-11-23,Lampung,com_16,Cabai Rawit Merah,66250
+2026-11-23,Lampung,com_3,Beras Kualitas Medium I,16350
+2026-11-23,Lampung,com_7,Daging Ayam Ras Segar,32400
+2026-11-23,Maluku Utara,com_10,Telur Ayam Ras Segar,42250
+2026-11-23,Maluku Utara,com_11,Bawang Merah Ukuran Sedang,65000
+2026-11-23,Maluku Utara,com_12,Bawang Putih Ukuran Sedang,65000
+2026-11-23,Maluku Utara,com_14,Cabai Merah Keriting,170000
+2026-11-23,Maluku Utara,com_16,Cabai Rawit Merah,200000
+2026-11-23,Maluku Utara,com_3,Beras Kualitas Medium I,17000
+2026-11-23,Maluku Utara,com_7,Daging Ayam Ras Segar,45000
+2026-11-23,Nusa Tenggara Timur,com_10,Telur Ayam Ras Segar,30850
+2026-11-23,Nusa Tenggara Timur,com_11,Bawang Merah Ukuran Sedang,31650
+2026-11-23,Nusa Tenggara Timur,com_12,Bawang Putih Ukuran Sedang,42900
+2026-11-23,Nusa Tenggara Timur,com_13,Cabai Merah Besar,52100
+2026-11-23,Nusa Tenggara Timur,com_14,Cabai Merah Keriting,56650
+2026-11-23,Nusa Tenggara Timur,com_15,Cabai Rawit Hijau,55000
+2026-11-23,Nusa Tenggara Timur,com_16,Cabai Rawit Merah,67500
+2026-11-23,Nusa Tenggara Timur,com_3,Beras Kualitas Medium I,14900
+2026-11-23,Nusa Tenggara Timur,com_7,Daging Ayam Ras Segar,46950
+2026-11-23,Papua,com_10,Telur Ayam Ras Segar,37600
+2026-11-23,Papua,com_11,Bawang Merah Ukuran Sedang,62250
+2026-11-23,Papua,com_12,Bawang Putih Ukuran Sedang,54750
+2026-11-23,Papua,com_13,Cabai Merah Besar,105250
+2026-11-23,Papua,com_14,Cabai Merah Keriting,126750
+2026-11-23,Papua,com_15,Cabai Rawit Hijau,85750
+2026-11-23,Papua,com_16,Cabai Rawit Merah,146000
+2026-11-23,Papua,com_3,Beras Kualitas Medium I,19750
+2026-11-23,Papua,com_7,Daging Ayam Ras Segar,50400
+2026-11-23,Semua Provinsi,com_10,Telur Ayam Ras Segar,29250
+2026-11-23,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,40950
+2026-11-23,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,40200
+2026-11-23,Semua Provinsi,com_13,Cabai Merah Besar,62350
+2026-11-23,Semua Provinsi,com_14,Cabai Merah Keriting,82000
+2026-11-23,Semua Provinsi,com_15,Cabai Rawit Hijau,72700
+2026-11-23,Semua Provinsi,com_16,Cabai Rawit Merah,97550
+2026-11-23,Semua Provinsi,com_3,Beras Kualitas Medium I,16650
+2026-11-23,Semua Provinsi,com_7,Daging Ayam Ras Segar,38500
+2026-11-23,Sulawesi Tengah,com_10,Telur Ayam Ras Segar,30600
+2026-11-23,Sulawesi Tengah,com_11,Bawang Merah Ukuran Sedang,39250
+2026-11-23,Sulawesi Tengah,com_12,Bawang Putih Ukuran Sedang,41250
+2026-11-23,Sulawesi Tengah,com_13,Cabai Merah Besar,59850
+2026-11-23,Sulawesi Tengah,com_14,Cabai Merah Keriting,90000
+2026-11-23,Sulawesi Tengah,com_15,Cabai Rawit Hijau,166250
+2026-11-23,Sulawesi Tengah,com_16,Cabai Rawit Merah,141250
+2026-11-23,Sulawesi Tengah,com_3,Beras Kualitas Medium I,16000
+2026-11-23,Sulawesi Tengah,com_7,Daging Ayam Ras Segar,34750
+2026-11-23,Sumatera Selatan,com_10,Telur Ayam Ras Segar,25250
+2026-11-23,Sumatera Selatan,com_11,Bawang Merah Ukuran Sedang,36750
+2026-11-23,Sumatera Selatan,com_12,Bawang Putih Ukuran Sedang,36500
+2026-11-23,Sumatera Selatan,com_13,Cabai Merah Besar,59000
+2026-11-23,Sumatera Selatan,com_14,Cabai Merah Keriting,70250
+2026-11-23,Sumatera Selatan,com_15,Cabai Rawit Hijau,81250
+2026-11-23,Sumatera Selatan,com_16,Cabai Rawit Merah,72250
+2026-11-23,Sumatera Selatan,com_3,Beras Kualitas Medium I,16250
+2026-11-23,Sumatera Selatan,com_7,Daging Ayam Ras Segar,29750
