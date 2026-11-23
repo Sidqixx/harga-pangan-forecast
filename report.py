@@ -93,8 +93,8 @@ def summary(df: pd.DataFrame, wide: pd.DataFrame, level: pd.Series) -> dict:
     hot = alerts[alerts["p"] >= spike.ALERT_CUTOFF].sort_values("p", ascending=False) if len(alerts) else alerts
     n = names(df)
     return {
-        "dataDate": f"{df['date'].max():%d %b %Y}",
-        "built": datetime.now(timezone.utc).strftime("%d %b %Y %H:%M UTC"),
+        "dataDate": tanggal(df["date"].max()),
+        "built": f"{tanggal(datetime.now(timezone.utc))} {datetime.now(timezone.utc):%H:%M} UTC",
         "national": NATIONAL,
         "commodities": [{"id": c, "name": n[c], "threshold": spike.THRESHOLDS[c]} for c in sorted(n.index, key=n.get)],
         "series": len(st),
@@ -106,45 +106,63 @@ def summary(df: pd.DataFrame, wide: pd.DataFrame, level: pd.Series) -> dict:
     }
 
 
+BULAN = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"]
+
+
+def tanggal(ts) -> str:
+    ts = pd.Timestamp(ts)
+    return f"{ts.day} {BULAN[ts.month - 1]} {ts.year}"
+
+
+def angka(v: float, digits: int = 1) -> str:
+    """Indonesian number format: 1.234 and 3,2."""
+    return f"{v:,.{digits}f}".replace(",", "_").replace(".", ",").replace("_", ".")
+
+
 def alert_track(df: pd.DataFrame, wide: pd.DataFrame) -> str:
     alerts = live.load(live.ALERTS)
     past = spike.score_alerts(alerts[alerts["p"] >= spike.ALERT_CUTOFF], wide) if len(alerts) else alerts
     if not len(past):
-        return "Rekam jejak live muncul setelah peringatan pertama lewat 14 hari."
-    return f"Live: dari {len(past):,} peringatan yang 14 harinya sudah lewat, <b>{past['spike'].mean():.0%}</b> benar-benar melonjak."
+        return "Rekam jejak harian muncul setelah peringatan pertama lewat 14 hari."
+    return (f"Sejauh ini {angka(len(past), 0)} peringatan sudah lewat 14 hari, "
+            f"dan <b>{angka(past['spike'].mean() * 100, 0)}%</b> di antaranya memang melonjak.")
 
 
 def live_table(df: pd.DataFrame) -> str:
     """Accuracy of the daily forecasts so far, scored against prices that have since been reported."""
     s = live.score(df)
     if s.empty:
-        return "<p>Belum ada forecast yang bisa dinilai: harga aslinya belum keluar.</p>"
-    s = s.assign(horizon=pd.cut(s["h"], [0, 3, 7, HORIZON], labels=["1-3 hari", "4-7 hari", "8-14 hari"]))
+        return "<p>Belum ada perkiraan yang bisa dinilai karena harga aslinya belum keluar.</p>"
+    s = s.assign(horizon=pd.cut(s["h"], [0, 3, 7, HORIZON], labels=["1 sampai 3 hari", "4 sampai 7 hari", "8 sampai 14 hari"]))
     table = pd.DataFrame([
         {
-            "Horizon": hz, "Dinilai": len(g),
-            "Error naive (harga terakhir)": backtest.mape(g["naive"], g["actual"]),
-            "Error model (P50)": backtest.mape(g["p50"], g["actual"]),
-            "Harga asli di rentang P10-P90": g["actual"].between(g["p10"], g["p90"]).mean(),
+            "Perkiraan untuk": hz, "Sudah dinilai": len(g),
+            "Meleset, tebakan harga terakhir": backtest.mape(g["naive"], g["actual"]),
+            "Meleset, model": backtest.mape(g["p50"], g["actual"]),
+            "Harga asli di rentang 80%": g["actual"].between(g["p10"], g["p90"]).mean() * 100,
         }
         for hz, g in s.groupby("horizon", observed=True)
     ]).to_html(index=False, border=0, formatters={
-        "Dinilai": "{:,}".format, "Error naive (harga terakhir)": "{:.1f}%".format,
-        "Error model (P50)": "{:.1f}%".format, "Harga asli di rentang P10-P90": "{:.0%}".format,
+        "Sudah dinilai": lambda v: angka(v, 0), "Meleset, tebakan harga terakhir": lambda v: angka(v) + "%",
+        "Meleset, model": lambda v: angka(v) + "%", "Harga asli di rentang 80%": lambda v: angka(v, 0) + "%",
     })
-    return (f"<p>Forecast harian berjalan sejak <b>{s['origin'].min():%d %b %Y}</b>. "
-            f"{len(s):,} prediksi sudah dinilai dengan harga asli (error = MAPE, makin kecil makin baik; "
-            f"rentang P10-P90 yang jujur memuat sekitar 80% harga asli).</p>\n{table}")
+    return (f"<p>Setiap perkiraan dicocokkan dengan harga asli begitu harganya keluar. Perkiraan harian berjalan sejak "
+            f"<b>{tanggal(s['origin'].min())}</b>, dan {angka(len(s), 0)} sudah dinilai. Meleset adalah rata-rata selisih "
+            f"dalam persen, makin kecil makin baik. Kolom terakhir idealnya sekitar 80%.</p>\n{table}")
 
 
 def gate_line() -> str:
     if not live.STATUS.exists():
         return ""
     s = json.loads(live.STATUS.read_text())
-    verdict = "<b>lolos</b>" if s["passed"] else "<b>GAGAL</b>, forecast dan peringatan terakhir yang lolos tetap ditampilkan"
-    return (f'Gerbang rilis model {s["date"]}: {verdict}. Diuji ulang pada {s["holdout"]} yang tidak dilihat model: '
-            f'error forecast {s["forecast_mape"]:.1f}% vs naive {s["naive_mape"]:.1f}%, rentang P10-P90 memuat {s["coverage"]:.0%} harga asli, '
-            f'kualitas peringatan (average precision) {s["spike_ap"]:.2f} vs heuristik {s["heuristic_ap"]:.2f}.')
+    start, end = s["holdout"].split(" .. ")
+    verdict = ("lolos" if s["passed"]
+               else "tidak lolos, jadi perkiraan dan peringatan yang tampil adalah versi terakhir yang lolos")
+    return (f"Pemeriksaan model {tanggal(s['date'])}: <b>{verdict}</b>. Sebelum dipakai, model diuji ulang pada "
+            f"{tanggal(start)} sampai {tanggal(end)}, periode yang belum pernah ia lihat. Perkiraannya meleset "
+            f"{angka(s['forecast_mape'])}% (tebakan harga terakhir: {angka(s['naive_mape'])}%), "
+            f"{angka(s['coverage'] * 100, 0)}% harga asli masuk rentang 80%, dan skor ketepatan peringatannya "
+            f"{angka(s['spike_ap'], 2)} (aturan sederhana: {angka(s['heuristic_ap'], 2)}; skala 0 sampai 1).")
 
 
 def main() -> None:

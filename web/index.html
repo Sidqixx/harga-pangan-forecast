@@ -20,66 +20,80 @@
   .card .big { font-size: 1.3rem; font-weight: 700; }
   .controls { display: flex; flex-wrap: wrap; gap: .8rem; align-items: end; padding: .8rem; background: var(--bg2); border-radius: 8px; position: sticky; top: 0; z-index: 1; }
   .controls label { display: flex; flex-direction: column; font-size: .85rem; color: var(--muted); }
-  select { font: inherit; padding: .35rem .5rem; border: 1px solid var(--line); border-radius: 6px; min-width: 200px; }
+  select { font: inherit; padding: .35rem .5rem; border: 1px solid var(--line); border-radius: 6px; min-width: 200px; cursor: pointer; }
+  .card .big small { font-size: .8rem; font-weight: 400; color: var(--muted); }
+  footer { margin-top: 3rem; border-top: 1px solid var(--line); }
   .chart { position: relative; height: 380px; margin-top: .8rem; }
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
-  table { border-collapse: collapse; font-size: .9rem; }
+  @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } .controls { position: static; } }
+  table { border-collapse: collapse; font-size: .9rem; display: block; max-width: 100%; overflow-x: auto; }
   th, td { padding: .3rem .7rem; border-bottom: 1px solid var(--line); text-align: right; }
   th:first-child, td:first-child { text-align: left; }
 </style>
 </head>
 <body>
+<header>
 <h1>Pemantau Harga Pangan</h1>
-<p class="muted">Harga harian pasar tradisional dari <a href="https://www.bi.go.id/hargapangan">PIHPS Bank Indonesia</a>,
-data sampai <b id="data-date"></b>. Diperbarui otomatis setiap hari (<span id="built"></span>).
-<a href="https://github.com/Sidqixx/harga-pangan-forecast">Kode &amp; metodologi</a> ·
+<p>Harga 9 bahan pangan pokok di pasar tradisional 34 provinsi, perkiraan 2 minggu ke depan, dan peringatan untuk harga yang kemungkinan melonjak.</p>
+<p class="muted">Sumber: <a href="https://www.bi.go.id/hargapangan">PIHPS Bank Indonesia</a>. Data sampai <b id="data-date"></b>, diperbarui otomatis setiap hari (<span id="built"></span>).
+<a href="https://github.com/Sidqixx/harga-pangan-forecast">Kode dan metodologi</a> ·
 <a href="https://github.com/Sidqixx/harga-pangan-forecast/blob/main/MODEL_CARD.md">Model card</a></p>
+</header>
 
-<h2>Peringatan dini: berpeluang melonjak dalam 14 hari</h2>
+<main>
+<h2>Bisa melonjak dalam 2 minggu</h2>
 <p class="muted" id="alert-intro"></p>
 <div class="cards" id="alerts"></div>
 
-<h2>Sedang waspada</h2>
+<h2>Sudah di atas batas waspada</h2>
 <p class="muted" id="waspada-intro"></p>
 <div class="cards" id="waspada"></div>
 
-<h2>Jelajahi harga</h2>
+<h2>Grafik harga dan perkiraan</h2>
 <div class="controls">
   <label>Komoditas <select id="commodity"></select></label>
   <label>Provinsi <select id="province"></select></label>
-  <label>Rentang <select id="range"><option value="3m">3 bulan terakhir (harian)</option><option value="year">1 tahun terakhir (harian)</option><option value="all">Sejak 2017 (mingguan)</option></select></label>
+  <label>Periode <select id="range"><option value="3m">3 bulan terakhir</option><option value="year">1 tahun terakhir</option><option value="all">Sejak 2017 (per minggu)</option></select></label>
 </div>
-<div class="chart"><canvas id="price-chart" aria-label="Grafik harga dan forecast"></canvas></div>
-<p class="muted">Area oranye: forecast 14 hari, 80% kemungkinan harga ada di dalamnya (P10–P90). Garis merah putus-putus: batas waspada.</p>
+<p class="muted" id="chart-status" role="status">Memuat data…</p>
+<div class="chart"><canvas id="price-chart" role="img" aria-label="Grafik harga dan perkiraan 14 hari"></canvas></div>
+<p class="muted">Area oranye: perkiraan 14 hari ke depan. Harga asli kemungkinan 80% berada di dalam area ini. Garis merah putus-putus: batas waspada.</p>
 
 <div class="grid2">
   <div>
-    <h2 id="rank-title">Harga per provinsi</h2>
-    <div class="chart" id="rank-box"><canvas id="rank-chart" aria-label="Harga terakhir per provinsi"></canvas></div>
+    <h2 id="rank-title">Harga terakhir per provinsi</h2>
+    <div class="chart" id="rank-box"><canvas id="rank-chart" role="img" aria-label="Harga terakhir per provinsi"></canvas></div>
   </div>
   <div>
-    <h2>Pola sekitar Lebaran</h2>
-    <div class="chart"><canvas id="lebaran-chart" aria-label="Pola harga sekitar Lebaran"></canvas></div>
+    <h2>Pola harga sekitar Lebaran</h2>
+    <div class="chart"><canvas id="lebaran-chart" role="img" aria-label="Pola harga sekitar Lebaran"></canvas></div>
     <p class="muted" id="lebaran-note"></p>
   </div>
 </div>
 
-<h2>Akurasi forecast (live)</h2>
+<h2>Seberapa tepat perkiraannya</h2>
 __LIVE_TABLE__
 <p class="muted">__GATE__</p>
+</main>
+
+<footer>
+<p class="muted">Proyek independen, tidak berafiliasi dengan Bank Indonesia. Perkiraan dan peringatan di halaman ini adalah peluang, bukan kepastian, dan bukan statistik resmi.</p>
+</footer>
 
 <script id="summary" type="application/json">__SUMMARY__</script>
 <script>
 const S = JSON.parse(document.getElementById("summary").textContent);
 const $ = id => document.getElementById(id);
 const NAME = Object.fromEntries(S.commodities.map(c => [c.id, c.name]));
-const rp = v => v == null ? "–" : "Rp " + Math.round(v).toLocaleString("id-ID");
-const pct = (v, d = 0) => (v * 100).toFixed(d) + "%";
+const rp = v => v == null ? "tidak ada data" : "Rp " + Math.round(v).toLocaleString("id-ID");
+const pct = (v, d = 0) => (v * 100).toLocaleString("id-ID", { minimumFractionDigits: d, maximumFractionDigits: d }) + "%";
 const place = p => p === S.national ? "Nasional" : p;
 const cache = {};
 const charts = {};
-const load = cid => cache[cid] ??= fetch(`series/${cid}.json`).then(r => r.json());
+const load = cid => cache[cid] ??= fetch(`series/${cid}.json`).then(r => {
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}).catch(e => { delete cache[cid]; throw e; });
 
 $("data-date").textContent = S.dataDate;
 $("built").textContent = S.built;
@@ -92,26 +106,28 @@ function card(container, cls, cid, province, html) {
   container.append(b);
 }
 
-$("alert-intro").innerHTML = `${S.alerts.length} deret yang hari ini masih normal berpeluang &ge; ${pct(S.alertCutoff)} menembus batas waspadanya.
-  Di backtest 2 tahun, 65% peringatan seperti ini benar-benar melonjak. __ALERT_TRACK__ Klik kartu untuk melihat grafiknya.`;
+$("alert-intro").innerHTML = S.alerts.length
+  ? `${S.alerts.length} harga yang hari ini masih normal punya peluang ${pct(S.alertCutoff)} atau lebih untuk menembus batas waspadanya dalam 14 hari.
+     Dalam pengujian pada data 2 tahun terakhir, sekitar 2 dari 3 peringatan seperti ini memang terjadi. __ALERT_TRACK__ Pilih kartu untuk melihat grafiknya.`
+  : `Hari ini tidak ada harga normal yang peluangnya ${pct(S.alertCutoff)} atau lebih untuk melonjak dalam 14 hari. __ALERT_TRACK__`;
 S.alerts.forEach(a => card($("alerts"), "", a.cid, a.province,
-  `<b>${NAME[a.cid]}</b>${place(a.province)}<div class="big">${pct(a.p)}</div>
-   <span class="muted">sekarang ${rp(a.price)}, batas ${rp(a.level)}</span>`));
+  `<b>${NAME[a.cid]}</b>${place(a.province)}<div class="big">${pct(a.p)} <small>peluang melonjak</small></div>
+   <span class="muted">${rp(a.price)} sekarang. Waspada di atas ${rp(a.level)}, ${pct(a.level / a.price - 1, 1)} lagi.</span>`));
 
-$("waspada-intro").textContent = S.waspada.length
-  ? `${S.waspada.length} dari ${S.series} deret sudah di atas batas waspadanya (median 4 minggu + ambang per komoditas, dari beras 5% sampai cabai rawit merah 50%).`
-  : `Tidak ada dari ${S.series} deret yang sedang di atas batas waspadanya (median 4 minggu + ambang per komoditas, dari beras 5% sampai cabai rawit merah 50%).`;
+const rule = "Batas waspada adalah harga normal 4 minggu terakhir ditambah ambang per komoditas: 5% untuk beras sampai 50% untuk cabai rawit merah, karena harga cabai wajar bergerak jauh lebih liar.";
+$("waspada-intro").textContent = (S.waspada.length
+  ? `${S.waspada.length} harga sudah lebih tinggi dari batas waspadanya. `
+  : "Hari ini tidak ada harga yang di atas batas waspadanya. ") + rule;
 S.waspada.forEach(w => card($("waspada"), "waspada", w.cid, w.province,
-  `<b>${NAME[w.cid]}</b>${place(w.province)}<div class="big">+${pct(w.change, 1)}</div>
-   <span class="muted">${rp(w.price)} · batas +${pct(w.threshold)}</span>`));
+  `<b>${NAME[w.cid]}</b>${place(w.province)}<div class="big">+${pct(w.change, 1)} <small>di atas harga normal</small></div>
+   <span class="muted">${rp(w.price)} sekarang. Batas waspada komoditas ini +${pct(w.threshold)}.</span>`));
 
 S.commodities.forEach(c => $("commodity").add(new Option(c.name, c.id)));
 
 async function select(cid, province) {
   $("commodity").value = cid;
-  await fillProvinces(province);
-  await draw();
-  $("commodity").scrollIntoView({ behavior: "smooth", block: "start" });
+  await show(true, province);
+  $("commodity").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
 }
 
 async function fillProvinces(keep) {
@@ -149,8 +165,8 @@ async function draw() {
     { label: `Harga ${place(prov)}`, data: own, borderColor: "#0969da", borderWidth: 2 },
     prov !== S.national && { label: "Nasional", data: hist.prices[S.national].concat(Array(nf).fill(null)), borderColor: "#8c959f", borderDash: [4, 4], borderWidth: 1 },
     { label: "P10", data: band("p10"), borderWidth: 0, spanGaps: true },
-    { label: "Forecast 80% (P10–P90)", data: band("p90"), borderWidth: 0, fill: "-1", backgroundColor: "rgba(191,135,0,.25)", spanGaps: true },
-    { label: "Forecast (P50)", data: band("p50"), borderColor: "#bf8700", borderDash: [6, 4], borderWidth: 2, spanGaps: true },
+    { label: "Rentang perkiraan 80%", data: band("p90"), borderWidth: 0, fill: "-1", backgroundColor: "rgba(191,135,0,.25)", spanGaps: true },
+    { label: "Perkiraan tengah", data: band("p50"), borderColor: "#bf8700", borderDash: [6, 4], borderWidth: 2, spanGaps: true },
     range !== "all" && d.level[prov] && { label: "Batas waspada", data: labels.map(() => d.level[prov]), borderColor: "#cf222e", borderDash: [2, 3], borderWidth: 1 },
   ].filter(Boolean).map(s => ({ pointRadius: 0, ...s }));
   chart("price-chart", {
@@ -183,22 +199,32 @@ async function draw() {
     data: { labels: d.lebaran.offsets, datasets: [{ data: d.lebaran.values, borderColor: "#0969da", pointRadius: 0, borderWidth: 2 }] },
     options: { maintainAspectRatio: false, animation: false,
       plugins: { legend: { display: false }, title: { display: true, text: `${NAME[cid]}, nasional` },
-                 tooltip: { callbacks: { title: c => `H${c[0].label >= 0 ? "+" : ""}${c[0].label}`, label: c => `${c.raw > 0 ? "+" : ""}${c.raw}% vs H-60 s.d. H-45` } } },
+                 tooltip: { callbacks: { title: c => `H${c[0].label >= 0 ? "+" : ""}${c[0].label}`, label: c => `${c.raw > 0 ? "+" : ""}${c.raw.toLocaleString("id-ID")}% dibanding H-60 sampai H-45` } } },
       scales: { x: { title: { display: true, text: "Hari terhadap 1 Syawal" }, ticks: { maxTicksLimit: 7 } },
                 y: { ticks: { callback: v => v + "%" } } } },
   });
-  $("lebaran-note").textContent = `Median ${d.lebaran.years} Lebaran sejak 2017, harga nasional relatif terhadap harga 45-60 hari sebelumnya.`;
+  $("lebaran-note").textContent = `Harga nasional dibanding harga 45 sampai 60 hari sebelum Lebaran, median dari ${d.lebaran.years} Lebaran sejak 2017.`;
 }
 
-$("commodity").onchange = async () => { await fillProvinces(); draw(); };
-$("province").onchange = draw;
-$("range").onchange = draw;
+async function show(fill, keep) {  // loading and error states around every redraw
+  $("chart-status").textContent = "Memuat data…";
+  try {
+    if (fill) await fillProvinces(keep);
+    await draw();
+    $("chart-status").textContent = "";
+  } catch {
+    $("chart-status").textContent = "Data komoditas ini gagal dimuat. Coba muat ulang halaman.";
+  }
+}
 
-window.addEventListener("DOMContentLoaded", async () => {
+$("commodity").onchange = () => show(true);
+$("province").onchange = () => show(false);
+$("range").onchange = () => show(false);
+
+window.addEventListener("DOMContentLoaded", () => {
   const first = S.alerts[0] ?? S.waspada[0] ?? { cid: S.commodities[0].id, province: S.national };
   $("commodity").value = first.cid;
-  await fillProvinces(first.province);
-  draw();
+  show(true, first.province);
 });
 </script>
 </body>
