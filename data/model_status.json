@@ -5,7 +5,7 @@
   "naive_mape": 3.35,
   "coverage": 0.828,
   "spike_rate": 0.012,
-  "spike_ap": 0.151,
-  "heuristic_ap": 0.094,
+  "spike_ap": 0.152,
+  "heuristic_ap": 0.095,
   "passed": true
 }
