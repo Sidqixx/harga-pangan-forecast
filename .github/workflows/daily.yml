@@ -1,9 +1,14 @@
 name: daily
 
 on:
-  schedule:
-    - cron: "17 3 * * *" # 10:17 WIB; GitHub delays or drops schedules at the top of the hour under load
+  schedule: # GitHub delays scheduled runs by hours, or drops them, under load; the second slot is a backup
+    - cron: "17 3 * * *" # 10:17 WIB
+    - cron: "47 7 * * *" # 14:47 WIB; every step is idempotent, so a second run in one day only refreshes
   workflow_dispatch:
+
+concurrency: # never let two runs commit data at the same time; a later trigger waits for the running one
+  group: daily
+  cancel-in-progress: false
 
 permissions:
   contents: write

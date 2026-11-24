@@ -11,7 +11,7 @@ A daily-updated pipeline over Indonesia's official food price survey ([PIHPS, Ba
 ## Pipeline
 
 ```
-GitHub Actions, daily 10:17 WIB
+GitHub Actions, daily 10:17 WIB (backup run 14:47 WIB)
   pytest      tests first; a broken change never touches the data
   fetch.py    PIHPS API -> data/raw/YYYY-MM.csv   (re-fetches the last 14 days to catch late entries and revisions)
   quality.py  checks; the job fails (and emails) if the newest price is more than 10 days old
