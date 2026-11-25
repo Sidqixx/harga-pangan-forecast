@@ -2,7 +2,7 @@
   "date": "2026-11-25",
   "holdout": "2026-10-15 .. 2026-11-11",
   "forecast_mape": 3.25,
-  "naive_mape": 3.37,
+  "naive_mape": 3.36,
   "coverage": 0.829,
   "spike_rate": 0.011,
   "spike_ap": 0.118,
