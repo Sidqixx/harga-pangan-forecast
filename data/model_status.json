@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-25",
-  "holdout": "2026-10-15 .. 2026-11-11",
-  "forecast_mape": 3.25,
-  "naive_mape": 3.36,
-  "coverage": 0.829,
-  "spike_rate": 0.011,
-  "spike_ap": 0.118,
-  "heuristic_ap": 0.091,
+  "date": "2026-11-26",
+  "holdout": "2026-10-16 .. 2026-11-12",
+  "forecast_mape": 3.26,
+  "naive_mape": 3.38,
+  "coverage": 0.828,
+  "spike_rate": 0.009,
+  "spike_ap": 0.078,
+  "heuristic_ap": 0.076,
   "passed": true
 }
