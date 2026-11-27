@@ -5741,15 +5741,15 @@ date,province,commodity_id,commodity,price
 2026-11-27,Jawa Barat,com_16,Cabai Rawit Merah,73350
 2026-11-27,Jawa Barat,com_3,Beras Kualitas Medium I,15850
 2026-11-27,Jawa Barat,com_7,Daging Ayam Ras Segar,35300
-2026-11-27,Jawa Tengah,com_10,Telur Ayam Ras Segar,24700
-2026-11-27,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,34750
-2026-11-27,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,36850
-2026-11-27,Jawa Tengah,com_13,Cabai Merah Besar,45950
-2026-11-27,Jawa Tengah,com_14,Cabai Merah Keriting,53950
-2026-11-27,Jawa Tengah,com_15,Cabai Rawit Hijau,52950
-2026-11-27,Jawa Tengah,com_16,Cabai Rawit Merah,60900
+2026-11-27,Jawa Tengah,com_10,Telur Ayam Ras Segar,24750
+2026-11-27,Jawa Tengah,com_11,Bawang Merah Ukuran Sedang,34850
+2026-11-27,Jawa Tengah,com_12,Bawang Putih Ukuran Sedang,36800
+2026-11-27,Jawa Tengah,com_13,Cabai Merah Besar,45650
+2026-11-27,Jawa Tengah,com_14,Cabai Merah Keriting,55100
+2026-11-27,Jawa Tengah,com_15,Cabai Rawit Hijau,53750
+2026-11-27,Jawa Tengah,com_16,Cabai Rawit Merah,61850
 2026-11-27,Jawa Tengah,com_3,Beras Kualitas Medium I,16100
-2026-11-27,Jawa Tengah,com_7,Daging Ayam Ras Segar,35100
+2026-11-27,Jawa Tengah,com_7,Daging Ayam Ras Segar,35350
 2026-11-27,Jawa Timur,com_10,Telur Ayam Ras Segar,23450
 2026-11-27,Jawa Timur,com_11,Bawang Merah Ukuran Sedang,32350
 2026-11-27,Jawa Timur,com_12,Bawang Putih Ukuran Sedang,28250
@@ -5884,13 +5884,13 @@ date,province,commodity_id,commodity,price
 2026-11-27,Riau,com_7,Daging Ayam Ras Segar,27450
 2026-11-27,Semua Provinsi,com_10,Telur Ayam Ras Segar,28950
 2026-11-27,Semua Provinsi,com_11,Bawang Merah Ukuran Sedang,39150
-2026-11-27,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,38350
-2026-11-27,Semua Provinsi,com_13,Cabai Merah Besar,63250
+2026-11-27,Semua Provinsi,com_12,Bawang Putih Ukuran Sedang,38300
+2026-11-27,Semua Provinsi,com_13,Cabai Merah Besar,63200
 2026-11-27,Semua Provinsi,com_14,Cabai Merah Keriting,78950
-2026-11-27,Semua Provinsi,com_15,Cabai Rawit Hijau,71250
-2026-11-27,Semua Provinsi,com_16,Cabai Rawit Merah,89550
+2026-11-27,Semua Provinsi,com_15,Cabai Rawit Hijau,71200
+2026-11-27,Semua Provinsi,com_16,Cabai Rawit Merah,89600
 2026-11-27,Semua Provinsi,com_3,Beras Kualitas Medium I,16750
-2026-11-27,Semua Provinsi,com_7,Daging Ayam Ras Segar,38250
+2026-11-27,Semua Provinsi,com_7,Daging Ayam Ras Segar,38200
 2026-11-27,Sulawesi Barat,com_10,Telur Ayam Ras Segar,25200
 2026-11-27,Sulawesi Barat,com_11,Bawang Merah Ukuran Sedang,37500
 2026-11-27,Sulawesi Barat,com_12,Bawang Putih Ukuran Sedang,38400
@@ -5951,11 +5951,11 @@ date,province,commodity_id,commodity,price
 2026-11-27,Sumatera Selatan,com_16,Cabai Rawit Merah,68400
 2026-11-27,Sumatera Selatan,com_3,Beras Kualitas Medium I,16650
 2026-11-27,Sumatera Selatan,com_7,Daging Ayam Ras Segar,31900
-2026-11-27,Sumatera Utara,com_10,Telur Ayam Ras Segar,30250
-2026-11-27,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,37150
-2026-11-27,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,35200
-2026-11-27,Sumatera Utara,com_14,Cabai Merah Keriting,71600
-2026-11-27,Sumatera Utara,com_15,Cabai Rawit Hijau,55900
+2026-11-27,Sumatera Utara,com_10,Telur Ayam Ras Segar,30100
+2026-11-27,Sumatera Utara,com_11,Bawang Merah Ukuran Sedang,36100
+2026-11-27,Sumatera Utara,com_12,Bawang Putih Ukuran Sedang,34250
+2026-11-27,Sumatera Utara,com_14,Cabai Merah Keriting,69850
+2026-11-27,Sumatera Utara,com_15,Cabai Rawit Hijau,53250
 2026-11-27,Sumatera Utara,com_16,Cabai Rawit Merah,48000
-2026-11-27,Sumatera Utara,com_3,Beras Kualitas Medium I,15500
-2026-11-27,Sumatera Utara,com_7,Daging Ayam Ras Segar,42950
+2026-11-27,Sumatera Utara,com_3,Beras Kualitas Medium I,15600
+2026-11-27,Sumatera Utara,com_7,Daging Ayam Ras Segar,40850
