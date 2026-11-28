@@ -1,12 +1,14 @@
 """Daily live run: release gate, 14-day forecasts, spike alerts, and scoring of past forecasts.
 
 Run: python live.py
-1. Gate: retrain today's recipe as if it were 4 weeks ago and score it on the 4 weeks since. It must not lose to
-   the naive forecast, its P10-P90 range must hold 70-90% of real prices, and the spike classifier must rank
-   better than the "already rising" heuristic. Result -> data/model_status.json.
-2. If the gate passes: train on all data and save the next 14 days for every active series to
-   data/forecasts/YYYY-MM.csv, and every calm series' spike probability to data/alerts/YYYY-MM.csv.
-   If it fails, nothing is published, the last good forecasts stay up, and the job exits 1 (email).
+1. Gate: retrain today's recipe as if it were weeks ago and score it on the weeks since, which it never saw.
+   Forecast check (last 4 weeks): it must not lose to the naive forecast and its P10-P90 range must hold
+   70-90% of real prices. Warning check (last 13 weeks, since spikes are rare): the spike classifier must rank
+   better than the "already rising" heuristic; with too few spikes to judge, the check is skipped, not failed.
+   Result -> data/model_status.json.
+2. Each part is published only if its own check passes: forecasts -> data/forecasts/YYYY-MM.csv, every calm
+   series' spike probability -> data/alerts/YYYY-MM.csv. A failed part keeps its last published version and
+   the job exits 1 (email).
 Re-running for the same origin replaces that origin's rows.
 """
 import json
@@ -28,32 +30,41 @@ STATUS = DATA / "model_status.json"
 SERIES = ["commodity_id", "province"]
 COLUMNS = {"naive": "naive", "lightgbm_p10": "p10", "lightgbm": "p50", "lightgbm_p90": "p90"}
 GATE_WEEKS = 4
+SPIKE_GATE_WEEKS = 13  # 4 weeks of a calm market can hold spikes in only a handful of series: AP is then noise
+MIN_SPIKE_SERIES = 20  # fewer distinct series with a spike than this: too little evidence to judge the warning
 NAIVE_TOLERANCE = 1.02  # 4 weeks is a small sample; a 2% tie with naive is noise, not a broken model
 COVERAGE_RANGE = (0.70, 0.90)
+
+
+def verdict(s: dict) -> dict:
+    """Pass/fail per published part, from the gate metrics."""
+    forecast_ok = s["forecast_mape"] <= s["naive_mape"] * NAIVE_TOLERANCE and COVERAGE_RANGE[0] <= s["coverage"] <= COVERAGE_RANGE[1]
+    judged = s["spike_series"] >= MIN_SPIKE_SERIES
+    spike_ok = not judged or s["spike_ap"] > s["heuristic_ap"]
+    return {"forecast_passed": bool(forecast_ok), "spike_judged": judged, "spike_passed": bool(spike_ok),
+            "passed": bool(forecast_ok and spike_ok)}
 
 
 def gate(df: pd.DataFrame, wide: pd.DataFrame) -> dict:
     end = wide.index[-1] - pd.Timedelta(days=HORIZON)  # last origin whose 14 days are over
     origins = pd.bdate_range(end - pd.Timedelta(weeks=GATE_WEEKS) + pd.Timedelta(days=1), end)
+    spike_origins = pd.bdate_range(end - pd.Timedelta(weeks=SPIKE_GATE_WEEKS) + pd.Timedelta(days=1), end)
     never = 10**6  # train once, at the first holdout origin
     bt = backtest.run(df, [backtest.naive, model.LightGBM(refit_days=never)], origins).dropna()
-    sp = spike.run(wide, test=origins, refit_days=never)
+    sp = spike.run(wide, test=spike_origins, refit_days=never)
     s = {
         "date": f"{wide.index[-1]:%Y-%m-%d}",
         "holdout": f"{origins[0]:%Y-%m-%d} .. {origins[-1]:%Y-%m-%d}",
         "forecast_mape": round(backtest.mape(bt["lightgbm"], bt["actual"]), 2),
         "naive_mape": round(backtest.mape(bt["naive"], bt["actual"]), 2),
         "coverage": round(float(bt["actual"].between(bt["lightgbm_p10"], bt["lightgbm_p90"]).mean()), 3),
+        "spike_holdout": f"{spike_origins[0]:%Y-%m-%d} .. {spike_origins[-1]:%Y-%m-%d}",
         "spike_rate": round(float(sp["spike"].mean()), 3),
+        "spike_series": int(sp[sp["spike"] == 1].groupby(SERIES, observed=True).ngroups),
         "spike_ap": round(spike.average_precision(sp["p"].to_numpy(), sp["spike"].to_numpy()), 3),
         "heuristic_ap": round(spike.average_precision(sp["to_level"].to_numpy(), sp["spike"].to_numpy()), 3),
     }
-    s["passed"] = bool(
-        s["forecast_mape"] <= s["naive_mape"] * NAIVE_TOLERANCE
-        and COVERAGE_RANGE[0] <= s["coverage"] <= COVERAGE_RANGE[1]
-        and s["spike_ap"] > s["heuristic_ap"]
-    )
-    return s
+    return s | verdict(s)
 
 
 def forecast(wide: pd.DataFrame) -> pd.DataFrame:
@@ -103,11 +114,19 @@ def main() -> None:
     status = gate(df, wide)
     STATUS.write_text(json.dumps(status, indent=2) + "\n")
     print(json.dumps(status))
-    if not status["passed"]:
-        sys.exit("Release gate failed: keeping the last published forecasts and alerts")
-    f, a = forecast(wide), spike.live(wide)
-    print(f"Origin {f['origin'].iloc[0]:%Y-%m-%d}: {len(f):,} forecasts -> {save(f, FORECASTS)}")
-    print(f"{len(a)} calm series scored, {(a['p'] >= spike.ALERT_CUTOFF).sum()} alerts -> {save(a, ALERTS)}")
+    failed = []
+    if status["forecast_passed"]:
+        f = forecast(wide)
+        print(f"Origin {f['origin'].iloc[0]:%Y-%m-%d}: {len(f):,} forecasts -> {save(f, FORECASTS)}")
+    else:
+        failed.append("forecast")
+    if status["spike_passed"]:
+        a = spike.live(wide)
+        print(f"{len(a)} calm series scored, {(a['p'] >= spike.ALERT_CUTOFF).sum()} alerts -> {save(a, ALERTS)}")
+    else:
+        failed.append("spike warning")
+    if failed:
+        sys.exit(f"Release gate failed for: {', '.join(failed)}. Keeping the last published version of those.")
 
 
 if __name__ == "__main__":

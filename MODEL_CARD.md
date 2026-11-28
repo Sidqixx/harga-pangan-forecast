@@ -54,13 +54,12 @@ The cut-off of 0.5 keeps the daily list short enough to act on (about 9 series) 
 
 ## Release gate and monitoring
 
-Every day `live.py` re-runs the training recipe as if it were 4 weeks earlier and scores it on the 4 weeks since, which the model never saw. It publishes only if:
+Every day `live.py` re-runs the training recipe as if it were weeks earlier and scores it on the weeks since, which the model never saw. Forecasts and warnings are checked and published separately:
 
-1. forecast MAPE ≤ naive MAPE x 1.02,
-2. P10–P90 coverage is between 70% and 90%,
-3. the warning's average precision beats the heuristic.
+- **Forecasts** (last 4 weeks): published only if forecast MAPE ≤ naive MAPE x 1.02 and P10–P90 coverage is between 70% and 90%.
+- **Warnings** (last 13 weeks): published only if the classifier's average precision beats the heuristic. Spikes are rare, so a shorter window can hold spikes in only a handful of series, and AP on so few events is noise: on 27 Nov 2026 the 4-week window had spikes in 7 series and the classifier "lost" (0.05 vs 0.08), while the 13-week window had 95 series and it won clearly (0.46 vs 0.16). If fewer than 20 series spiked in the window, the warning check is reported as not judged instead of failing.
 
-Otherwise nothing is published, the last forecasts that passed stay online, and the job fails (email). The result is saved to `data/model_status.json` and shown on the dashboard. Every published forecast and warning is scored against the real prices once they arrive, and the live accuracy is shown on the dashboard next to the backtest numbers.
+A part that fails keeps its last published version online, the dashboard shows a notice, and the job fails (email). The result is saved to `data/model_status.json` and shown on the dashboard. Every published forecast and warning is scored against the real prices once they arrive, and the live accuracy is shown on the dashboard next to the backtest numbers.
 
 ## Limitations and risks
 

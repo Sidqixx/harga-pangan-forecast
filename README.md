@@ -15,9 +15,10 @@ GitHub Actions, daily 10:17 WIB (backup run 14:47 WIB)
   pytest      tests first; a broken change never touches the data
   fetch.py    PIHPS API -> data/raw/YYYY-MM.csv   (re-fetches the last 14 days to catch late entries and revisions)
   quality.py  checks; the job fails (and emails) if the newest price is more than 10 days old
-  live.py     release gate on the last 4 unseen weeks; if it passes, retrains on all data and saves
-              14-day forecasts (P10/P50/P90 + naive) -> data/forecasts/, spike probabilities -> data/alerts/,
-              gate result -> data/model_status.json; if it fails, publishes nothing and the job fails
+  live.py     release gate on unseen weeks (4 for forecasts, 13 for warnings); each part that passes is
+              retrained on all data and saved: 14-day forecasts (P10/P50/P90 + naive) -> data/forecasts/,
+              spike probabilities -> data/alerts/, gate result -> data/model_status.json; a failed part
+              keeps its last version and the job fails
   commit      only when something changed, rebased onto anything pushed during the run
   report.py   site/index.html + site/series/*.json -> GitHub Pages
 ```
@@ -108,7 +109,7 @@ What this says:
 
 It beats the heuristic for every commodity. At the cut-off used on the dashboard (p ≥ 0.5) there are about **9 alerts a day, 65% of which turn into a spike**, catching 27% of all new spikes; p ≥ 0.7 gives 2.7 alerts a day at 81% precision. The trade-off table and the limitations are in the [model card](MODEL_CARD.md).
 
-**Release gate** (`live.py`, daily): the training recipe is re-run as if it were 4 weeks earlier and scored on the 4 weeks since. Forecasts and alerts are published only if the forecast does not lose to naive (2% tolerance), the P10 to P90 range holds 70% to 90% of real prices, and the classifier beats the heuristic. Otherwise the last forecasts that passed stay online, the dashboard shows a notice, and the job fails visibly. First run (19 Nov 2026): forecast 3.2% vs naive 3.3%, coverage 84%, average precision 0.25 vs heuristic 0.10, passed.
+**Release gate** (`live.py`, daily): the training recipe is re-run as if it were weeks earlier and scored on the weeks since. Forecasts are checked on the last 4 weeks and published only if they do not lose to naive (2% tolerance) and the P10 to P90 range holds 70% to 90% of real prices. Warnings are checked on the last 13 weeks and published only if the classifier beats the heuristic: spikes are rare, and on 27 Nov 2026 a 4-week window held spikes in only 7 series, which made the comparison noise and blocked the whole release for two days. With fewer than 20 spiking series the warning check is reported as not judged rather than failed. A part that fails keeps its last published version, the dashboard shows a notice, and the job fails visibly.
 
 ## Running locally
 

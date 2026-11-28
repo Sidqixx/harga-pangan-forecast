@@ -103,8 +103,11 @@ def summary(df: pd.DataFrame, wide: pd.DataFrame, level: pd.Series) -> dict:
     age = (pd.Timestamp(datetime.now(timezone.utc).date()) - df["date"].max()).days
     if age > quality.STALE_DAYS:
         notices.append(f"Harga terbaru dari PIHPS sudah {age} hari. Angka di halaman ini mungkin belum mencerminkan pasar saat ini.")
-    if live.STATUS.exists() and not json.loads(live.STATUS.read_text())["passed"]:
-        notices.append("Pemeriksaan model terakhir tidak lolos. Perkiraan dan peringatan di bawah adalah versi terakhir yang lolos.")
+    gate = gate_status()
+    if gate and not gate["forecast_passed"]:
+        notices.append("Pemeriksaan model perkiraan terakhir tidak lolos. Perkiraan di bawah adalah versi terakhir yang lolos.")
+    if gate and not gate["spike_passed"]:
+        notices.append("Pemeriksaan model peringatan terakhir tidak lolos. Daftar peringatan di bawah adalah versi terakhir yang lolos.")
     return {
         "dataDate": tanggal(df["date"].max()),
         "built": f"{tanggal(datetime.now(timezone.utc))} {datetime.now(timezone.utc):%H:%M} UTC",
@@ -166,18 +169,34 @@ def live_table(df: pd.DataFrame) -> str:
             f'<div class="table-wrap" tabindex="0" role="region" aria-label="Tabel akurasi perkiraan">{table}</div>')
 
 
-def gate_line() -> str:
+def gate_status() -> dict | None:
     if not live.STATUS.exists():
-        return ""
+        return None
     s = json.loads(live.STATUS.read_text())
+    s.setdefault("forecast_passed", s["passed"])  # files written before the gate was split
+    s.setdefault("spike_passed", s["passed"])
+    s.setdefault("spike_judged", True)
+    s.setdefault("spike_holdout", s["holdout"])
+    return s
+
+
+def gate_line() -> str:
+    s = gate_status()
+    if s is None:
+        return ""
     start, end = s["holdout"].split(" .. ")
-    verdict = ("lolos" if s["passed"]
-               else "tidak lolos, jadi perkiraan dan peringatan yang tampil adalah versi terakhir yang lolos")
-    return (f"Pemeriksaan model {tanggal(s['date'])}: <b>{verdict}</b>. Sebelum dipakai, model diuji ulang pada "
-            f"{tanggal(start)} sampai {tanggal(end)}, periode yang belum pernah ia lihat. Perkiraannya meleset "
-            f"{angka(s['forecast_mape'])}% (tebakan harga terakhir: {angka(s['naive_mape'])}%), "
-            f"{angka(s['coverage'] * 100, 0)}% harga asli masuk rentang 80%, dan skor ketepatan peringatannya "
-            f"{angka(s['spike_ap'], 2)} (aturan sederhana: {angka(s['heuristic_ap'], 2)}; skala 0 sampai 1).")
+    sp_start, sp_end = s["spike_holdout"].split(" .. ")
+    ok = lambda passed: "<b>lolos</b>" if passed else "<b>tidak lolos</b>, yang tampil versi terakhir yang lolos"
+    if not s["spike_judged"]:
+        spike_text = (f"Peringatan: belum dinilai, karena dalam {tanggal(sp_start)} sampai {tanggal(sp_end)} "
+                      f"lonjakan hanya terjadi di {s['spike_series']} harga, terlalu sedikit untuk menilai.")
+    else:
+        spike_text = (f"Peringatan: {ok(s['spike_passed'])}. Diuji pada {tanggal(sp_start)} sampai {tanggal(sp_end)}, "
+                      f"skor ketepatannya {angka(s['spike_ap'], 2)} (aturan sederhana: {angka(s['heuristic_ap'], 2)}; skala 0 sampai 1).")
+    return (f"Pemeriksaan model {tanggal(s['date'])}, pada periode yang belum pernah dilihat model. "
+            f"Perkiraan: {ok(s['forecast_passed'])}. Diuji pada {tanggal(start)} sampai {tanggal(end)}, meleset "
+            f"{angka(s['forecast_mape'])}% (tebakan harga terakhir: {angka(s['naive_mape'])}%) dan "
+            f"{angka(s['coverage'] * 100, 0)}% harga asli masuk rentang 80%. {spike_text}")
 
 
 def main() -> None:
